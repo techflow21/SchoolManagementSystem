@@ -58,7 +58,6 @@ namespace SchoolManagementSystem.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.MapControllers();
 
             app.Run();
