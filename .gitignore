@@ -4,3 +4,5 @@
 SchoolManagementSystem.Api/bin/Debug/net6.0/appsettings.json
 SchoolManagementSystem.Api/appsettings.json
 *.json
+*.vs
+vs
