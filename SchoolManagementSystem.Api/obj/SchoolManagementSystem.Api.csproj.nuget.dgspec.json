@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj": {}
+    "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj": {
+    "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
+        "projectUniqueName": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
         "projectName": "SchoolManagementSystem.Api",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\obj\\",
+        "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
+        "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj"
+              "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
+                "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj"
               }
             }
           }
@@ -87,21 +86,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+    "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "projectName": "SchoolManagementSystem.Core",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
+        "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,21 +147,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+    "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
         "projectName": "SchoolManagementSystem.Infrastructure",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -176,8 +175,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj"
+              "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj"
               }
             }
           }
@@ -261,21 +260,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
+    "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+        "projectUniqueName": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
         "projectName": "SchoolManagementSystem.Service",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
+        "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+        "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -289,8 +288,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
+              "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MAJOR WORKS(TASKS)\\MULTI-TENANT\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
               }
             }
           }
@@ -320,7 +319,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
