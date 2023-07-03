@@ -1,0 +1,40 @@
+﻿using System;
+using SchoolManagementSystem.Core.DTOs.Requests;
+using SchoolManagementSystem.Core.Entities;
+using SchoolManagementSystem.Core.Interfaces;
+
+namespace SchoolManagementSystem.Service.Implementation
+{
+    public class TeachingStaff : ITeachingStaff
+    {
+        public TeachingStaff()
+        {
+        }
+
+        public Task<Teacher> AddingTeachingStaff(TeachingStaffModel teachingStaff)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AssignClass()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AssignSubject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteTeachingByID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Teacher>> GetAllTeachingStaff()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
