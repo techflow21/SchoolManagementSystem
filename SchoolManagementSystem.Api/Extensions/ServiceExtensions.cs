@@ -16,6 +16,7 @@ namespace SchoolManagementSystem.Infrastructure.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
 
             services.AddScoped<ITeachingStaff, TeachingStaff>();
+            services.AddScoped<ISalaryService, SalaryService>();
         }
     }
 }
