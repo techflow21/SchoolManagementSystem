@@ -4,12 +4,6 @@ using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SchoolManagementSystem.Service.Implementation.SalaryService;
 
 namespace SchoolManagementSystem.Service.Implementation
 {
@@ -23,14 +17,11 @@ namespace SchoolManagementSystem.Service.Implementation
 
             public SalaryService(IHttpContextAccessor httpContextAccessor, ILoggerManager logger, IUnitOfWork unitOfWork, IMapper mapper)
             {
-
                 _httpContextAccessor = httpContextAccessor;
                 _logger = logger;
                 _unitOfWork = unitOfWork;
                 _mapper = mapper;
                 _salaryRepo = _unitOfWork.GetRepository<Salary>();
-            
-
             }
 
         public async Task<Salary> AddStaffSalaryAsync(AddStaffSalaryDto addStaffSalaryDto)
@@ -40,7 +31,6 @@ namespace SchoolManagementSystem.Service.Implementation
 
             await _salaryRepo.AddAsync(salary);
             await _unitOfWork.SaveChangesAsync();
-
             return salary;
         }
 
