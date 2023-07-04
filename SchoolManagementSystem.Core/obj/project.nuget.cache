@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MPjo0vH8VFNh1lmcks/m0g1KHNuenDhyD+KI2Zhv+ChnlpY64IY/QV1jkGt82Uri0snbRjGMMmTngvR22iGjzg==",
+  "dgSpecHash": "wsZyC/DRQ0EpH+/VB7inmjEWQCCs134jR5JLLgf4BFhNrpKp6JY3n/TgyHXP/sVeAMElCqoscQRNOxg/7VxGGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\ResolvedPR\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.16\\microsoft.entityframeworkcore.6.0.16.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.16\\microsoft.entityframeworkcore.abstractions.6.0.16.nupkg.sha512",
