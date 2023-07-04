@@ -32,3 +32,20 @@ C:/Users/HP/Desktop/SchoolManagementSystem/SchoolManagementSystem.Service/obj/De
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/obj/Debug/net6.0/refint/SchoolManagementSystem.Service.dll
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.pdb
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/obj/Debug/net6.0/ref/SchoolManagementSystem.Service.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Service.deps.json
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Service.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Service.pdb
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.AssemblyInfo.cs
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.csproj.CopyComplete
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\refint\SchoolManagementSystem.Service.dll
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\SchoolManagementSystem.Service.pdb
+C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Service\obj\Debug\net6.0\ref\SchoolManagementSystem.Service.dll
