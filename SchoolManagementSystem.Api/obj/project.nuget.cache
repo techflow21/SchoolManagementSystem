@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S5rIhCUdNMiKhcyO/qOvN/TPcRZZQYZWoxhaupQ8QJwCYxVGiplMBdOHRB+jcb0n9QzNHwtfyQmh3Ow0+r77iA==",
+  "dgSpecHash": "1+t+2C6Cg0AZzyU0WbV3bRsOOL/BWIO14llOlXIy4Kw2f7nIEfMA4oYHT5etG5SHOKJpGGadtxI6FArIlilPDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -52,8 +52,9 @@
     "C:\\Users\\HP\\.nuget\\packages\\nlog\\5.0.0\\nlog.5.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\nlog.extensions.logging\\5.0.0\\nlog.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

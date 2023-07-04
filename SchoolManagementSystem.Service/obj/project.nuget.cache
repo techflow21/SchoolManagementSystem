@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HEBWn1nnu+yyHTqHARhOUWHpW7iXfgzrHJaZzIRCPU4oDN2/nX5tnFFrxBoZHmDVDkQuNS1NVnLpRGaRfxjGbQ==",
+  "dgSpecHash": "gzXkQ3TQF59tsoiUQaVDli8DZtM0QPKbYmRPI00ec2Yb3nA3/Pqv5s/zgzPIibKP0ajdYabv/zTht95Kyik6Bg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

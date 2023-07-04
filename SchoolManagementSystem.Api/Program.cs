@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Extensions;
 using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using SchoolManagementSystem.Infrastructure.Repository;
 using NLog;
+using Microsoft.OpenApi.Models;
 
 namespace SchoolManagementSystem.Api
 {
@@ -31,10 +30,38 @@ namespace SchoolManagementSystem.Api
 
             LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.EnableAnnotations();
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementSystem", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description =
+                        "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\""
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                            Array.Empty<string>()
+                    },
+                });
+            });
+
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddSingleton<ITenantRegistry, TenantRegistry>();
-            builder.Services.AddScoped<ITenantResolver, TenantResolver>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
@@ -43,7 +70,6 @@ namespace SchoolManagementSystem.Api
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
             DatabaseHelper.EnsureLatestDatabase(builder.Services);
 

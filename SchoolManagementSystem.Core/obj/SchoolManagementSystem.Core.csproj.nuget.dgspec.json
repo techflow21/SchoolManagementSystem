@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {}
+    "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+    "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "projectName": "SchoolManagementSystem.Core",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

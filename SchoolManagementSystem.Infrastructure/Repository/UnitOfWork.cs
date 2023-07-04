@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
 
 namespace SchoolManagementSystem.Infrastructure.Repository

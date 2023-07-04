@@ -20,7 +20,6 @@ namespace SchoolManagementSystem.Infrastructure.Configurations
         }
 
         public Tenant[] GetTenants() => _tenantOptions.Tenants;
-
         public User[] GetUsers() => _tenantOptions.Users;
     }
 }

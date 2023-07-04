@@ -2669,11 +2669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
       "projectName": "SchoolManagementSystem.Infrastructure",
-      "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2690,8 +2690,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj"
+            "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\FreshResolve\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj"
             }
           }
         }
