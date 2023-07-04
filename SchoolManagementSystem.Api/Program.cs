@@ -6,9 +6,7 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Extensions;
 using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using SchoolManagementSystem.Infrastructure.Repository;
 using NLog;
-using SchoolManagementSystem.Service.Implementation;
 using Microsoft.OpenApi.Models;
 
 namespace SchoolManagementSystem.Api
@@ -36,9 +34,7 @@ namespace SchoolManagementSystem.Api
             builder.Services.AddSwaggerGen(c =>
             {
                 c.EnableAnnotations();
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementApp", Version = "v1" });
-
-
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementSystem", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     Name = "Authorization",
@@ -67,13 +63,7 @@ namespace SchoolManagementSystem.Api
             });
 
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddSingleton<ITenantRegistry, TenantRegistry>();
-            builder.Services.AddScoped<ITenantResolver, TenantResolver>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
-
-            builder.Services.AddScoped<ITeachingStaff, TeachingStaff>();
-            builder.Services.AddScoped<ISalaryService, SalaryService>();
-
+            
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
 
@@ -94,6 +84,7 @@ namespace SchoolManagementSystem.Api
                 app.UseSwaggerUI();
             }
 
+            app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
