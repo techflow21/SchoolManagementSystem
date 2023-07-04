@@ -1,14 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Extensions;
 using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using SchoolManagementSystem.Infrastructure.Repository;
 using NLog;
-using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Api
 {
@@ -33,11 +30,6 @@ namespace SchoolManagementSystem.Api
             LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddSingleton<ITenantRegistry, TenantRegistry>();
-            builder.Services.AddScoped<ITenantResolver, TenantResolver>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
-
-            builder.Services.AddScoped<ITeachingStaff, TeachingStaff>();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
