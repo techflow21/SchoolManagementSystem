@@ -12,8 +12,8 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230629014202_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230705101300_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

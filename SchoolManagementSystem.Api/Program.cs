@@ -7,10 +7,11 @@ using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
 using NLog;
 using Microsoft.OpenApi.Models;
+using SchoolManagementSystem.Api.Extensions;
 
 namespace SchoolManagementSystem.Api
 {
-    public class Program
+    public abstract class Program
     {
         public static void Main(string[] args)
         {
@@ -89,4 +90,4 @@ namespace SchoolManagementSystem.Api
             app.Run();
         }
     }
-}
+} 
