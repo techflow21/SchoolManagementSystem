@@ -16597,7 +16597,16 @@
     </database>
     <database id="5521" parent="1" name="master">
       <Current>1</Current>
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@DESKTOP-COOCBQO\SQLE</Fingerprint>
+      <Grants>1|database||1|connect|G
+1|database||2|connect|G
+1|database||5|connect|G
+1|database||6|connect|G
+1|database||6|execute|G
+1|database||0|view any column encryption key definition|G
+1|database||0|view any column master key definition|G</Grants>
       <ObjectId>1</ObjectId>
+      <PermissionsCheckSum>7998723517</PermissionsCheckSum>
       <CollationName>SQL_Latin1_General_CP1_CI_AS</CollationName>
     </database>
     <database id="5522" parent="1" name="model">
@@ -16802,44 +16811,132 @@
       <ObjectId>267</ObjectId>
       <Type>certificate-mapped-login</Type>
     </login>
-    <schema id="5561" parent="5521" name="INFORMATION_SCHEMA">
+    <role id="5561" parent="5521" name="public">
+      <AuthType>none</AuthType>
+      <ObjectId>0</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5562" parent="5521" name="dbo">
+      <AuthType>instance</AuthType>
+      <DefaultSchema>dbo</DefaultSchema>
+      <ObjectId>1</ObjectId>
+    </role>
+    <role id="5563" parent="5521" name="guest">
+      <AuthType>none</AuthType>
+      <DefaultSchema>guest</DefaultSchema>
+      <ObjectId>2</ObjectId>
+    </role>
+    <role id="5564" parent="5521" name="INFORMATION_SCHEMA">
+      <AuthType>none</AuthType>
+      <ObjectId>3</ObjectId>
+    </role>
+    <role id="5565" parent="5521" name="sys">
+      <AuthType>none</AuthType>
+      <ObjectId>4</ObjectId>
+    </role>
+    <role id="5566" parent="5521" name="##MS_PolicyEventProcessingLogin##">
+      <AuthType>instance</AuthType>
+      <DefaultSchema>dbo</DefaultSchema>
+      <ObjectId>5</ObjectId>
+    </role>
+    <role id="5567" parent="5521" name="##MS_AgentSigningCertificate##">
+      <AuthType>none</AuthType>
+      <ObjectId>6</ObjectId>
+      <Type>certificate-mapped-user</Type>
+    </role>
+    <role id="5568" parent="5521" name="db_owner">
+      <AuthType>none</AuthType>
+      <ObjectId>16384</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5569" parent="5521" name="db_accessadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16385</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5570" parent="5521" name="db_securityadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16386</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5571" parent="5521" name="db_ddladmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16387</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5572" parent="5521" name="db_backupoperator">
+      <AuthType>none</AuthType>
+      <ObjectId>16389</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5573" parent="5521" name="db_datareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16390</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5574" parent="5521" name="db_datawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16391</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5575" parent="5521" name="db_denydatareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16392</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="5576" parent="5521" name="db_denydatawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16393</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <schema id="5577" parent="5521" name="INFORMATION_SCHEMA">
       <ObjectId>3</ObjectId>
     </schema>
-    <schema id="5562" parent="5521" name="db_accessadmin">
+    <schema id="5578" parent="5521" name="db_accessadmin">
       <ObjectId>16385</ObjectId>
     </schema>
-    <schema id="5563" parent="5521" name="db_backupoperator">
+    <schema id="5579" parent="5521" name="db_backupoperator">
       <ObjectId>16389</ObjectId>
     </schema>
-    <schema id="5564" parent="5521" name="db_datareader">
+    <schema id="5580" parent="5521" name="db_datareader">
       <ObjectId>16390</ObjectId>
     </schema>
-    <schema id="5565" parent="5521" name="db_datawriter">
+    <schema id="5581" parent="5521" name="db_datawriter">
       <ObjectId>16391</ObjectId>
     </schema>
-    <schema id="5566" parent="5521" name="db_ddladmin">
+    <schema id="5582" parent="5521" name="db_ddladmin">
       <ObjectId>16387</ObjectId>
     </schema>
-    <schema id="5567" parent="5521" name="db_denydatareader">
+    <schema id="5583" parent="5521" name="db_denydatareader">
       <ObjectId>16392</ObjectId>
     </schema>
-    <schema id="5568" parent="5521" name="db_denydatawriter">
+    <schema id="5584" parent="5521" name="db_denydatawriter">
       <ObjectId>16393</ObjectId>
     </schema>
-    <schema id="5569" parent="5521" name="db_owner">
+    <schema id="5585" parent="5521" name="db_owner">
       <ObjectId>16384</ObjectId>
     </schema>
-    <schema id="5570" parent="5521" name="db_securityadmin">
+    <schema id="5586" parent="5521" name="db_securityadmin">
       <ObjectId>16386</ObjectId>
     </schema>
-    <schema id="5571" parent="5521" name="dbo">
+    <schema id="5587" parent="5521" name="dbo">
       <Current>1</Current>
       <ObjectId>1</ObjectId>
     </schema>
-    <schema id="5572" parent="5521" name="guest">
+    <schema id="5588" parent="5521" name="guest">
       <ObjectId>2</ObjectId>
     </schema>
-    <schema id="5573" parent="5521" name="sys">
+    <schema id="5589" parent="5521" name="sys">
       <ObjectId>4</ObjectId>
     </schema>
   </database-model>
