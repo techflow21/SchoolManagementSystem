@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7667c8a-84b6-400a-a523-948459948c4a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/DTOs/Responses/Status.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/Interfaces/IManageIncome.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/Implementation/ManageIncome.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/Extensions/ServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/Extensions/ServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/SchoolManagementSystem.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/ref/SchoolManagementSystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/ref/SchoolManagementSystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/refint/SchoolManagementSystem.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Api/obj/Debug/net6.0/refint/SchoolManagementSystem.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/Entities/Expense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/Entities/Expense.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/DataContext/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/DataContext/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705101300_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705125848_Initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705101300_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705125848_Initial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705105324_connection for branchA.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705131737_expense model update.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705105324_connection for branchA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/20230705131737_expense model update.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/ref/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/ref/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/refint/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Infrastructure/obj/Debug/net6.0/refint/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/bin/Debug/net6.0/SchoolManagementSystem.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/ref/SchoolManagementSystem.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/ref/SchoolManagementSystem.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/refint/SchoolManagementSystem.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagementSystem.Service/obj/Debug/net6.0/refint/SchoolManagementSystem.Service.dll" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2S9XuWTaFGtJELmBu5inUVO9KdZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDatabaseViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "development",
+    "last_opened_file_path": "C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>
