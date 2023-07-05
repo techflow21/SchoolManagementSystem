@@ -4,7 +4,7 @@
 
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
-    public partial class connectionforbranchA : Migration
+    public partial class expensemodelupdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

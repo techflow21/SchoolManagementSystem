@@ -16,7 +16,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     TenantId = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -99,7 +99,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SMSMessages",
+                name: "SmsMessages",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -110,7 +110,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SMSMessages", x => x.Id);
+                    table.PrimaryKey("PK_SmsMessages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -176,9 +176,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Teachers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Teachers_SMSMessages_SMSMessageId",
+                        name: "FK_Teachers_SmsMessages_SMSMessageId",
                         column: x => x.SMSMessageId,
-                        principalTable: "SMSMessages",
+                        principalTable: "SmsMessages",
                         principalColumn: "Id");
                 });
 
@@ -333,9 +333,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         principalTable: "Results",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Students_SMSMessages_SMSMessageId",
+                        name: "FK_Students_SmsMessages_SMSMessageId",
                         column: x => x.SMSMessageId,
-                        principalTable: "SMSMessages",
+                        principalTable: "SmsMessages",
                         principalColumn: "Id");
                 });
 
@@ -503,7 +503,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 name: "Results");
 
             migrationBuilder.DropTable(
-                name: "SMSMessages");
+                name: "SmsMessages");
         }
     }
 }

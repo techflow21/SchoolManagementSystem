@@ -123,7 +123,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenantId")
@@ -405,7 +404,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SMSMessages");
+                    b.ToTable("SmsMessages");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Student", b =>

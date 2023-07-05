@@ -4,7 +4,7 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Repository;
 using SchoolManagementSystem.Service.Implementation;
 
-namespace SchoolManagementSystem.Infrastructure.Extensions
+namespace SchoolManagementSystem.Api.Extensions
 {
     public static class ServiceExtensions
     {

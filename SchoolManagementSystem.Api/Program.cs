@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
-using SchoolManagementSystem.Infrastructure.Extensions;
 using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
 using NLog;

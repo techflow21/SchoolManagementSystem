@@ -1,9 +1,8 @@
-﻿namespace SchoolManagementSystem.Core.Entities
+﻿namespace SchoolManagementSystem.Core.Entities;
+
+public class User
 {
-    public class User
-    {
-        public string Name { get; set; } = null!;
-        public string Secret { get; set; } = null!;
-        public string TenantId { get; set; } = null!;
-    }
+    public string Name { get; set; } = null!;
+    public string Secret { get; set; } = null!;
+    public string TenantId { get; set; } = null!;
 }
