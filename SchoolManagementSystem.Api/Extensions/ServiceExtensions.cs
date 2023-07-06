@@ -17,6 +17,7 @@ namespace SchoolManagementSystem.Infrastructure.Extensions
 
             services.AddScoped<ITeachingStaff, TeachingStaff>();
             services.AddScoped<ISalaryService, SalaryService>();
+            services.AddScoped<IManageExpenditure, ManageExpenditure>();
         }
     }
 }
