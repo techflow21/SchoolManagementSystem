@@ -7,6 +7,8 @@ using SchoolManagementSystem.Infrastructure.MappingProfiles;
 using NLog;
 using Microsoft.OpenApi.Models;
 using SchoolManagementSystem.Api.Extensions;
+using SchoolManagementSystem.Core.Interfaces;
+using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Api
 {

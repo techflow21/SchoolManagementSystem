@@ -1,6 +1,8 @@
-﻿namespace SchoolManagementSystem.Core.Entities;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class User
+namespace SchoolManagementSystem.Core.Entities;
+
+public class User : IdentityUser
 {
     public string Name { get; set; } = null!;
     public string Secret { get; set; } = null!;

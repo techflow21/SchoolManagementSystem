@@ -596,3 +596,4 @@ C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolMana
 C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
