@@ -88,15 +88,11 @@ public class ManageIncome : IManageIncome
         return expenses;
     }
 
-
     public async Task<AddExpenseDto> GetIncomeByIdAsync(int id)
     {
         var expense = await _expenseRepository.GetByIdAsync(id);
 
-        if (expense is null)
-        {
-            throw new Exception("Not found!");
-        }
+        if (expense is null) throw new Exception("Not found!");
 
         return new AddExpenseDto
         {
