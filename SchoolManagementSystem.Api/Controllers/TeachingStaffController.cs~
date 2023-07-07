@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SchoolManagementSystem.Core.DTOs.Requests;
-using SchoolManagementSystem.Api.Extensions;
+using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
 
@@ -18,9 +18,9 @@ namespace SchoolManagementSystem.Api.Controllers
     {
         private readonly ITeachingStaff _teachingStaff;
 
-        private readonly IHttpContextAccessor _contextAccessor;
+        private readonly HttpContextAccessor _contextAccessor;
 
-        public TeachingStaffController(ITeachingStaff teachingStaff, IHttpContextAccessor contextAccessor)
+        public TeachingStaffController(ITeachingStaff teachingStaff, HttpContextAccessor contextAccessor)
         {
             _teachingStaff = teachingStaff;
             _contextAccessor = contextAccessor;
@@ -32,7 +32,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
             var teacher = await _teachingStaff.AddingTeachingStaff(teachingStaff);
 
-            return CreatedAtAction(nameof(GetTeachingStaffByTeacherID), new { teacher.id }, teacher);
+            return CreatedAtAction(nameof(GetTeachingStaffByTeacherID), new { id = teacher.id }, teacher);
         }
 
         [HttpPut("updateTeachingStaff")]
@@ -44,23 +44,51 @@ namespace SchoolManagementSystem.Api.Controllers
 
         }
 
-        [HttpGet("SortingTeachingStaff")]
-        public async Task<IActionResult> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff)
+        [HttpGet("allTeachingStaffOfSpecificSubject")]
+        public async Task<IActionResult> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
         {
-
-            var tenancyId = _contextAccessor.HttpContext.User.GetUserId();
-
-            var teachers = await _teachingStaff.SortingTeachingStaff(sortingTeachingStaff, tenancyId);
+            var teachers = await _teachingStaff.GetAllTeachingStaffOfSpecificSubject(Subject);
 
             return Ok(teachers);
         }
 
 
+        [HttpGet("allTeachingStaffOfSpecificClass")]
+        public async Task<IActionResult> GetAllTeachingStaffOfSpecificClass(Class Class)
+        {
+            var teachers = await _teachingStaff.GetAllTeachingStaffOfSpecificClass(Class);
+
+            return Ok(teachers);
+        }
+
+        [HttpGet("allTeachingStaffOfSpecificSubjectAndClass")]
+        public async Task<IActionResult> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
+        {
+            var teachers = await _teachingStaff.GetAllTeachingStaffOfSpecificSubjectAndClass(classAndSubjectModel);
+
+            return Ok(teachers);
+        }
+
+        [HttpGet("allTeachingStaffOfSpecificSubjectOrClass")]
+        public async Task<IActionResult> GetAllTeachingStaffOfSpecificSubjectOrClass(ClassAndSubjectModel classAndSubjectModel)
+        {
+            var teachers = await _teachingStaff.GetAllTeachingStaffOfSpecificSubject_Or_Class(classAndSubjectModel);
+
+            return Ok(teachers);
+        }
 
         [HttpGet("allTeachingStaffWithClassAndSubjectOnly")]
         public async Task<IActionResult> GetAllTeachingStaffWithClassAndSubjectOnly()
         {
             var teachers = await _teachingStaff.GetAllTeachingStaffWithClassAndSubjectOnly();
+
+            return Ok(teachers);
+        }
+
+        [HttpGet("allTeachingStaff")]
+        public async Task<IActionResult> GetAllTeachingStaff()
+        {
+            var teachers = await _teachingStaff.GetAllTeachingStaff();
 
             return Ok(teachers);
         }
@@ -91,27 +119,22 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
 
-        [HttpPut("addSubject")]
+        [HttpPut("addSubjectModel")]
         public async Task<IActionResult> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
         {
             var subject = new Subject
             {
-                TenantId = _contextAccessor.HttpContext?.User.GetUserId()
+                TenantId = _contextAccessor.
             };
             var teacher = await _teachingStaff.AssignSubjectByTeacherID(addSubjectModel, subject);
 
             return Ok(teacher);
         }
 
-        [HttpPut("addClass")]
+        [HttpPut("addClassModel")]
         public async Task<IActionResult> AssignClassByTeacherID(AddDataModel addClassModel)
         {
-            var @class = new Class
-            {
-                TenantId = _contextAccessor.HttpContext?.User.GetUserId()
-            };
-
-            var teacher = await _teachingStaff.AssignClassByTeacherID(addClassModel, @class);
+            var teacher = await _teachingStaff.AssignClassByTeacherID(addClassModel);
 
             return Ok(teacher);
         }
