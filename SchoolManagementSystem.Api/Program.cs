@@ -1,14 +1,12 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using NLog;
+using SchoolManagementSystem.Api.Extensions;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
-using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using NLog;
-using Microsoft.OpenApi.Models;
-using SchoolManagementSystem.Api.Extensions;
-using SchoolManagementSystem.Core.Interfaces;
-using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Api;
 
@@ -25,10 +23,7 @@ public abstract class Program
         });
 
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = JwtHelper.GetTokenParameters();
-            });
+            .AddJwtBearer(options => { options.TokenValidationParameters = JwtHelper.GetTokenParameters(); });
 
         LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
@@ -36,7 +31,7 @@ public abstract class Program
         {
             c.EnableAnnotations();
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementSystem", Version = "v1" });
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Name = "Authorization",
                 Type = SecuritySchemeType.ApiKey,
@@ -59,7 +54,7 @@ public abstract class Program
                         }
                     },
                     Array.Empty<string>()
-                },
+                }
             });
         });
 
@@ -87,7 +82,7 @@ public abstract class Program
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
-            
+
         app.AddGlobalErrorHandler();
 
         app.Run();
