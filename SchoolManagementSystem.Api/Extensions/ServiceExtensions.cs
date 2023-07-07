@@ -1,6 +1,4 @@
-﻿using NuGet.Protocol.Core.Types;
-using SchoolManagementSystem.Core.Entities;
-using SchoolManagementSystem.Core.Interfaces;
+﻿using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Repository;
@@ -19,7 +17,7 @@ public static class ServiceExtensions
 
         services.AddScoped<ITeachingStaff, TeachingStaff>();
         services.AddScoped<ISalaryService, SalaryService>();
-        
+
         services.AddScoped<IManageIncome, ManageIncome>();
     }
 }

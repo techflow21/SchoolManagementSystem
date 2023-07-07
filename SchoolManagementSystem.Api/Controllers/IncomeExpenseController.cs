@@ -24,4 +24,44 @@ public class IncomeExpenseController : ControllerBase
 
         return CreatedAtAction(nameof(AddIncome), expense);
     }
+
+    [HttpPut("UpdateIncomeAsync")]
+    public async Task<IActionResult> UpdateIncomeAsync(UpdateExpenseDto updateExpenseDto)
+    {
+        var expense = await _manageIncome.UpdateIncomeAsync(updateExpenseDto);
+
+        if (expense is null) return BadRequest();
+
+        return Ok(expense);
+    }
+
+    [HttpDelete("DeleteIncomeAsync")]
+    public async Task<IActionResult> DeleteIncomeAsync(int id)
+    {
+        var expense = await _manageIncome.DeleteIncomeAsync(id);
+
+        if (expense is null) return BadRequest();
+
+        return Ok(expense);
+    }
+
+    [HttpGet("GetAllIncomeAsync")]
+    public async Task<IActionResult> GetAllIncomeAsync()
+    {
+        var expenses = await _manageIncome.GetAllIncomeAsync();
+
+        if (expenses is null) return BadRequest();
+
+        return Ok(expenses);
+    }
+
+    [HttpGet("GetIncomeByIdAsync")]
+    public async Task<IActionResult> GetIncomeByIdAsync(int id)
+    {
+        var expense = await _manageIncome.GetIncomeByIdAsync(id);
+
+        if (expense is null) return BadRequest();
+
+        return Ok(expense);
+    }
 }
