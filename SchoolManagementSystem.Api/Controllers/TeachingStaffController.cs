@@ -7,6 +7,7 @@ using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Api.Extensions;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,7 +37,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpPut("updateTeachingStaff")]
-        public async Task<IActionResult> UpdateTeachingStaff(string TeacherID, TeachingStaffModel teachingStaffModel)
+        public async Task<IActionResult> UpdateTeachingStaff([Required]string TeacherID, [FromQuery] TeachingStaffModel teachingStaffModel)
         {
             var updatedteacher = await _teachingStaff.UpdateTeachingStaff(TeacherID, teachingStaffModel);
 
@@ -45,12 +46,23 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpGet("SortingTeachingStaff")]
-        public async Task<IActionResult> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff)
+        public async Task<IActionResult> SortingTeachingStaff([FromQuery] SortingTeachingStaffModel sortingTeachingStaff)
         {
 
             var tenancyId = _contextAccessor.HttpContext.User.GetUserId();
 
             var teachers = await _teachingStaff.SortingTeachingStaff(sortingTeachingStaff, tenancyId);
+
+            return Ok(teachers);
+        }
+
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search([FromQuery] string searchquery)
+        {
+
+            var tenancyId = _contextAccessor.HttpContext.User.GetUserId();
+
+            var teachers = await _teachingStaff.SearchFuntion(searchquery, tenancyId);
 
             return Ok(teachers);
         }
@@ -67,7 +79,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
 
         [HttpGet("allSubjectOfTeacherByTeacherID")]
-        public async Task<IActionResult> GetAllSubjectOfTeacherByTeacherID(string TeacherID)
+        public async Task<IActionResult> GetAllSubjectOfTeacherByTeacherID([Required] string TeacherID)
         {
             var subjects = await _teachingStaff.GetAllSubjectOfTeacherByTeacherID(TeacherID);
 
@@ -75,7 +87,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpGet("allClassesOfTeacherByTeacherID")]
-        public async Task<IActionResult> GetAllClassOfTeacherByTeacherID(string TeacherID)
+        public async Task<IActionResult> GetAllClassOfTeacherByTeacherID([Required] string TeacherID)
         {
             var classes = await _teachingStaff.GetAllSubjectOfTeacherByTeacherID(TeacherID);
 
@@ -83,7 +95,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpGet("teachingStaffByTeacherID")]
-        public async Task<IActionResult> GetTeachingStaffByTeacherID(string TeacherID)
+        public async Task<IActionResult> GetTeachingStaffByTeacherID([Required] string TeacherID)
         {
             var teacher = await _teachingStaff.GetTeachingStaffByTeacherID(TeacherID);
 

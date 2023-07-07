@@ -12,29 +12,7 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<TeacherModel> UpdateTeachingStaff(string TeacherID, TeachingStaffModel teachingStaff);
 
-
-
-
         Task<IEnumerable<TeacherModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId);
-
-
-
-
-
-      // GetAllTeachingStaffOfSpecificSubject(Subject Subject);
-
-     //GetAllTeachingStaffOfSpecificClass(Class Class);
-
-       //GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel);
-
-       // GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel);
-
-// GetAllTeachingStaff();
-
-
-
-
-
 
         Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly();
 
@@ -44,13 +22,27 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<TeacherModel> GetTeachingStaffByTeacherID(string TeacherID);
 
-        Task<bool> DeleteTeachingByID(string TeacherID);
+        Task<IEnumerable<TeacherModel>> SearchFuntion(string searchquery, string tenancyId); 
 
         Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel, Subject subject); 
 
         Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass, Class @class);
 
+        Task<bool> DeleteTeachingByID(string TeacherID);
 
     }
 }
+
+// GetAllTeachingStaffOfSpecificSubject(Subject Subject);
+
+//GetAllTeachingStaffOfSpecificClass(Class Class);
+
+//GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel);
+
+// GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel);
+
+// GetAllTeachingStaff();
+
+
+
 
