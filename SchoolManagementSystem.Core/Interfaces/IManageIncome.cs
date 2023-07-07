@@ -11,5 +11,4 @@ public interface IManageIncome
     Task<Status> DeleteIncomeAsync(int id);
     Task<IEnumerable<Expense>> GetAllIncomeAsync();
     Task<AddExpenseDto> GetIncomeByIdAsync(int id);
-
 }
