@@ -1097,6 +1097,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.16"
         },
@@ -2755,19 +2756,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolPr\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
       "projectName": "SchoolManagementSystem.Service",
-      "projectPath": "C:\\Users\\HP\\Desktop\\SchoolPr\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\SchoolPr\\SchoolManagementSystem.Service\\obj\\",
+      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2781,8 +2782,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\SchoolPr\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\SchoolPr\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
+            "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
             }
           }
         }
@@ -2818,7 +2819,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

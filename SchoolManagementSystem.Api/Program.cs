@@ -1,14 +1,12 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using NLog;
+using SchoolManagementSystem.Api.Extensions;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
-using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using NLog;
-using Microsoft.OpenApi.Models;
-using SchoolManagementSystem.Api.Extensions;
-using SchoolManagementSystem.Core.Interfaces;
-using SchoolManagementSystem.Service.Implementation;
+using System.Reflection;
 
 namespace SchoolManagementSystem.Api;
 
@@ -84,10 +82,12 @@ public abstract class Program
             app.UseSwaggerUI();
         }
 
+        app.UseStaticFiles();
+
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
-            
+
         app.AddGlobalErrorHandler();
 
         app.Run();

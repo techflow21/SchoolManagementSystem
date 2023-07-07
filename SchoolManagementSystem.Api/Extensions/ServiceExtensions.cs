@@ -2,6 +2,7 @@
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Repository;
+using SchoolManagementSystem.Service.ExternalServices;
 using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Api.Extensions;
@@ -22,6 +23,9 @@ public static class ServiceExtensions
 
         services.AddScoped<IManageExpenditure, ManageExpenditure>();
         services.AddScoped<ISchoolFeeService, SchoolFeeService>();
+
+        services.AddScoped<IStudentService, StudentService>();
+        services.AddScoped<IPhotoUploadService, PhotoUploadService>();
 
     }
 }
