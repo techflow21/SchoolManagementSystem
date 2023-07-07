@@ -12,7 +12,11 @@ namespace SchoolManagementSystem.Infrastructure.MappingProfiles
             CreateMap<Salary, AddStaffSalaryDto>();
             CreateMap<AddStaffSalaryDto, Salary>();
             CreateMap<Salary, SalaryHistoryDto>();
+            //
             CreateMap<Expense, ExpenditureHistoryDto>();
+            CreateMap<EditExpenditureRequestDto, Expense>();
+            CreateMap<Expense, EditExpenditureResponseDto>();
+            CreateMap<AddExpenditureDto, Expense>();
         }
     }
 }

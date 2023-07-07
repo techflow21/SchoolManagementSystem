@@ -55,7 +55,7 @@ namespace SchoolManagementSystem.Service.Implementation
             salary.StaffCategory = salaryEditDto.StaffCategory;
             salary.AmountPaid = salaryEditDto.AmountPaid;
             salary.Date = DateTime.Now;
-
+                
             _salaryRepo.Update(salary);
             await _unitOfWork.SaveChangesAsync();
             return "Salary updated successfully";
