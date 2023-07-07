@@ -12,8 +12,8 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230629014202_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230706105853_minor model changes")]
+    partial class minormodelchanges
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -125,7 +125,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenantId")
@@ -407,7 +406,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SMSMessages");
+                    b.ToTable("SmsMessages");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Student", b =>

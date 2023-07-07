@@ -2,15 +2,17 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
-using SchoolManagementSystem.Infrastructure.Extensions;
 using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
 using NLog;
 using Microsoft.OpenApi.Models;
+using SchoolManagementSystem.Api.Extensions;
+using SchoolManagementSystem.Core.Interfaces;
+using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Api
 {
-    public class Program
+    public abstract class Program
     {
         public static void Main(string[] args)
         {
@@ -89,4 +91,4 @@ namespace SchoolManagementSystem.Api
             app.Run();
         }
     }
-}
+} 

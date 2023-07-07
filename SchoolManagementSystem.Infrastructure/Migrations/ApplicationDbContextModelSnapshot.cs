@@ -119,18 +119,20 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Date")
+                    b.Property<decimal?>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenantId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
+                    b.Property<int?>("Type")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -405,7 +407,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SMSMessages");
+                    b.ToTable("SmsMessages");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Student", b =>
