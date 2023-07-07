@@ -19,5 +19,7 @@ public static class ServiceExtensions
         services.AddScoped<ISalaryService, SalaryService>();
 
         services.AddScoped<IManageIncome, ManageIncome>();
+
+        services.AddScoped<IManageExpenditure, ManageExpenditure>();
     }
 }
