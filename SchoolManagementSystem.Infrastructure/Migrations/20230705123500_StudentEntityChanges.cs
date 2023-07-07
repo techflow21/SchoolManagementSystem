@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class StudentEntityChanges : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -302,7 +302,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StudentID = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -315,6 +314,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     ClassId = table.Column<int>(type: "int", nullable: true),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateRegistered = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     ResultId = table.Column<int>(type: "int", nullable: true),
                     SMSMessageId = table.Column<int>(type: "int", nullable: true),
                     TenantId = table.Column<string>(type: "nvarchar(max)", nullable: false)

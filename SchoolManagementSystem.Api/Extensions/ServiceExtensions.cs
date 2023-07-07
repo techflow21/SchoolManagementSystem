@@ -2,6 +2,7 @@
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
 using SchoolManagementSystem.Infrastructure.Repository;
+using SchoolManagementSystem.Service.ExternalServices;
 using SchoolManagementSystem.Service.Implementation;
 
 namespace SchoolManagementSystem.Infrastructure.Extensions
@@ -17,6 +18,9 @@ namespace SchoolManagementSystem.Infrastructure.Extensions
 
             services.AddScoped<ITeachingStaff, TeachingStaff>();
             services.AddScoped<ISalaryService, SalaryService>();
+
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IPhotoUploadService, PhotoUploadService>();
         }
     }
 }

@@ -12,8 +12,8 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230629014202_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230705123500_StudentEntityChanges")]
+    partial class StudentEntityChanges
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -440,6 +440,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LGA")
                         .HasColumnType("nvarchar(max)");
 
@@ -460,10 +463,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StateOfOrigin")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StudentID")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

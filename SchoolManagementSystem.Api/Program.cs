@@ -7,6 +7,7 @@ using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
 using NLog;
 using Microsoft.OpenApi.Models;
+using SchoolManagementSystem.Core.Interfaces;
 
 namespace SchoolManagementSystem.Api
 {
@@ -62,12 +63,11 @@ namespace SchoolManagementSystem.Api
             });
 
             builder.Services.AddHttpContextAccessor();
-
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
 
             builder.Services.ConfigureLoggerService();
-
+            
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
 
@@ -81,6 +81,8 @@ namespace SchoolManagementSystem.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseStaticFiles();
+
 
             app.UseAuthentication();
             app.UseAuthorization();

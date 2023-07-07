@@ -438,6 +438,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LGA")
                         .HasColumnType("nvarchar(max)");
 
@@ -458,10 +461,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StateOfOrigin")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StudentID")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "cL9B7J2YeAEpI4W6fzY/iNeTPHO1JDB49npK+9HM+S4=",
+  "Hash": "myHsbIlLc5UR3XCRnQIBLMuiBp5a8rnhk7dsMwznqH4=",
   "Source": "SchoolManagementSystem.Api",
   "BasePath": "_content/SchoolManagementSystem.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "SchoolManagementSystem.Api\\wwwroot",
+      "Source": "SchoolManagementSystem.Api",
+      "ContentRoot": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\wwwroot\\",
+      "BasePath": "_content/SchoolManagementSystem.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\wwwroot\\Images\\WebSecurity.jfif",
+      "SourceId": "SchoolManagementSystem.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\wwwroot\\",
+      "BasePath": "_content/SchoolManagementSystem.Api",
+      "RelativePath": "Images/WebSecurity.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\WebSecurity.jfif"
+    }
+  ]
 }
