@@ -11,7 +11,7 @@
   "profiles": {
     "SchoolManagementSystem.Api": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7067;http://localhost:5190",
       "environmentVariables": {
