@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolManagementSystem.Core.DTOs.Requests;
+using SchoolManagementSystem.Core.Interfaces;
 
 namespace SchoolManagementSystem.Api.Controllers
 {

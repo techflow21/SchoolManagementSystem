@@ -1,4 +1,6 @@
-﻿using SchoolManagementSystem.Core.DTOs.Requests;
+﻿using System;
+using Microsoft.Data.SqlClient.Server;
+using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
@@ -25,7 +27,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             teacher.DateRegistered = DateTime.Now;
 
-            teacher.TeacherID = $"{teacher.DateOfBirth}/randonNum/{teacher.DateRegistered}/randomNum";
+            teacher.TeacherID = $"{teacher.DateOfBirth.ToShortDateString()}/{GenerateRandomNumber()}/{teacher.DateRegistered.ToShortDateString()}/{GenerateRandomNumber}";
 
             await _teacher.AddAsync(teacher);
             await _unitOfWork.SaveChangesAsync();
@@ -33,16 +35,18 @@ namespace SchoolManagementSystem.Service.Implementation
             return MapTeacherToModel(teacher);
         }
 
-        public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass)
+        public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass, Class @class)
         {
             var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addClass.TeacherID);
 
             if (teacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {addClass.TeacherID} not found in database");
+                throw new ArgumentNullException($"TeacherID {addClass.TeacherID} not found in database");
             }
 
-            teacher.Classes.Add(addClass.addClass);
+            @class.Name = addClass.Data;
+
+            teacher.Classes.Add(@class);
 
             await _unitOfWork.SaveChangesAsync();
 
@@ -51,16 +55,18 @@ namespace SchoolManagementSystem.Service.Implementation
 
         }
 
-        public async Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
+        public async Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel, Subject subject)
         {
             var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addSubjectModel.TeacherID);
 
             if (teacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {addSubjectModel.TeacherID} not found in database");
+                throw new ArgumentNullException($"TeacherID {addSubjectModel.TeacherID} not found in database");
             }
 
-            teacher.Subjects.Add(addSubjectModel.subject);
+            subject.Name = addSubjectModel.Data;
+
+            teacher.Subjects.Add(subject);
 
             await _unitOfWork.SaveChangesAsync();
 
@@ -73,7 +79,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             if (teacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {TeacherID} not found in database");
+                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
             await _teacher.DeleteAsync(teacher);
@@ -93,7 +99,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             if (teacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {TeacherID} not found in database");
+                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
             return teacher.Classes;
@@ -105,67 +111,13 @@ namespace SchoolManagementSystem.Service.Implementation
 
             if (teacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {TeacherID} not found in database");
+                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
             return teacher.Subjects;
         }
 
-        public async Task<IEnumerable<TeacherModel>> GetAllTeachingStaff()
-        {
-            var teachers = await _teacher.GetAllAsync();
-
-            return teachers.Select(MapTeacherToModel);
-        }
-
-        public async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificClass(Class Class)
-        {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(Class));
-
-            if (teachers == null)
-            {
-                throw new FileNotFoundException($"No Teacher with Class {Class} was not found in database");
-            }
-
-            return teachers.Select(MapTeacherToModel);
-        }
-
-        public async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
-        {
-            var teachers = await _teacher.GetByAsync(t => t.Subjects.Contains(Subject));
-
-            if (teachers == null)
-            {
-                throw new FileNotFoundException($"No Teacher with Subject {Subject} was not found in database");
-            }
-
-            return teachers.Select(MapTeacherToModel);
-        }
-
-        public async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
-        {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) && t.Subjects.Contains(classAndSubjectModel.Subject));
-
-            if (teachers == null)
-            {
-                throw new FileNotFoundException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
-            }
-
-            return teachers.Select(MapTeacherToModel);
-        }
-
-        public async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
-        {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) || t.Subjects.Contains(classAndSubjectModel.Subject));
-
-            if (teachers == null)
-            {
-                throw new FileNotFoundException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
-            }
-
-            return teachers.Select(MapTeacherToModel);
-        }
-
+       
         public async Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly()
         {
             var teachers = await _teacher.GetAllAsync();
@@ -180,39 +132,178 @@ namespace SchoolManagementSystem.Service.Implementation
             return MapTeacherToModel(teacher);
         }
 
+
+
+        public async Task<IEnumerable<TeacherModel>> SearchFuntion(string searchquery, string tenancyID)
+        {
+            var @class = new Class
+            {
+                TenantId = tenancyID,
+                Name = searchquery
+            };
+
+            var subject = new Subject
+            {
+                TenantId = tenancyID,
+                Name = searchquery
+            };
+            
+            var teachers = await _teacher.GetByAsync(t => t.FirstName == searchquery ||
+            t.MiddleName == searchquery ||
+            t.LastName == searchquery ||
+            t.Classes.Contains(@class) ||
+            t.Subjects.Contains(subject) ||
+            t.PhoneNumber == searchquery ||
+            t.StateOfOrigin == searchquery ||
+            t.LGA == searchquery ||
+            t.TeacherID == searchquery ||
+            t.Email == searchquery ||
+            t.Address == searchquery
+            );
+
+            if (teachers == null)
+            {
+                throw new ArgumentNullException("No Result");
+            }
+
+            return teachers.Select(MapTeacherToModel);
+        }
+
+
+
+        public async Task<IEnumerable<TeacherModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId)
+        {
+           
+            // GET By Class
+            if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject))
+            {
+                var @class = new Class
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Class
+                };
+                return await GetAllTeachingStaffOfSpecificClass(@class);
+            }
+
+            // GET By Subject
+            if (string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject))
+            {
+
+                var subject = new Subject
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Subject
+                };
+                return await GetAllTeachingStaffOfSpecificSubject(subject);
+            }
+
+            // Get by Class or Subject
+            if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject) && sortingTeachingStaff.strictlyBoth == false)
+            {
+                var @class = new Class
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Class
+                };
+                var subject = new Subject
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Subject
+                };
+
+                var classAndSubject = new ClassAndSubjectModel
+                {
+                    Class = @class,
+                    Subject = subject
+                    
+                };
+
+                return await GetAllTeachingStaffOfSpecificSubject_Or_Class(classAndSubject);
+            }
+
+            // Get by Class And Subject
+            if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject) && sortingTeachingStaff.strictlyBoth == true)
+            {
+                var @class = new Class
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Class
+                };
+                var subject = new Subject
+                {
+                    TenantId = tenancyId,
+                    Name = sortingTeachingStaff.Subject
+                };
+
+                var classAndSubject = new ClassAndSubjectModel
+                {
+                    Class = @class,
+                    Subject = subject
+
+                };
+
+                return await GetAllTeachingStaffOfSpecificSubjectAndClass(classAndSubject);
+            }
+
+            return await GetAllTeachingStaff();
+
+        }
+
+
         public async Task<TeacherModel> UpdateTeachingStaff(string TeacherID, TeachingStaffModel teachingStaff)
         {
             var existingTeacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
 
             if (existingTeacher == null)
             {
-                throw new FileNotFoundException($"TeacherID {TeacherID} not found in database"); 
+                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database"); 
 	        }
 
-            MapModelToTeacher(teachingStaff);
+            MapModelToTeacher(teachingStaff, existingTeacher);
 
             await _unitOfWork.SaveChangesAsync();
 
             return MapTeacherToModel(existingTeacher);
         }
 
+
+
+
+
+
+
         private Teacher MapModelToTeacher(TeachingStaffModel teachingStaffModel , Teacher existingTeacher = null) 
 	    {
+            TimeOnly timeOnly ;
             if (existingTeacher == null)
             {
                 existingTeacher = new Teacher();
             }
 
-            existingTeacher.FirstName = teachingStaffModel.FirstName;
-            existingTeacher.LastName = teachingStaffModel.LastName;
-            existingTeacher.MiddleName = teachingStaffModel.MiddleName;
-            existingTeacher.Address = teachingStaffModel.Address;
-            existingTeacher.LGA = teachingStaffModel.LGA;
-            existingTeacher.StateOfOrigin = teachingStaffModel.StateOfOrigin;
-            existingTeacher.Email = teachingStaffModel.Email;
-            existingTeacher.PhoneNumber = teachingStaffModel.PhoneNumber;
-            existingTeacher.DateOfBirth = teachingStaffModel.DateOfBirth;
-            existingTeacher.ImageUrl = teachingStaffModel.ImageUrl;
+            var dateTime = DateTime.Now;
+
+            DateOnly dOB = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
+
+            if (teachingStaffModel.DateOfBirth == dOB)
+            {
+
+                var DOB = existingTeacher.DateOfBirth;
+
+                DateOnly existingdOB = new DateOnly(DOB.Year, DOB.Month, DOB.Day);
+
+                teachingStaffModel.DateOfBirth = existingdOB;
+            }
+
+            existingTeacher.FirstName = teachingStaffModel.FirstName ?? existingTeacher.FirstName;
+            existingTeacher.LastName = teachingStaffModel.LastName ?? existingTeacher.LastName;
+            existingTeacher.MiddleName = teachingStaffModel.MiddleName ?? existingTeacher.MiddleName;
+            existingTeacher.Address = teachingStaffModel.Address ?? existingTeacher.Address;
+            existingTeacher.LGA = teachingStaffModel.LGA ?? existingTeacher.LGA;
+            existingTeacher.StateOfOrigin = teachingStaffModel.StateOfOrigin ?? existingTeacher.StateOfOrigin;
+            existingTeacher.Email = teachingStaffModel.Email ?? existingTeacher.Email;
+            existingTeacher.PhoneNumber = teachingStaffModel.PhoneNumber ?? existingTeacher.PhoneNumber;
+            existingTeacher.DateOfBirth = teachingStaffModel.DateOfBirth.ToDateTime(timeOnly);
+            existingTeacher.ImageUrl = teachingStaffModel.ImageUrl ?? existingTeacher.ImageUrl;
 
             return existingTeacher;
                   
@@ -220,6 +311,11 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private TeacherModel MapTeacherToModel(Teacher teacher)
         {
+
+            var dateTime = teacher.DateOfBirth;
+
+            DateOnly dOB = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
+
             return new TeacherModel
             {
                 id = teacher.Id,
@@ -232,8 +328,8 @@ namespace SchoolManagementSystem.Service.Implementation
                 StateOfOrigin = teacher.StateOfOrigin,
                 Email = teacher.Email,
                 PhoneNumber = teacher.PhoneNumber,
-                DateOfBirth = teacher.DateOfBirth,
-                ImageUrl = teacher.ImageUrl,
+                DateOfBirth = dOB,
+                //ImageUrl = teacher.ImageUrl,
                 DateRegistered = teacher.DateRegistered
               };
         
@@ -255,6 +351,70 @@ namespace SchoolManagementSystem.Service.Implementation
 
 	    }
 
+        private string GenerateRandomNumber()
+        {
+            Random random = new Random();
+
+            var randomNumber = random.Next(10000000, 99999999);
+
+
+            return randomNumber.ToString();
+        }
+
+        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaff()
+        {
+            var teachers = await _teacher.GetAllAsync();
+
+            return teachers.Select(MapTeacherToModel);
+        }
+
+        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificClass(Class Class)
+        {
+            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(Class));
+
+            if (teachers == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Class {Class} was not found in database");
+            }
+
+            return teachers.Select(MapTeacherToModel);
+        }
+
+        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
+        {
+            var teachers = await _teacher.GetByAsync(t => t.Subjects.Contains(Subject));
+
+            if (teachers == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Subject {Subject} was not found in database");
+            }
+
+            return teachers.Select(MapTeacherToModel);
+        }
+
+        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
+        {
+            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) && t.Subjects.Contains(classAndSubjectModel.Subject));
+
+            if (teachers == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
+            }
+
+            return teachers.Select(MapTeacherToModel);
+        }
+
+        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
+        {
+            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) || t.Subjects.Contains(classAndSubjectModel.Subject));
+
+            if (teachers == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
+            }
+
+            return teachers.Select(MapTeacherToModel);
+        }
 
     }
 }

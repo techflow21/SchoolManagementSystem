@@ -21,5 +21,7 @@ public static class ServiceExtensions
         services.AddScoped<IManageIncome, ManageIncome>();
 
         services.AddScoped<IManageExpenditure, ManageExpenditure>();
+        services.AddScoped<ISchoolFeeService, SchoolFeeService>();
+
     }
 }
