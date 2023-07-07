@@ -6,7 +6,7 @@ using SchoolManagementSystem.Core.Interfaces;
 
 namespace SchoolManagementSystem.Infrastructure.DataContext
 {
-    public class ApplicationDbContext : DbContext
+    public sealed class ApplicationDbContext : DbContext
     {
         private readonly Tenant _tenant;
 
@@ -31,7 +31,7 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
         public DbSet<Salary> Salaries { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Result> Results { get; set; }
-        public DbSet<SMSMessage> SMSMessages { get; set; }
+        public DbSet<SMSMessage> SmsMessages { get; set; }
         public DbSet<ClientPayment> ClientPayments { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Report> Reports { get; set; }
