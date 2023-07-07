@@ -46,3 +46,15 @@ C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\Sc
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.deps.json
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfo.cs
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll

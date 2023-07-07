@@ -1,16 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Infrastructure.DataContext;
 
-namespace SchoolManagementSystem.Infrastructure.Extensions
+namespace SchoolManagementSystem.Api.Extensions
 {
-    public class DatabaseHelper
+    public abstract class DatabaseHelper
     {
         public static void EnsureLatestDatabase(IServiceCollection services)
         {
             var provider = services.BuildServiceProvider();
-
+    
             var connections = provider.GetRequiredService<ITenantRegistry>()
                 .GetTenants()
                 .Select(e => e.ConnectionString)

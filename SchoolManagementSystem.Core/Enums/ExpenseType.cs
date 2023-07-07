@@ -1,8 +1,7 @@
-﻿namespace SchoolManagementSystem.Core.Enums
+﻿namespace SchoolManagementSystem.Core.Enums;
+
+public enum ExpenseType
 {
-    public enum ExpenseType
-    {
-        Expenditure, 
-        Income
-    }
+    Expenditure,
+    Income
 }
