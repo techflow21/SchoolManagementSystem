@@ -14,7 +14,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
         public string StateOfOrigin { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         //public string ImageUrl { get; set; }
         public DateTime DateRegistered { get; set; }
 

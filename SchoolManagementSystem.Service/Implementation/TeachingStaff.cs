@@ -27,7 +27,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             teacher.DateRegistered = DateTime.Now;
 
-            teacher.TeacherID = $"{teacher.DateOfBirth.ToShortDateString()}/{GenerateRandomNumber()}/{teacher.DateRegistered.ToShortDateString()}/{GenerateRandomNumber}";
+            teacher.TeacherID = $"{teacher.DateRegistered.Year}{teacher.DateRegistered.Day}{GenerateRandomNumber()}";
 
             await _teacher.AddAsync(teacher);
             await _unitOfWork.SaveChangesAsync();
@@ -274,7 +274,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private Teacher MapModelToTeacher(TeachingStaffModel teachingStaffModel , Teacher existingTeacher = null) 
 	    {
-            TimeOnly timeOnly ;
+      
             if (existingTeacher == null)
             {
                 existingTeacher = new Teacher();
@@ -282,14 +282,12 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var dateTime = DateTime.Now;
 
-            DateOnly dOB = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
-
-            if (teachingStaffModel.DateOfBirth == dOB)
+            if (teachingStaffModel.DateOfBirth == dateTime)
             {
 
-                var DOB = existingTeacher.DateOfBirth;
+                
 
-                DateOnly existingdOB = new DateOnly(DOB.Year, DOB.Month, DOB.Day);
+                DateTime existingdOB = existingTeacher.DateOfBirth;
 
                 teachingStaffModel.DateOfBirth = existingdOB;
             }
@@ -302,7 +300,7 @@ namespace SchoolManagementSystem.Service.Implementation
             existingTeacher.StateOfOrigin = teachingStaffModel.StateOfOrigin ?? existingTeacher.StateOfOrigin;
             existingTeacher.Email = teachingStaffModel.Email ?? existingTeacher.Email;
             existingTeacher.PhoneNumber = teachingStaffModel.PhoneNumber ?? existingTeacher.PhoneNumber;
-            existingTeacher.DateOfBirth = teachingStaffModel.DateOfBirth.ToDateTime(timeOnly);
+            existingTeacher.DateOfBirth = teachingStaffModel.DateOfBirth;
             existingTeacher.ImageUrl = teachingStaffModel.ImageUrl ?? existingTeacher.ImageUrl;
 
             return existingTeacher;
@@ -312,9 +310,9 @@ namespace SchoolManagementSystem.Service.Implementation
         private TeacherModel MapTeacherToModel(Teacher teacher)
         {
 
-            var dateTime = teacher.DateOfBirth;
+            
 
-            DateOnly dOB = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
+           
 
             return new TeacherModel
             {
@@ -328,7 +326,7 @@ namespace SchoolManagementSystem.Service.Implementation
                 StateOfOrigin = teacher.StateOfOrigin,
                 Email = teacher.Email,
                 PhoneNumber = teacher.PhoneNumber,
-                DateOfBirth = dOB,
+                DateOfBirth = teacher.DateOfBirth,
                 //ImageUrl = teacher.ImageUrl,
                 DateRegistered = teacher.DateRegistered
               };
@@ -355,7 +353,7 @@ namespace SchoolManagementSystem.Service.Implementation
         {
             Random random = new Random();
 
-            var randomNumber = random.Next(10000000, 99999999);
+            var randomNumber = random.Next(1000, 9999);
 
 
             return randomNumber.ToString();
