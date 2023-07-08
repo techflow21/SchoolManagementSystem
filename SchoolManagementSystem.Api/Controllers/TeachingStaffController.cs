@@ -108,7 +108,10 @@ namespace SchoolManagementSystem.Api.Controllers
         {
             var subject = new Subject
             {
-                TenantId = _contextAccessor.HttpContext?.User.GetUserId()
+                TenantId = _contextAccessor.HttpContext?.User.GetUserId(),
+
+         
+                
             };
             var teacher = await _teachingStaff.AssignSubjectByTeacherID(addSubjectModel, subject);
 
@@ -121,6 +124,8 @@ namespace SchoolManagementSystem.Api.Controllers
             var @class = new Class
             {
                 TenantId = _contextAccessor.HttpContext?.User.GetUserId()
+
+
             };
 
             var teacher = await _teachingStaff.AssignClassByTeacherID(addClassModel, @class);
