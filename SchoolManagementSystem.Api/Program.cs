@@ -1,66 +1,95 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using SchoolManagementSystem.Core.Interfaces;
+using Microsoft.OpenApi.Models;
+using NLog;
+using SchoolManagementSystem.Api.Extensions;
 using SchoolManagementSystem.Infrastructure.Configurations;
 using SchoolManagementSystem.Infrastructure.DataContext;
-using SchoolManagementSystem.Infrastructure.Extensions;
-using System.Reflection;
 using SchoolManagementSystem.Infrastructure.MappingProfiles;
-using SchoolManagementSystem.Infrastructure.Repository;
-using NLog;
+using System.Reflection;
 
-namespace SchoolManagementSystem.Api
+namespace SchoolManagementSystem.Api;
+
+public abstract class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddDbContext<ApplicationDbContext>(o =>
+        // Add services to the container.
+        builder.Services.AddDbContext<ApplicationDbContext>(o =>
+        {
+            o.UseSqlServer(options => options.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
+        });
+
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
             {
-                o.UseSqlServer(options => options.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
+                options.TokenValidationParameters = JwtHelper.GetTokenParameters();
             });
 
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = JwtHelper.GetTokenParameters();
-                });
+        LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
-            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
-
-            builder.Services.AddHttpContextAccessor();
-            builder.Services.AddSingleton<ITenantRegistry, TenantRegistry>();
-            builder.Services.AddScoped<ITenantResolver, TenantResolver>();
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
-
-            builder.Services.AddAutoMapper(typeof(MappingProfile));
-            builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
-
-            builder.Services.ConfigureLoggerService();
-
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            DatabaseHelper.EnsureLatestDatabase(builder.Services);
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.EnableAnnotations();
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementSystem", Version = "v1" });
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description =
+                    "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\""
+            });
 
-            app.UseAuthentication();
-            app.UseAuthorization();
-            app.MapControllers();
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                },
+            });
+        });
 
-            app.Run();
+        builder.Services.AddHttpContextAccessor();
+
+        builder.Services.AddAutoMapper(typeof(MappingProfile));
+        builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
+
+        builder.Services.ConfigureLoggerService();
+
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+
+        DatabaseHelper.EnsureLatestDatabase(builder.Services);
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
+
+        app.UseStaticFiles();
+
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.MapControllers();
+
+        app.AddGlobalErrorHandler();
+
+        app.Run();
     }
 }
