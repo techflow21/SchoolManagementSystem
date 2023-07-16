@@ -66,7 +66,7 @@ public abstract class Program
         builder.Services.AddAutoMapper(typeof(MappingProfile));
         builder.Services.AddAutoMapper(Assembly.Load("SchoolManagementSystem.Infrastructure"));
 
-        builder.Services.ConfigureLoggerService();
+        builder.Services.ConfigureServiceExtension();
 
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();

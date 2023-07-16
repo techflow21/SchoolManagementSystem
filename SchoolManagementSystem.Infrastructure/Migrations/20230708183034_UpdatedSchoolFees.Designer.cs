@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManagementSystem.Infrastructure.DataContext;
 
@@ -11,9 +12,10 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230708183034_UpdatedSchoolFees")]
+    partial class UpdatedSchoolFees
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,6 +70,27 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("Classes");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.ClassFee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("TenantId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalFee")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClassFees");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.ClientPayment", b =>
@@ -310,7 +333,10 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Class")
+                    b.Property<int?>("ClassFeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClassName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -327,6 +353,8 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClassFeeId");
 
                     b.ToTable("SchoolFees");
                 });
@@ -649,6 +677,13 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.SchoolFee", b =>
+                {
+                    b.HasOne("SchoolManagementSystem.Core.Entities.ClassFee", null)
+                        .WithMany("FeeList")
+                        .HasForeignKey("ClassFeeId");
+                });
+
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.SchoolSetting", b =>
                 {
                     b.HasOne("SchoolManagementSystem.Core.Entities.SchoolSession", "SchoolSession")
@@ -691,6 +726,11 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.HasOne("SchoolManagementSystem.Core.Entities.SMSMessage", null)
                         .WithMany("Teachers")
                         .HasForeignKey("SMSMessageId");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.ClassFee", b =>
+                {
+                    b.Navigation("FeeList");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Result", b =>

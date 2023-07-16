@@ -1,9 +1,11 @@
-﻿namespace SchoolManagementSystem.Core.DTOs.Requests
+﻿namespace SchoolManagementSystem.Core.DTOs.Responses
 {
-    public class SchoolFeeDto
+    public class SchoolFeeResponse
     {
+        public int Id { get; set; }
         public string Class { get; set; }
         public string FeeName { get; set; }
         public decimal FeeAmount { get; set; }
     }
 }
+ 

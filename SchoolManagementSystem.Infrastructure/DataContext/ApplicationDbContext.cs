@@ -71,11 +71,11 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
             modelBuilder.Entity<SchoolFee>().HasKey(e => e.Id);
             modelBuilder.Entity<SchoolFee>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<SchoolFee>().Property(e =>  e.FeeAmount).HasPrecision(18, 2);
-            modelBuilder.Entity<SchoolFee>().Property(e =>  e.TotalFees).HasPrecision(18, 2);
             modelBuilder.Entity<SchoolFee>().HasQueryFilter(e => e.TenantId == _tenant.Name);
 
             modelBuilder.Entity<Expense>().HasKey(e => e.Id);
             modelBuilder.Entity<Expense>().Property(e => e.TenantId).IsRequired();
+            modelBuilder.Entity<Expense>().Property(e => e.Amount).HasPrecision(18, 2);
             modelBuilder.Entity<Expense>().HasQueryFilter(e => e.TenantId == _tenant.Name);
 
             modelBuilder.Entity<Salary>().HasKey(e => e.Id);
@@ -108,18 +108,6 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
             modelBuilder.Entity<Report>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<Report>().HasQueryFilter(e => e.TenantId == _tenant.Name);
         }
-
-        //public DbSet<Goods> Goods { get; set; } = null!;
-
-        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
-         {
-             base.OnModelCreating(modelBuilder);
-
-             modelBuilder.Entity<Goods>().HasKey(e => e.Id);
-             modelBuilder.Entity<Goods>().Property(e => e.Name).IsRequired().HasMaxLength(100);
-             modelBuilder.Entity<Goods>().Property(e => e.TenantId).IsRequired();
-             modelBuilder.Entity<Goods>().HasQueryFilter(e => e.TenantId == _tenant.Name);
-         }*/
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

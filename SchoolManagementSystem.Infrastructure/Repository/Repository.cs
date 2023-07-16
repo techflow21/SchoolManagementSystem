@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using SchoolManagementSystem.Core.Interfaces;
 
+
 namespace SchoolManagementSystem.Infrastructure.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
@@ -15,6 +16,11 @@ namespace SchoolManagementSystem.Infrastructure.Repository
         {
             _dbContext = context ?? throw new ArgumentException(null, nameof(context));
             _dbSet = _dbContext.Set<T>();
+        }
+
+        public async Task<List<T>> Where(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public virtual T Add(T obj)

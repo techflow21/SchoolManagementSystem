@@ -34,7 +34,7 @@ namespace SchoolManagementSystem.Infrastructure.Configurations
                 issuer: ISSUER,
                 audience: AUDIENCE,
                 claims: new List<Claim>() { new(ClaimConstants.TenantId, tenant.Name ?? string.Empty) },
-                expires: DateTime.Now.AddMinutes(10),
+                expires: DateTime.Now.AddMinutes(60),
                 signingCredentials: signinCredentials
             );
 

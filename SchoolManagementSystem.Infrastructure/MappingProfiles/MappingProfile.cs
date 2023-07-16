@@ -12,15 +12,15 @@ namespace SchoolManagementSystem.Infrastructure.MappingProfiles
             CreateMap<Salary, AddStaffSalaryDto>();
             CreateMap<AddStaffSalaryDto, Salary>();
             CreateMap<Salary, SalaryHistoryDto>();
-            //
+            
             CreateMap<Expense, ExpenditureHistoryDto>();
             CreateMap<EditExpenditureRequestDto, Expense>();
             CreateMap<Expense, EditExpenditureResponseDto>();
             CreateMap<AddExpenditureDto, Expense>();
 
             CreateMap<SchoolFee, SchoolFeeDto>().ReverseMap();
-            CreateMap<SchoolFee, ClassFeeDto>().ReverseMap();
-
+            CreateMap<SchoolFee, SchoolFeeResponse>().ReverseMap();
+            
             CreateMap<Student, StudentDto>().ReverseMap();
             CreateMap<Student, StudentResponseDto>();
         }

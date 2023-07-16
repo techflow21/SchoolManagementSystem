@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 namespace SchoolManagementSystem.Core.Interfaces
 {
     public interface IRepository<T>
     {
+        Task<List<T>> Where(Expression<Func<T, bool>> predicate);
+
         T Add(T obj);
 
         Task<T> AddAsync(T obj);

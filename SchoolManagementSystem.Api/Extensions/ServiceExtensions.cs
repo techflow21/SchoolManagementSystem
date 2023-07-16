@@ -9,7 +9,7 @@ namespace SchoolManagementSystem.Api.Extensions;
 
 public static class ServiceExtensions
 {
-    public static void ConfigureLoggerService(this IServiceCollection services)
+    public static void ConfigureServiceExtension(this IServiceCollection services)
     {
         services.AddSingleton<ILoggerManager, LoggerManager>();
         services.AddSingleton<ITenantRegistry, TenantRegistry>();
@@ -20,10 +20,9 @@ public static class ServiceExtensions
         services.AddScoped<ISalaryService, SalaryService>();
 
         services.AddScoped<IManageIncome, ManageIncome>();
-
         services.AddScoped<IManageExpenditure, ManageExpenditure>();
-        services.AddScoped<ISchoolFeeService, SchoolFeeService>();
 
+        services.AddScoped<ISchoolFeeService, SchoolFeeService>();
         services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<IPhotoUploadService, PhotoUploadService>();
 
