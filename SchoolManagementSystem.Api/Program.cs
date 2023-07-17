@@ -68,6 +68,8 @@ public abstract class Program
 
         builder.Services.ConfigureLoggerService();
 
+        builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfiguration"));
+
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
 

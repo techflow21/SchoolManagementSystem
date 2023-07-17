@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using SchoolManagementSystem.Core.DTOs.Requests;
+using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
 
@@ -11,9 +13,9 @@ namespace SchoolManagementSystem.Service.Implementation
         private readonly IMapper _mapper;
         private readonly IRepository<SchoolFee> _schoolFeeRepository;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ILoggerManager _logger;
+        private readonly ILogger<SchoolFeeService> _logger;
 
-        public SchoolFeeService(ILoggerManager logger, IUnitOfWork unitOfWork, IMapper mapper)
+        public SchoolFeeService(ILogger<SchoolFeeService> logger, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -21,41 +23,82 @@ namespace SchoolManagementSystem.Service.Implementation
             _schoolFeeRepository = _unitOfWork.GetRepository<SchoolFee>();
         }
 
-        public async Task<SchoolFeeDto> SetSchoolFee(ClassFeeDto classFee)
+        public async Task AddSchoolFee(SchoolFeeDto schoolFeeDto)
         {
-           var schoolFee = _mapper.Map<SchoolFee>(classFee);
-
+            var schoolFee = _mapper.Map<SchoolFee>(schoolFeeDto);
             await _schoolFeeRepository.AddAsync(schoolFee);
-            await _unitOfWork.SaveChangesAsync();
-
-            var setSchoolFee = _mapper.Map<SchoolFeeDto>(schoolFee);
-            return setSchoolFee;
+            _unitOfWork.SaveChanges();
+            _logger.LogInformation("School fee added successfully.");
         }
 
+        public async Task<string> UpdateSchoolFee(int id, SchoolFeeDto schoolFeeDto)
+        {
+            var existingSchoolFee = await _schoolFeeRepository.GetByIdAsync(id);
+            if (existingSchoolFee == null)
+            {
+                return "school fee not exists";
+            }
+            var updatedFee = _mapper.Map(schoolFeeDto, existingSchoolFee);
+            await _schoolFeeRepository.UpdateAsync(updatedFee);
 
-        public async Task<List<SchoolFeeDto>> ViewSchoolFees()
+            await _unitOfWork.SaveChangesAsync();
+            _logger.LogInformation("School fee updated successfully.");
+
+            return "school fee updated successful!";
+        }
+
+        public async Task<List<SchoolFeeResponse>> GetAllSchoolFees()
         {
             var schoolFees = await _schoolFeeRepository.GetAllAsync();
-            var schoolFeesDto = _mapper.Map<List<SchoolFeeDto>>(schoolFees);
+            var schoolFeeDtos = _mapper.Map<List<SchoolFeeResponse>>(schoolFees);
 
-            return schoolFeesDto;
+            await _unitOfWork.SaveChangesAsync();
+            _logger.LogInformation("Retrieved all school fees.");
+            return schoolFeeDtos;
         }
 
-        public async Task<bool> EditSchoolFee(int feeId, ClassFeeDto updatedFee)
-        {
-            var schoolFee = await _schoolFeeRepository.GetByIdAsync(feeId);
 
+        public async Task DeleteSchoolFee(int id)
+        {
+            var schoolFee = await _schoolFeeRepository.GetByIdAsync(id);
             if (schoolFee == null)
             {
-                return false;
+                return;
             }
-            schoolFee.FeeName = updatedFee.FeeName;
-            schoolFee.FeeAmount = updatedFee.FeeAmount;
-            schoolFee.SetDate = DateTime.Now;
+            await _schoolFeeRepository.DeleteAsync(schoolFee);
 
-            await _schoolFeeRepository.UpdateAsync(schoolFee);
-            await _unitOfWork.SaveChangesAsync();
-            return true;
+            _unitOfWork.SaveChanges();
+            _logger.LogInformation("School fee deleted successfully.");
+        }
+
+
+        public async Task<decimal> GetTotalSchoolFees()
+        {
+            var totalFee = await _schoolFeeRepository.SumAsync(fee => fee.FeeAmount);
+            _logger.LogInformation("Retrieved total school fees.");
+            return totalFee;
+        }
+
+
+        public async Task<decimal> GetTotalSchoolFeesOfClass(string className)
+        {
+            //var feesOfClass = await _schoolFeeRepository.GetByAsync(fee => fee.Class ==className.ToLower());
+
+            var feesOfClass = await _schoolFeeRepository.Where(fee => fee.Class == className);
+            var totalClassFee = feesOfClass.Sum(fee => fee.FeeAmount);
+
+            _logger.LogInformation($"Retrieved total school fees of class {className}.");
+            return totalClassFee;
+        }
+
+
+        public async Task<List<SchoolFeeResponse>> GetAllSchoolFeesOfClass(string className)
+        {
+            var schoolFeesOfClass = await _schoolFeeRepository.Where(fee => fee.Class == className);
+            var schoolFeeDtos = _mapper.Map<List<SchoolFeeResponse>>(schoolFeesOfClass);
+
+            _logger.LogInformation($"Retrieved all school fees of class {className}.");
+            return schoolFeeDtos;
         }
     }
 }

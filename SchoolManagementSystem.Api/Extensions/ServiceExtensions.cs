@@ -11,19 +11,22 @@ public static class ServiceExtensions
 {
     public static void ConfigureLoggerService(this IServiceCollection services)
     {
+
         services.AddSingleton<ILoggerManager, LoggerManager>();
         services.AddSingleton<ITenantRegistry, TenantRegistry>();
         services.AddScoped<ITenantResolver, TenantResolver>();
         services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();
 
+        services.AddTransient<IEmailService, EmailService>();
+        services.AddTransient<IContactService, ContactService>();
+
         services.AddScoped<ITeachingStaff, TeachingStaff>();
         services.AddScoped<ISalaryService, SalaryService>();
 
         services.AddScoped<IManageIncome, ManageIncome>();
-
         services.AddScoped<IManageExpenditure, ManageExpenditure>();
-        services.AddScoped<ISchoolFeeService, SchoolFeeService>();
 
+        services.AddScoped<ISchoolFeeService, SchoolFeeService>();
         services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<IPhotoUploadService, PhotoUploadService>();
 

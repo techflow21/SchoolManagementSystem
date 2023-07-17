@@ -17,6 +17,11 @@ namespace SchoolManagementSystem.Infrastructure.Repository
             _dbSet = _dbContext.Set<T>();
         }
 
+        public async Task<List<T>> Where(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
+        }
+
         public virtual T Add(T obj)
         {
             try
