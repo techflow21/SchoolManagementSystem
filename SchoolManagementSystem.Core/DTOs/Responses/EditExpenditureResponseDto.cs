@@ -10,6 +10,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
     public class EditExpenditureResponseDto
     {
         public ExpenseType Type { get; set; }
+        public decimal Amount { get; set; }
         public string Description { get; set; }
         public DateTime? UpdatedDate { get; set; }
     }

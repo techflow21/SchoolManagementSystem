@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj": {}
+    "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {}
   },
   "projects": {
-    "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/SchoolManagementSystem.Core.csproj": {
+    "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/SchoolManagementSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "projectName": "SchoolManagementSystem.Core",
-        "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/SchoolManagementSystem.Core.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/obj/",
+        "projectPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,35 +69,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/SchoolManagementSystem.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/SchoolManagementSystem.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
         "projectName": "SchoolManagementSystem.Infrastructure",
-        "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/SchoolManagementSystem.Infrastructure.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/SchoolManagementSystem.Core.csproj": {
-                "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/SchoolManagementSystem.Core.csproj"
+              "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj"
               }
             }
           }
@@ -184,35 +186,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj": {
+    "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
         "projectName": "SchoolManagementSystem.Service",
-        "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/obj/",
+        "projectPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/SchoolManagementSystem.Infrastructure.csproj": {
-                "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Infrastructure/SchoolManagementSystem.Infrastructure.csproj"
+              "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Downloads\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
               }
             }
           }
@@ -248,7 +251,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

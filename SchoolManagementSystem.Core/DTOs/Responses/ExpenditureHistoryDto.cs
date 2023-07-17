@@ -6,6 +6,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
     {
         public int Id { get; set; }
         public ExpenseType Type { get; set; }
+        public decimal Amount { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public DateTime? UpdatedDate { get; set; }

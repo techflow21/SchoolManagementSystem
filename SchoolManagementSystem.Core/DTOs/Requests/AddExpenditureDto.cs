@@ -9,6 +9,7 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
 {
     public class AddExpenditureDto
     {
+        public decimal Amount { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
     }

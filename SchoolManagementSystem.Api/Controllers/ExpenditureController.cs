@@ -23,7 +23,7 @@ namespace SchoolManagementSystem.Api.Controllers
         [SwaggerResponse(StatusCodes.Status200OK, "add expenditures.")]
         [SwaggerResponse(StatusCodes.Status400BadRequest, "The request was invalid")]
         [SwaggerResponse(StatusCodes.Status500InternalServerError, "Internal server error.")]
-        public async Task<IActionResult> AddExpenditureAsync(AddExpenditureDto modelRequest)
+        public async Task<IActionResult> AddExpenditureAsync([FromBody] AddExpenditureDto modelRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -45,6 +45,27 @@ namespace SchoolManagementSystem.Api.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        //[Route("all")]
+        [SwaggerOperation(Summary = "Get an expenditure by id", Description = "requires authorization.")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Returns a single expenditure")]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Internal server error.")]
+        public async Task<IActionResult> GetExpenditureByIdAsync(int expenditureId)
+        {
+            var response = await _expenditureService.GetExpenditureByIdAsync(expenditureId);
+            return Ok(response);
+        }
+
+        [HttpGet("search")]        
+        [SwaggerOperation(Summary = "Search an expenditure", Description = "requires authorization.")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Returns a list of searched expenditure")]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Internal server error.")]
+        public async Task<ActionResult<List<EditExpenditureResponseDto>>> SearchExpenditure([FromQuery] SearchRequestDto searchRequest)
+        {
+            var response = await _expenditureService.SearchExpenditureAsync(searchRequest);
+            return Ok(response);
+        }
+
         [HttpPut]
         [Route("update")]
         [SwaggerOperation(Summary = "Update expenditure expenses", Description = "requires authorization.")]
@@ -59,6 +80,22 @@ namespace SchoolManagementSystem.Api.Controllers
             }
             var response = await _expenditureService.EditExpenditureAsync(modelRequest);
             return Ok(new { message = response.Item1, expenditure = response.Item2 });
+        }
+
+
+        [HttpDelete]       
+        [SwaggerOperation(Summary = "Delete an expenditure", Description = "requires authorization.")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Delete an expenditure sucessfully")]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Internal server error.")]
+        public async Task<IActionResult> DeleteExpenditureAsync(int expenditureId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var response = await _expenditureService.DeleteExpenditureAsync(expenditureId);
+            return Ok(response);
         }
     }
 }
