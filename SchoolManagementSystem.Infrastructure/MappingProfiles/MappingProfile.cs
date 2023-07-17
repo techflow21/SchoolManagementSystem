@@ -19,10 +19,12 @@ namespace SchoolManagementSystem.Infrastructure.MappingProfiles
             CreateMap<AddExpenditureDto, Expense>();
 
             CreateMap<SchoolFee, SchoolFeeDto>().ReverseMap();
-            CreateMap<SchoolFee, ClassFeeDto>().ReverseMap();
+            CreateMap<SchoolFee, SchoolFeeResponse>().ReverseMap();
 
             CreateMap<Student, StudentDto>().ReverseMap();
             CreateMap<Student, StudentResponseDto>();
+
+            CreateMap<Contact, ContactRequestDto>().ReverseMap();
         }
     }
 }

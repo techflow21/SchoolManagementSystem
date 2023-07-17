@@ -111,6 +111,38 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.ToTable("ClientPayments");
                 });
 
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenantId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Expense", b =>
                 {
                     b.Property<int>("Id")
@@ -120,6 +152,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal?>("Amount")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime?>("Date")
@@ -309,8 +342,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ClassId")
-                        .HasColumnType("int");
+                    b.Property<string>("Class")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("FeeAmount")
                         .HasPrecision(18, 2)
@@ -320,20 +354,11 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("SetDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("TenantId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TotalFees")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassId");
 
                     b.ToTable("SchoolFees");
                 });
@@ -654,17 +679,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Navigation("Class");
 
                     b.Navigation("Subject");
-                });
-
-            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.SchoolFee", b =>
-                {
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Class", "Class")
-                        .WithMany()
-                        .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Class");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.SchoolSetting", b =>
