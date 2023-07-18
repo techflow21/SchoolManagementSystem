@@ -11,5 +11,11 @@ namespace SchoolManagementSystem.Core.Interfaces
         Task<IEnumerable<ExpenditureHistoryDto>> ViewExpenditureHistoryAsync();
 
         Task<(string, EditExpenditureResponseDto)> EditExpenditureAsync(EditExpenditureRequestDto request);
+
+        Task<string> DeleteExpenditureAsync(int expenditureId);
+
+        Task<EditExpenditureResponseDto> GetExpenditureByIdAsync(int expenditureId);
+
+        Task<List<EditExpenditureResponseDto>> SearchExpenditureAsync(SearchRequestDto searchRequest);
     }
 }

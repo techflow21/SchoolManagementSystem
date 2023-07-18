@@ -35,6 +35,21 @@ namespace SchoolManagementSystem.Service.Implementation
             return newExpenditure;
         }
 
+        public async Task<string> DeleteExpenditureAsync(int expenditureId)
+        {
+            var expenditureExists = await _expenditureRepo.GetSingleByAsync(e => e.Id == expenditureId);
+
+
+            if (expenditureExists == null)
+            {
+                throw new Exception("Expense not found");
+            }
+
+            await _expenditureRepo.DeleteAsync(expenditureExists);
+
+            return "Expenditure deleted successfully";
+        }
+
         public async Task<(string, EditExpenditureResponseDto)> EditExpenditureAsync(EditExpenditureRequestDto request)
         {
             var expenditureExists = await _expenditureRepo.GetByIdAsync(request.Id);
@@ -56,15 +71,43 @@ namespace SchoolManagementSystem.Service.Implementation
             return ("Expenditure updated successfully", result);
         }
 
+        public async Task<EditExpenditureResponseDto> GetExpenditureByIdAsync(int expenditureId)
+        {
+            var expenditure = await _expenditureRepo.GetSingleByAsync(e => e.Id == expenditureId);
+
+            if (expenditure == null)
+            {
+                throw new Exception("Expense not found");
+            }
+
+            var result = _mapper.Map<EditExpenditureResponseDto>(expenditure);
+
+            return result;
+        }
+
+        public async Task<List<EditExpenditureResponseDto>> SearchExpenditureAsync(SearchRequestDto searchRequest)
+        {
+            var allExpenditure = await _expenditureRepo.GetAllAsync();
+
+            if (!string.IsNullOrEmpty(searchRequest.Search))
+            {
+                allExpenditure = allExpenditure.Where(p => p.Description.Contains(searchRequest.Search, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            var result = _mapper.Map<List<EditExpenditureResponseDto>>(allExpenditure);
+
+            return result;
+        }
+
         public async Task<IEnumerable<ExpenditureHistoryDto>> ViewExpenditureHistoryAsync()
         {
-            var allExpense = await _expenditureRepo.GetAllAsync();
+            var allExpense = await _expenditureRepo.GetByAsync(e => e.Type == ExpenseType.Expenditure);
 
-            var expenditureHistory = allExpense.Where(e => e.Type == ExpenseType.Expenditure);
-
-            var expenditures = _mapper.Map<IEnumerable<ExpenditureHistoryDto>>(expenditureHistory);
+            var expenditures = _mapper.Map<IEnumerable<ExpenditureHistoryDto>>(allExpense);
 
             return expenditures;
         }
+
+
     }
 }
