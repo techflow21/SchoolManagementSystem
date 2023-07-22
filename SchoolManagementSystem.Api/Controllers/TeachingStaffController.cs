@@ -19,6 +19,8 @@ namespace SchoolManagementSystem.Api.Controllers
     {
         private readonly ITeachingStaff _teachingStaff;
 
+        private readonly ITenantResolver _tenantService;
+
         private readonly IHttpContextAccessor _contextAccessor;
 
         public TeachingStaffController(ITeachingStaff teachingStaff, IHttpContextAccessor contextAccessor)
@@ -28,7 +30,8 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpPost("addingTeachingStaff")]
-        public async Task<IActionResult> AddingTeachingStaff(TeachingStaffModel teachingStaff)
+        [DisableRequestSizeLimit]
+        public async Task<IActionResult> AddingTeachingStaff([FromForm]TeachingStaffModel teachingStaff)
         {
 
             var teacher = await _teachingStaff.AddingTeachingStaff(teachingStaff);
@@ -37,7 +40,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpPut("updateTeachingStaff")]
-        public async Task<IActionResult> UpdateTeachingStaff([Required]string TeacherID, [FromQuery] TeachingStaffModel teachingStaffModel)
+        public async Task<IActionResult> UpdateTeachingStaff([Required]string TeacherID, [FromForm] TeachingStaffModel teachingStaffModel)
         {
             var updatedteacher = await _teachingStaff.UpdateTeachingStaff(TeacherID, teachingStaffModel);
 
@@ -106,14 +109,8 @@ namespace SchoolManagementSystem.Api.Controllers
         [HttpPut("addSubject")]
         public async Task<IActionResult> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
         {
-            var subject = new Subject
-            {
-                TenantId = _contextAccessor.HttpContext?.User.GetUserId(),
-
-         
-                
-            };
-            var teacher = await _teachingStaff.AssignSubjectByTeacherID(addSubjectModel, subject);
+           
+            var teacher = await _teachingStaff.AssignSubjectByTeacherID(addSubjectModel);
 
             return Ok(teacher);
         }
@@ -121,18 +118,13 @@ namespace SchoolManagementSystem.Api.Controllers
         [HttpPut("addClass")]
         public async Task<IActionResult> AssignClassByTeacherID(AddDataModel addClassModel)
         {
-            var @class = new Class
-            {
-                TenantId = _contextAccessor.HttpContext?.User.GetUserId()
-
-
-            };
-
-            var teacher = await _teachingStaff.AssignClassByTeacherID(addClassModel, @class);
+            
+            var teacher = await _teachingStaff.AssignClassByTeacherID(addClassModel);
 
             return Ok(teacher);
         }
 
+      
 
         [HttpDelete("teacherID")]
         public async Task<IActionResult> DeleteTeachingByID(string TeacherID)

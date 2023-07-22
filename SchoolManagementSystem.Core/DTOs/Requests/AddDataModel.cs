@@ -7,7 +7,7 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
     {
         public string TeacherID { get; set; } = null!;
 
-        public string Data { get; set; } = null!;
+        public int DataID { get; set; } 
     }
 }
 
