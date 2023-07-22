@@ -4,6 +4,7 @@ using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
+using SchoolManagementSystem.Service.ExternalServices;
 
 namespace SchoolManagementSystem.Service.Implementation
 {
@@ -11,13 +12,27 @@ namespace SchoolManagementSystem.Service.Implementation
     {
         private readonly IRepository<Teacher> _teacher;
 
+        private readonly IRepository<Class> _class;
+
+        private readonly IRepository<Subject> _subject;
+
         private readonly IUnitOfWork _unitOfWork;
 
+        private readonly IPhotoUploadService _photoUploadService;
 
-       public TeachingStaff(IUnitOfWork unitOfWork)
+
+        public TeachingStaff(IUnitOfWork unitOfWork, IPhotoUploadService photoUploadService)
         {
             _teacher = unitOfWork.GetRepository<Teacher>();
+
             _unitOfWork = unitOfWork;
+
+            _photoUploadService = photoUploadService;
+
+            _class = unitOfWork.GetRepository<Class>();
+
+            _subject = unitOfWork.GetRepository<Subject>();
+
 
         }
 
@@ -27,6 +42,13 @@ namespace SchoolManagementSystem.Service.Implementation
 
             teacher.DateRegistered = DateTime.Now;
 
+            if (teachingStaffModel.ImageUrl != null)
+            {
+                string imagePath = await _photoUploadService.PhotoUpload(teachingStaffModel.ImageUrl);
+
+                teacher.ImageUrl = imagePath;
+            }
+
             teacher.TeacherID = $"{teacher.DateRegistered.Year}{teacher.DateRegistered.Day}{GenerateRandomNumber()}";
 
             await _teacher.AddAsync(teacher);
@@ -35,18 +57,25 @@ namespace SchoolManagementSystem.Service.Implementation
             return MapTeacherToModel(teacher);
         }
 
-        public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass, Class @class)
+        public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass)
         {
             var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addClass.TeacherID);
 
-            if (teacher == null)
+            var checkClass = await _class.GetSingleByAsync(c => c.Id == addClass.DataID);
+
+            if (checkClass == null)
             {
-                throw new ArgumentNullException($"TeacherID {addClass.TeacherID} not found in database");
+                throw new ArgumentNullException($"ClassID {addClass.DataID} was not found in database");
             }
 
-            @class.Name = addClass.Data;
+            if (teacher == null)
+            {
+                throw new ArgumentNullException($"TeacherID {addClass.TeacherID} was not found in database");
+            }
 
-            teacher.Classes.Add(@class);
+            
+
+            teacher.Classes.Add(checkClass);
 
             await _unitOfWork.SaveChangesAsync();
 
@@ -55,17 +84,23 @@ namespace SchoolManagementSystem.Service.Implementation
 
         }
 
-        public async Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel, Subject subject)
+        public async Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
         {
             var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addSubjectModel.TeacherID);
+
+            var subject = await _subject.GetSingleByAsync(c => c.Id == addSubjectModel.DataID);
+
+            if (subject == null)
+            {
+                throw new ArgumentNullException($"ClassID {addSubjectModel.DataID} was not found in database");
+            }
 
             if (teacher == null)
             {
                 throw new ArgumentNullException($"TeacherID {addSubjectModel.TeacherID} not found in database");
             }
 
-            subject.Name = addSubjectModel.Data;
-
+          
             teacher.Subjects.Add(subject);
 
             await _unitOfWork.SaveChangesAsync();
@@ -149,16 +184,16 @@ namespace SchoolManagementSystem.Service.Implementation
             };
             
             var teachers = await _teacher.GetByAsync(t => t.FirstName == searchquery ||
-            t.MiddleName == searchquery ||
-            t.LastName == searchquery ||
+            t.MiddleName.Contains(searchquery) ||
+            t.LastName.Contains(searchquery) ||
             t.Classes.Contains(@class) ||
             t.Subjects.Contains(subject) ||
-            t.PhoneNumber == searchquery ||
-            t.StateOfOrigin == searchquery ||
-            t.LGA == searchquery ||
-            t.TeacherID == searchquery ||
-            t.Email == searchquery ||
-            t.Address == searchquery
+            t.PhoneNumber.Contains(searchquery) ||
+            t.StateOfOrigin.Contains(searchquery) ||
+            t.LGA.Contains(searchquery) ||
+            t.TeacherID.Contains(searchquery) ||
+            t.Email.Contains(searchquery) ||
+            t.Address.Contains(searchquery)
             );
 
             if (teachers == null)
@@ -301,7 +336,7 @@ namespace SchoolManagementSystem.Service.Implementation
             existingTeacher.Email = teachingStaffModel.Email ?? existingTeacher.Email;
             existingTeacher.PhoneNumber = teachingStaffModel.PhoneNumber ?? existingTeacher.PhoneNumber;
             existingTeacher.DateOfBirth = teachingStaffModel.DateOfBirth;
-            existingTeacher.ImageUrl = teachingStaffModel.ImageUrl ?? existingTeacher.ImageUrl;
+            //existingTeacher.ImageUrl = teachingStaffModel.ImageUrl ?? existingTeacher.ImageUrl;
 
             return existingTeacher;
                   
@@ -349,7 +384,9 @@ namespace SchoolManagementSystem.Service.Implementation
 
 	    }
 
-        private string GenerateRandomNumber()
+
+
+        private static string GenerateRandomNumber()
         {
             Random random = new Random();
 

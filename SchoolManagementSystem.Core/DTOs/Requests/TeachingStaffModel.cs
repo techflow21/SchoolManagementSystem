@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel;
 using SchoolManagementSystem.Core.Entities;
 
 namespace SchoolManagementSystem.Core.DTOs.Requests
@@ -15,10 +17,12 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string ImageUrl { get; set; }
-
-
         
+        [DisplayName("Profile Photo")]
+        public IFormFile? ImageUrl { get; set; }
+
+
+
     }
 }
 

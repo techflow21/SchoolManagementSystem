@@ -24,9 +24,9 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<IEnumerable<TeacherModel>> SearchFuntion(string searchquery, string tenancyId); 
 
-        Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel, Subject subject); 
+        Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel); 
 
-        Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass, Class @class);
+        Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass);
 
         Task<bool> DeleteTeachingByID(string TeacherID);
 
