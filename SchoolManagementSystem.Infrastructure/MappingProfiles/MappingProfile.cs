@@ -25,6 +25,9 @@ namespace SchoolManagementSystem.Infrastructure.MappingProfiles
             CreateMap<Student, StudentResponseDto>();
 
             CreateMap<Contact, ContactRequestDto>().ReverseMap();
+
+            CreateMap<Class, ClassDto>().ReverseMap();
+            CreateMap<Subject, SubjectDto>().ReverseMap();
         }
     }
 }
