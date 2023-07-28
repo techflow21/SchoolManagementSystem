@@ -18,7 +18,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPost("add-subject")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> AddSubjectAsync([FromBody] SubjectDto addSubject)
+        public async Task<IActionResult> AddSubjectAsync([FromBody] SubjectRequestDto addSubject)
         {
             if (!ModelState.IsValid)
             {
@@ -34,7 +34,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPut("update-subject/{Id}")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> UpdateSubjectAsync(int Id, [FromBody] SubjectDto updateSubject)
+        public async Task<IActionResult> UpdateSubjectAsync(int Id, [FromBody] SubjectRequestDto updateSubject)
         {
             if (!ModelState.IsValid)
             {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SchoolManagementSystem.Core.Contracts;
 using SchoolManagementSystem.Core.DTOs.Requests;
+using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
 
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem.Service.Implementation
             _mapper = mapper;
             _classRepo =  _unitOfWork.GetRepository<Class>();
         }
-        public async Task<ServiceResponse<string>> AddClassAsync(ClassDto addClass)
+        public async Task<ServiceResponse<string>> AddClassAsync(ClassRequestDto addClass)
         {
             var classExists = await _classRepo.GetSingleByAsync(s => s.Name == addClass.Name);
             if (classExists != null)
@@ -45,7 +46,7 @@ namespace SchoolManagementSystem.Service.Implementation
             {
                 _logger.LogInfo("Class added successfully.");
 
-                var result = new ClassDto
+                var result = new ClassResponseDto
                 {
                     Name = addedClass.Name
                 };
@@ -94,7 +95,7 @@ namespace SchoolManagementSystem.Service.Implementation
         }
 
 
-        public async Task<ServiceResponse<string>> UpdateClassAsync(int Id, ClassDto updateClass)
+        public async Task<ServiceResponse<string>> UpdateClassAsync(int Id, ClassRequestDto updateClass)
         {
             Class existingClass = await _classRepo.GetByIdAsync(Id);
             if (existingClass == null)
@@ -134,11 +135,11 @@ namespace SchoolManagementSystem.Service.Implementation
             }
         }
 
-        public async Task<List<ClassDto>> ViewAllClassesAsync()
+        public async Task<List<ClassResponseDto>> ViewAllClassesAsync()
         {
             var AllClasses = await _classRepo.GetAllAsync();
 
-            var result = _mapper.Map<List<ClassDto>>(AllClasses);
+            var result = _mapper.Map<List<ClassResponseDto>>(AllClasses);
             await _unitOfWork.SaveChangesAsync();
 
             return result;

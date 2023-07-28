@@ -24,7 +24,7 @@ namespace SchoolManagementSystem.Service.Implementation
             _photoUploadService = photoUploadService;
         }
 
-        public async Task<ServiceResponse<string>> AddStudentAsync(StudentDto addStudent)
+        public async Task<ServiceResponse<string>> AddStudentAsync(StudentRequestDto addStudent)
         {
             var emailExists = await _studentRepo.GetSingleByAsync(s => s.Email == addStudent.Email);
             if (emailExists != null)
@@ -39,6 +39,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var student = _mapper.Map<Student>(addStudent);
 
+            student.StudentNumber = $"{student.TenantId}/{student.DateRegistered.Year}/{student.DateRegistered.Day}/{GenerateRandomNumber()}";
             student.DateRegistered = DateTime.Now;
             student.IsActive = true;
 
@@ -74,7 +75,7 @@ namespace SchoolManagementSystem.Service.Implementation
             }
         }
 
-        public async Task<ServiceResponse<string>> UpdateStudentAsync(int Id, StudentDto updateStudent)
+        public async Task<ServiceResponse<string>> UpdateStudentAsync(int Id, StudentRequestDto updateStudent)
         {
             var student = await _studentRepo.GetByIdAsync(Id);
             if (student == null)
@@ -102,7 +103,7 @@ namespace SchoolManagementSystem.Service.Implementation
             {
                 _logger.LogInfo($"Student with ID {Id} updated successfully.");
 
-                var result = _mapper.Map<StudentDto>(student);
+                var result = _mapper.Map<StudentRequestDto>(student);
                 return new ServiceResponse<string>
                 {
                     Success = true,
@@ -171,6 +172,16 @@ namespace SchoolManagementSystem.Service.Implementation
             };
 
 
+        }
+
+        private static string GenerateRandomNumber()
+        {
+            Random random = new Random();
+
+            var randomNumber = random.Next(1000, 9999);
+
+
+            return randomNumber.ToString();
         }
 
     }

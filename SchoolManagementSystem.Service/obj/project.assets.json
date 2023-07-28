@@ -3005,11 +3005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
       "projectName": "SchoolManagementSystem.Service",
-      "projectPath": "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
       "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
+      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3026,8 +3026,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
+            "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
             }
           }
         }
