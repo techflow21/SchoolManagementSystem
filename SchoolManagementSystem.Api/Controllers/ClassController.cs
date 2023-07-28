@@ -19,7 +19,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPost("add-class")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> AddClassAsync([FromBody] ClassDto addClass)
+        public async Task<IActionResult> AddClassAsync([FromBody] ClassRequestDto addClass)
         {
             if (!ModelState.IsValid)
             {
@@ -35,7 +35,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPut("update-class/{Id}")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> UpdateClassAsync(int Id, [FromBody] ClassDto updateClass)
+        public async Task<IActionResult> UpdateClassAsync(int Id, [FromBody] ClassRequestDto updateClass)
         {
             if (!ModelState.IsValid)
             {

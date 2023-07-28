@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SchoolManagementSystem.Core.Entities
+﻿namespace SchoolManagementSystem.Core.Entities
 {
     public class Student : EntityBase
     {
+        public string StudentNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? MiddleName { get; set; }
@@ -17,9 +16,6 @@ namespace SchoolManagementSystem.Core.Entities
         public DateTime DateRegistered { get; set; }
         public bool IsActive { get; set; }
 
-        [ForeignKey(nameof(Class))]
-        public int ClassId { get; set; }
-        public Class Class { get; set; }
         public ICollection<Subject>? Subjects { get; set; }
     }
 }

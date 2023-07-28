@@ -1,6 +1,6 @@
 ﻿namespace SchoolManagementSystem.Core.DTOs.Requests
 {
-    public record ClassDto
+    public record ClassRequestDto
     {
         public string Name { get; set; }
 

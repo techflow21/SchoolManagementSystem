@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SchoolManagementSystem.Core.Contracts;
 using SchoolManagementSystem.Core.DTOs.Requests;
+using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Interfaces;
 
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem.Service.Implementation
             _mapper = mapper;
             _subjectRepo =  _unitOfWork.GetRepository<Subject>();
         }
-        public async Task<ServiceResponse<string>> AddSubjectAsync(SubjectDto addSubject)
+        public async Task<ServiceResponse<string>> AddSubjectAsync(SubjectRequestDto addSubject)
         {
             var subjectExists = await _subjectRepo.GetSingleByAsync(s => s.Name == addSubject.Name);
             if (subjectExists != null)
@@ -45,7 +46,7 @@ namespace SchoolManagementSystem.Service.Implementation
             {
                 _logger.LogInfo("Subject added successfully.");
 
-                var result = new SubjectDto
+                var result = new SubjectResponseDto
                 {
                     Name = addedSubject.Name
                 };
@@ -94,7 +95,7 @@ namespace SchoolManagementSystem.Service.Implementation
         }
 
 
-        public async Task<ServiceResponse<string>> UpdateSubjectAsync(int Id, SubjectDto updateSubject)
+        public async Task<ServiceResponse<string>> UpdateSubjectAsync(int Id, SubjectRequestDto updateSubject)
         {
             Subject existingSubject = await _subjectRepo.GetByIdAsync(Id);
             if (existingSubject == null)
@@ -134,11 +135,11 @@ namespace SchoolManagementSystem.Service.Implementation
             }
         }
 
-        public async Task<List<SubjectDto>> ViewAllSubjectsAsync()
+        public async Task<List<SubjectResponseDto>> ViewAllSubjectsAsync()
         {
             var AllSubjects = await _subjectRepo.GetAllAsync();
 
-            var result = _mapper.Map<List<SubjectDto>>(AllSubjects);
+            var result = _mapper.Map<List<SubjectResponseDto>>(AllSubjects);
             await _unitOfWork.SaveChangesAsync();
 
             return result;

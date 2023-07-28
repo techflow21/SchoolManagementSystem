@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i+ceEyaCk0AOptTyRKwxs335lCntSdmBDeNO5G5ZPlI9bl8uNo63ClK1TwU3SeT8azXEacW51p3ensQJ785pBA==",
+  "dgSpecHash": "SJvw9bg8yWOw7BhxPhWhV3lAgTyAIhcQs+QCREVn5gv78srxhksza9gmj7+qHvv6nxtyV/ZQMpS9MWRKdbXwHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MyPC\\source\\repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MyPC\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
