@@ -77,7 +77,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             teacher.Classes.Add(checkClass);
 
-            await _unitOfWork.SaveChangesAsync();
+            //await _unitOfWork.SaveChangesAsync();
 
             return MapTeacherToSubjectAndClassModel(teacher);
 

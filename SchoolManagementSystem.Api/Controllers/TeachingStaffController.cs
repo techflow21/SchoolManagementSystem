@@ -23,10 +23,11 @@ namespace SchoolManagementSystem.Api.Controllers
 
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public TeachingStaffController(ITeachingStaff teachingStaff, IHttpContextAccessor contextAccessor)
+        public TeachingStaffController(ITeachingStaff teachingStaff, IHttpContextAccessor contextAccessor, ITenantResolver tenantService)
         {
             _teachingStaff = teachingStaff;
             _contextAccessor = contextAccessor;
+            _tenantService = tenantService;
         }
 
         [HttpPost("addingTeachingStaff")]

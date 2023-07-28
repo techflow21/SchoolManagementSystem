@@ -30,5 +30,7 @@ public static class ServiceExtensions
         services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<IPhotoUploadService, PhotoUploadService>();
 
+        services.AddScoped<ISubscription, SubscriptionServices>();
+
     }
 }
