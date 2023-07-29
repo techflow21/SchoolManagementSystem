@@ -9,9 +9,7 @@
       "SchoolManagementSystem.Service/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "5.0.0",
           "MimeKit": "4.1.0",
-          "Paystack.Net": "1.1.0",
           "SchoolManagementSystem.Infrastructure": "1.0.0"
         },
         "runtime": {
@@ -313,20 +311,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration.UserSecrets/5.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Configuration.Json": "6.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "6.0.0",
-          "Microsoft.Extensions.FileProviders.Physical": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          }
-        }
-      },
       "Microsoft.Extensions.DependencyInjection/6.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -555,14 +539,6 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.1.25517"
-          }
-        }
-      },
       "NLog/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
@@ -581,17 +557,6 @@
           "lib/net5.0/NLog.Extensions.Logging.dll": {
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.0.154"
-          }
-        }
-      },
-      "Paystack.Net/1.1.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/PayStack.Net.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
           }
         }
       },
@@ -1000,13 +965,6 @@
       "path": "microsoft.extensions.configuration.json/6.0.0",
       "hashPath": "microsoft.extensions.configuration.json.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.UserSecrets/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+tK3seG68106lN277YWQvqmfyI/89w0uTu/5Gz5VYSUu5TI4mqwsaWLlSmT9Bl1yW/i1Nr06gHJxqaqB5NU9Tw==",
-      "path": "microsoft.extensions.configuration.usersecrets/5.0.0",
-      "hashPath": "microsoft.extensions.configuration.usersecrets.5.0.0.nupkg.sha512"
-    },
     "Microsoft.Extensions.DependencyInjection/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1154,13 +1112,6 @@
       "path": "mimekit/4.1.0",
       "hashPath": "mimekit.4.1.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "path": "newtonsoft.json/13.0.1",
-      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
-    },
     "NLog/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1174,13 +1125,6 @@
       "sha512": "sha512-K8hXJf9bGzm66n9jUBK0HEbH6Ei6u01oiYdHbITEWeP8X1bVCki5QJviWkHiGaqa4oMDit8Bdf+wdYdZf2WfRA==",
       "path": "nlog.extensions.logging/5.0.0",
       "hashPath": "nlog.extensions.logging.5.0.0.nupkg.sha512"
-    },
-    "Paystack.Net/1.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-13UXyxPUjtxcEquPYT8ltqn3BqRZdvdQUmmeN92YrcUo5jj0NVzYhZKgW8RxVkhB1zoiUgaZMpt7xZz//1720Q==",
-      "path": "paystack.net/1.1.0",
-      "hashPath": "paystack.net.1.1.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",

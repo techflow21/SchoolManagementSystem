@@ -1653,28 +1653,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration.UserSecrets/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0",
-          "Microsoft.Extensions.FileProviders.Physical": "5.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/netstandard2.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.DependencyInjection/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -2505,18 +2483,6 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Paystack.Net/1.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/PayStack.Net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/PayStack.Net.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -4346,9 +4312,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "5.0.0",
           "MimeKit": "4.1.0",
-          "Paystack.Net": "1.1.0",
           "SchoolManagementSystem.Infrastructure": "1.0.0"
         },
         "compile": {
@@ -6326,28 +6290,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Configuration.UserSecrets/5.0.0": {
-      "sha512": "+tK3seG68106lN277YWQvqmfyI/89w0uTu/5Gz5VYSUu5TI4mqwsaWLlSmT9Bl1yW/i1Nr06gHJxqaqB5NU9Tw==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration.usersecrets/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props",
-        "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets",
-        "lib/net461/Microsoft.Extensions.Configuration.UserSecrets.dll",
-        "lib/net461/Microsoft.Extensions.Configuration.UserSecrets.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.xml",
-        "microsoft.extensions.configuration.usersecrets.5.0.0.nupkg.sha512",
-        "microsoft.extensions.configuration.usersecrets.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "Microsoft.Extensions.DependencyInjection/6.0.1": {
       "sha512": "vWXPg3HJQIpZkENn1KWq8SfbqVujVD7S7vIAyFXXqK5xkf1Vho+vG0bLBCHxU36lD1cLLtmGpfYf0B3MYFi9tQ==",
       "type": "package",
@@ -7936,20 +7878,6 @@
         "lib/netstandard2.0/NuGet.Versioning.xml",
         "nuget.versioning.6.3.1.nupkg.sha512",
         "nuget.versioning.nuspec"
-      ]
-    },
-    "Paystack.Net/1.1.0": {
-      "sha512": "13UXyxPUjtxcEquPYT8ltqn3BqRZdvdQUmmeN92YrcUo5jj0NVzYhZKgW8RxVkhB1zoiUgaZMpt7xZz//1720Q==",
-      "type": "package",
-      "path": "paystack.net/1.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/netstandard2.0/PayStack.Net.dll",
-        "paystack-logo.png",
-        "paystack.net.1.1.0.nupkg.sha512",
-        "paystack.net.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -12113,34 +12041,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
+    "/Users/mac/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
+      "projectUniqueName": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/SchoolManagementSystem.Api.csproj",
       "projectName": "SchoolManagementSystem.Api",
-      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
-      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\obj\\",
+      "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/SchoolManagementSystem.Api.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
+        "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
-              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj"
+            "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj": {
+              "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj"
             }
           }
         }
@@ -12209,8 +12137,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
