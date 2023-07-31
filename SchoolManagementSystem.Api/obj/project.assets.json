@@ -2485,6 +2485,18 @@
           }
         }
       },
+      "Paystack.Net/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/PayStack.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PayStack.Net.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -4313,6 +4325,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "MimeKit": "4.1.0",
+          "Paystack.Net": "1.1.0",
           "SchoolManagementSystem.Infrastructure": "1.0.0"
         },
         "compile": {
@@ -7878,6 +7891,20 @@
         "lib/netstandard2.0/NuGet.Versioning.xml",
         "nuget.versioning.6.3.1.nupkg.sha512",
         "nuget.versioning.nuspec"
+      ]
+    },
+    "Paystack.Net/1.1.0": {
+      "sha512": "13UXyxPUjtxcEquPYT8ltqn3BqRZdvdQUmmeN92YrcUo5jj0NVzYhZKgW8RxVkhB1zoiUgaZMpt7xZz//1720Q==",
+      "type": "package",
+      "path": "paystack.net/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/PayStack.Net.dll",
+        "paystack-logo.png",
+        "paystack.net.1.1.0.nupkg.sha512",
+        "paystack.net.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -12041,34 +12068,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
+    "/Users/mac/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
+      "projectUniqueName": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/SchoolManagementSystem.Api.csproj",
       "projectName": "SchoolManagementSystem.Api",
-      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\SchoolManagementSystem.Api.csproj",
-      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Api\\obj\\",
+      "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/SchoolManagementSystem.Api.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
+        "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj": {
-              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj"
+            "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj": {
+              "projectPath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj"
             }
           }
         }
@@ -12137,7 +12164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
       }
     }
   }

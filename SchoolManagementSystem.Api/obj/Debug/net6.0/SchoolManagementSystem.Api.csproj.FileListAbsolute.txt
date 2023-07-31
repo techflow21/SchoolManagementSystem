@@ -1343,6 +1343,10 @@ C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Api/obj/Deb
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/bin/Debug/net6.0/System.Text.Encoding.CodePages.dll
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll
+<<<<<<< HEAD
+/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/bin/Debug/net6.0/SchoolManagementSystem.Api.staticwebassets.runtime.json
+/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/bin/Debug/net6.0/PayStack.Net.dll
+=======
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\appsettings.json
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\nlog.config
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\bin\Debug\net6.0\appsettings.Development.json
@@ -1619,3 +1623,4 @@ C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\obj
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\obj\Debug\net6.0\SchoolManagementSystem.Api.pdb
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\obj\Debug\net6.0\SchoolManagementSystem.Api.genruntimeconfig.cache
 C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Api\obj\Debug\net6.0\ref\SchoolManagementSystem.Api.dll
+>>>>>>> development

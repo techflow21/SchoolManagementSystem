@@ -1167,22 +1167,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "2.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1831,6 +1831,17 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "assemblyVersion": "6.3.1.1",
             "fileVersion": "6.3.1.1"
+          }
+        }
+      },
+      "Paystack.Net/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/PayStack.Net.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
           }
         }
       },
@@ -2806,6 +2817,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "MimeKit": "4.1.0",
+          "Paystack.Net": "1.1.0",
           "SchoolManagementSystem.Infrastructure": "1.0.0"
         },
         "runtime": {
@@ -3827,6 +3839,13 @@
       "sha512": "sha512-T/igBDLXCd+pH3YTWgGVNvYSOwbwaT30NyyM9ONjvlHlmaUjKBJpr9kH0AeL+Ado4EJsBhU3qxXVc6lyrpRcMw==",
       "path": "nuget.versioning/6.3.1",
       "hashPath": "nuget.versioning.6.3.1.nupkg.sha512"
+    },
+    "Paystack.Net/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-13UXyxPUjtxcEquPYT8ltqn3BqRZdvdQUmmeN92YrcUo5jj0NVzYhZKgW8RxVkhB1zoiUgaZMpt7xZz//1720Q==",
+      "path": "paystack.net/1.1.0",
+      "hashPath": "paystack.net.1.1.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
