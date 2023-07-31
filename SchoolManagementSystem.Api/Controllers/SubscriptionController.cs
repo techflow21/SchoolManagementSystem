@@ -27,11 +27,17 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPost("Subscription")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> Subscription([FromForm]  SubscriptionPlans subscriptionPlans)
+        public async Task<IActionResult> Subscription([FromForm]  SubscriptionRequest subscriptionPlans)
         {
+            var Response = await _subscription.subscription(subscriptionPlans);
 
-             return Ok(subscriptionPlans);
-            //return CreatedAtAction(nameof(GetTeachingStaffByTeacherID), new { teacher.id }, teacher);
+            if (Response.SubscriptionSuccess == false)
+            {
+                return BadRequest(Response);
+            }
+
+             return Ok(Response);
+            
         }
     }
 }

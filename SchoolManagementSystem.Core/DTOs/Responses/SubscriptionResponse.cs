@@ -5,7 +5,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
     {
         public bool SubscriptionSuccess { get; set; } = false;
 
-        public bool MailSentSuccess { get; set; } = false;
+       
 
         public string? Message { get; set; } = null!;
      }

@@ -242,6 +242,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Paystack.Net": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

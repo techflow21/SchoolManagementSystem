@@ -49,6 +49,8 @@ namespace SchoolManagementSystem.Service.Implementation
                 teacher.ImageUrl = imagePath;
             }
 
+
+
             teacher.TeacherID = $"{teacher.DateRegistered.Year}{teacher.DateRegistered.Day}{GenerateRandomNumber()}";
 
             await _teacher.AddAsync(teacher);
@@ -76,6 +78,8 @@ namespace SchoolManagementSystem.Service.Implementation
             
 
             teacher.Classes.Add(checkClass);
+
+            
 
             await _unitOfWork.SaveChangesAsync();
 
