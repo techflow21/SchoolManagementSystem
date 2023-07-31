@@ -118,3 +118,15 @@ C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Core\obj\De
 C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
 C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
 C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.deps.json
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfo.cs
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\Chidiebere\Documents\coding\SMA\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
