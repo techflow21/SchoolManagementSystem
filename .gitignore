@@ -618,3 +618,8 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,csharp,dotnetcore,aspnetcore
+SchoolManagementSystem.Core
+SchoolManagementSystem.Infrastructure/obj/rider.project.restore.info
+SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.AssemblyInfo.cs
+SchoolManagementSystem.Service/obj/Debug/net6.0/SchoolManagementSystem.Service.csproj.AssemblyReference.cache
+SchoolManagementSystem.Service/obj/rider.project.restore.info
