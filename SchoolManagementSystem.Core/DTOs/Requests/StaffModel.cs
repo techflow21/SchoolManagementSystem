@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolManagementSystem.Core.DTOs.Requests
 {
-    public class TeachingStaffModel
+    public class StaffModel
     {
 
         public string FirstName { get; set; }

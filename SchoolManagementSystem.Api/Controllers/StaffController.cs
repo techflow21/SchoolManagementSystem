@@ -32,16 +32,16 @@ namespace SchoolManagementSystem.Api.Controllers
 
         [HttpPost("addingTeachingStaff")]
         [DisableRequestSizeLimit]
-        public async Task<IActionResult> AddingTeachingStaff([FromForm]TeachingStaffModel teachingStaff)
+        public async Task<IActionResult> AddingTeachingStaff([FromForm]StaffModel teachingStaff)
         {
 
-            var teacher = await _teachingStaff.AddingTeachingStaff(teachingStaff);
+            var teacher = await _teachingStaff.TeachingStaff(teachingStaff);
 
             return CreatedAtAction(nameof(GetTeachingStaffByTeacherID), new { teacher.id }, teacher);
         }
 
         [HttpPut("updateTeachingStaff")]
-        public async Task<IActionResult> UpdateTeachingStaff([Required]string TeacherID, [FromForm] TeachingStaffModel teachingStaffModel)
+        public async Task<IActionResult> UpdateTeachingStaff([Required]string TeacherID, [FromForm] StaffModel teachingStaffModel)
         {
             var updatedteacher = await _teachingStaff.UpdateTeachingStaff(TeacherID, teachingStaffModel);
 

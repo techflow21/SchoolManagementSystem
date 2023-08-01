@@ -8,9 +8,9 @@ namespace SchoolManagementSystem.Core.Interfaces
     public interface ITeachingStaff
     {
 
-        Task<TeacherModel> AddingTeachingStaff(TeachingStaffModel teachingStaff);
+        Task<TeacherModel> TeachingStaff(StaffModel teachingStaff);
 
-        Task<TeacherModel> UpdateTeachingStaff(string TeacherID, TeachingStaffModel teachingStaff);
+        Task<TeacherModel> UpdateTeachingStaff(string TeacherID, StaffModel teachingStaff);
 
         Task<IEnumerable<TeacherModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId);
 
