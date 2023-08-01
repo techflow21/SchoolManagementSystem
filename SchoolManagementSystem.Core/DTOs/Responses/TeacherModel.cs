@@ -1,11 +1,11 @@
 ﻿using System;
 namespace SchoolManagementSystem.Core.DTOs.Responses
 {
-    public class TeacherModel
+    public class StaffResponseModel
     
     {
         public int id { get; set; }
-        public string TeacherID { get; set; }
+        public string StaffID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
@@ -15,7 +15,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
-        //public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
         public DateTime DateRegistered { get; set; }
 
 

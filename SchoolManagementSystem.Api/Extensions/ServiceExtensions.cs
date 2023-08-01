@@ -20,7 +20,7 @@ public static class ServiceExtensions
         services.AddTransient<IEmailService, EmailService>();
         services.AddTransient<IContactService, ContactService>();
 
-        services.AddScoped<ITeachingStaff, TeachingStaff>();
+        services.AddScoped<IStaff, StaffService>();
         services.AddScoped<ISalaryService, SalaryService>();
 
         services.AddScoped<IManageIncome, ManageIncome>();
