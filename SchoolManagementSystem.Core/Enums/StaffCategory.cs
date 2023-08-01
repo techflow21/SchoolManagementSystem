@@ -2,7 +2,7 @@
 {
     public enum StaffCategory
     {
-        Teacher,
-        NonTeacher
+        Teaching = 1,
+        NonTeaching
     }
 }

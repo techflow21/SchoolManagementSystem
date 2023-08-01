@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Data.SqlClient.Server;
 using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
+using SchoolManagementSystem.Core.Enums;
 using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Service.ExternalServices;
 
 namespace SchoolManagementSystem.Service.Implementation
 {
-    public class TeachingStaff : ITeachingStaff
+    public class StaffService : IStaff
     {
         private readonly IRepository<Teacher> _teacher;
+
+        private readonly IRepository<NonTeacher> _nonTeacher;
 
         private readonly IRepository<Class> _class;
 
@@ -21,9 +25,11 @@ namespace SchoolManagementSystem.Service.Implementation
         private readonly IPhotoUploadService _photoUploadService;
 
 
-        public TeachingStaff(IUnitOfWork unitOfWork, IPhotoUploadService photoUploadService)
+        public StaffService(IUnitOfWork unitOfWork, IPhotoUploadService photoUploadService)
         {
             _teacher = unitOfWork.GetRepository<Teacher>();
+
+            _nonTeacher = unitOfWork.GetRepository<NonTeacher>();
 
             _unitOfWork = unitOfWork;
 
@@ -36,27 +42,56 @@ namespace SchoolManagementSystem.Service.Implementation
 
         }
 
-        public async Task<TeacherModel> AddingTeachingStaff(TeachingStaffModel teachingStaffModel)
+        public async Task<StaffResponseModel> AddingStaff(StaffModel staffModel)
         {
-            var teacher = MapModelToTeacher(teachingStaffModel);
-
-            teacher.DateRegistered = DateTime.Now;
-
-            if (teachingStaffModel.ImageUrl != null)
+            
+            switch (staffModel.StaffCategory)
             {
-                string imagePath = await _photoUploadService.PhotoUpload(teachingStaffModel.ImageUrl);
+                case StaffCategory.Teaching:
+                    var teacher = MapModelToTeacher(staffModel);
 
-                teacher.ImageUrl = imagePath;
+                    teacher.DateRegistered = DateTime.Now;
+
+                    if (staffModel.ImageUrl != null)
+                    {
+                        string imagePath = await _photoUploadService.PhotoUpload(staffModel.ImageUrl);
+
+                        teacher.ImageUrl = imagePath;
+                    }
+
+
+
+                    teacher.TeacherID = $"{teacher.DateRegistered.Year}{teacher.DateRegistered.Day}{GenerateRandomNumber()}";
+
+                    await _teacher.AddAsync(teacher);
+                    await _unitOfWork.SaveChangesAsync();
+
+                    return MapTeacherToModel(teacher);
+
+                case StaffCategory.NonTeaching:
+                    var nonTeacher = MapModelToNonTeacher(staffModel);
+
+                    nonTeacher.DateRegistered = DateTime.Now;
+
+                    if (staffModel.ImageUrl != null)
+                    {
+                        string imagePath = await _photoUploadService.PhotoUpload(staffModel.ImageUrl);
+
+                        nonTeacher.ImageUrl = imagePath;
+                    }
+
+
+
+                    nonTeacher.NonTeacherID = $"{nonTeacher.DateRegistered.Year}{nonTeacher.DateRegistered.Day}{GenerateRandomNumber()}";
+
+                    await _nonTeacher.AddAsync(nonTeacher);
+                    await _unitOfWork.SaveChangesAsync();
+
+                    return MapNonTeacherToModel(nonTeacher);
+
+                default:
+                    throw new ArgumentNullException($"Invalid Selection");
             }
-
-
-
-            teacher.TeacherID = $"{teacher.DateRegistered.Year}{teacher.DateRegistered.Day}{GenerateRandomNumber()}";
-
-            await _teacher.AddAsync(teacher);
-            await _unitOfWork.SaveChangesAsync();
-
-            return MapTeacherToModel(teacher);
         }
 
         public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass)
@@ -112,24 +147,52 @@ namespace SchoolManagementSystem.Service.Implementation
             return MapTeacherToSubjectAndClassModel(teacher);
         }
 
-        public async Task<bool> DeleteTeachingByID(string TeacherID)
+
+        public async Task<bool> DeleteStaffByID(SelectStaffModel selectStaffModel)
         {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
+            
 
-            if (teacher == null)
+            switch (selectStaffModel.StaffCategory)
             {
-                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
+                case StaffCategory.Teaching:
+                    var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == selectStaffModel.StaffID);
+
+                    if (teacher == null)
+                    {
+                        throw new ArgumentNullException($"StaffID {selectStaffModel.StaffID} not found in database");
+                    }
+
+                    await _teacher.DeleteAsync(teacher);
+
+                    var result = await _unitOfWork.SaveChangesAsync();
+
+                    if (result == 0)
+                    {
+                        return false;
+                    }
+                    return true;
+
+                case StaffCategory.NonTeaching:
+                    var nonTeacher = await _nonTeacher.GetSingleByAsync(n => n.NonTeacherID == selectStaffModel.StaffID);
+
+                    if (nonTeacher == null)
+                    {
+                        throw new ArgumentNullException($"StaffID {selectStaffModel.StaffID} not found in database");
+                    }
+
+                    await _nonTeacher.DeleteAsync(nonTeacher);
+
+                    var nonTeacherResult = await _unitOfWork.SaveChangesAsync();
+
+                    if (nonTeacherResult == 0)
+                    {
+                        return false;
+                    }
+                    return true;
+                default:
+                    throw new ArgumentNullException($"Invalid Operation");
+                    
             }
-
-            await _teacher.DeleteAsync(teacher);
-
-            var result = await _unitOfWork.SaveChangesAsync();
-
-            if (result == 0) 
-	        {
-                return false;
-	        }
-            return true;
         }
 
         public async Task<IEnumerable<Class>> GetAllClassOfTeacherByTeacherID(string TeacherID)
@@ -164,16 +227,41 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToSubjectAndClassModel);
         }
 
-        public async Task<TeacherModel> GetTeachingStaffByTeacherID(string TeacherID)
+        public async Task<StaffResponseModel> GetStaffByStaffID(SelectStaffModel selectStaff)
         {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
+            
+            switch (selectStaff.StaffCategory)
+            {
+                case StaffCategory.Teaching:
+                    var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == selectStaff.StaffID);
+                    if (teacher == null)
+                    {
+                        throw new ArgumentNullException($"TeacherID {selectStaff.StaffID} not found in database");
+                    }
+                    return MapTeacherToModel(teacher);
 
-            return MapTeacherToModel(teacher);
+                case StaffCategory.NonTeaching:
+
+                    var nonTeacher = await _nonTeacher.GetSingleByAsync(n => n.NonTeacherID == selectStaff.StaffID);
+
+                    if (nonTeacher == null)
+                    {
+                        throw new ArgumentNullException($"Non-TeacherID {selectStaff.StaffID} not found in database");
+                    }
+
+                    return MapNonTeacherToModel(nonTeacher);
+
+                default:
+
+                    throw new ArgumentNullException($"Invalid Selection");
+                   
+            }
+
         }
 
 
 
-        public async Task<IEnumerable<TeacherModel>> SearchFuntion(string searchquery, string tenancyID)
+        public async Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery, string tenancyID)
         {
             var @class = new Class
             {
@@ -187,30 +275,62 @@ namespace SchoolManagementSystem.Service.Implementation
                 Name = searchquery
             };
             
-            var teachers = await _teacher.GetByAsync(t => t.FirstName == searchquery ||
-            t.MiddleName.Contains(searchquery) ||
-            t.LastName.Contains(searchquery) ||
-            t.Classes.Contains(@class) ||
-            t.Subjects.Contains(subject) ||
-            t.PhoneNumber.Contains(searchquery) ||
-            t.StateOfOrigin.Contains(searchquery) ||
-            t.LGA.Contains(searchquery) ||
-            t.TeacherID.Contains(searchquery) ||
-            t.Email.Contains(searchquery) ||
-            t.Address.Contains(searchquery)
+            var teachers = await _teacher.GetByAsync(
+                t =>
+                t.TeacherID.Contains(searchquery) ||
+                t.FirstName.Contains(searchquery) ||
+                t.MiddleName.Contains(searchquery) ||
+                t.LastName.Contains(searchquery) ||
+                t.Classes.Contains(@class) ||
+                t.Subjects.Contains(subject) ||
+                t.PhoneNumber.Contains(searchquery) ||
+                t.StateOfOrigin.Contains(searchquery) ||
+                t.LGA.Contains(searchquery) ||
+                t.Email.Contains(searchquery) ||
+                t.Address.Contains(searchquery)
             );
 
-            if (teachers == null)
+            var nonTeachers = await _nonTeacher.GetByAsync(
+                n =>
+                n.NonTeacherID.Contains(searchquery) ||
+                n.FirstName.Contains(searchquery) ||
+                n.MiddleName.Contains(searchquery) ||
+                n.LastName.Contains(searchquery) ||
+                n.Duty.Contains(searchquery)||
+                n.PhoneNumber.Contains(searchquery) ||
+                n.StateOfOrigin.Contains(searchquery) ||
+                n.LGA.Contains(searchquery) ||
+                n.Email.Contains(searchquery) ||
+                n.Address.Contains(searchquery)
+            );
+
+            if (teachers == null && nonTeachers == null)
             {
                 throw new ArgumentNullException("No Result");
             }
 
-            return teachers.Select(MapTeacherToModel);
+            if (nonTeachers == null && teachers != null)
+            {
+                return teachers.Select(MapTeacherToModel);
+            }
+            if (teachers == null && nonTeachers != null)
+            {
+                return nonTeachers.Select(MapNonTeacherToModel);
+            }
+
+            var teacherModel = teachers.Select(MapTeacherToModel);
+
+            var nonTeacherModel = nonTeachers.Select(MapNonTeacherToModel);
+
+            var staff = teacherModel.Concat(nonTeacherModel);
+
+            return staff;
+
         }
 
 
 
-        public async Task<IEnumerable<TeacherModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId)
+        public async Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId)
         {
            
             // GET By Class
@@ -289,20 +409,49 @@ namespace SchoolManagementSystem.Service.Implementation
         }
 
 
-        public async Task<TeacherModel> UpdateTeachingStaff(string TeacherID, TeachingStaffModel teachingStaff)
+        public async Task<StaffResponseModel> UpdateTeachingStaff(SelectStaffModel selectStaffModel, StaffModel staffModel)
         {
-            var existingTeacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
-
-            if (existingTeacher == null)
+           
+            switch (selectStaffModel.StaffCategory)
             {
-                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database"); 
-	        }
+                case StaffCategory.Teaching:
+                    var existingTeacher = await _teacher.GetSingleByAsync(t => t.TeacherID == selectStaffModel.StaffID);
 
-            MapModelToTeacher(teachingStaff, existingTeacher);
+                    if (existingTeacher == null)
+                    {
+                        throw new ArgumentNullException($"TeacherID {selectStaffModel.StaffID} not found in database");
+                    }
 
-            await _unitOfWork.SaveChangesAsync();
+                    MapModelToTeacher(staffModel, existingTeacher);
 
-            return MapTeacherToModel(existingTeacher);
+                    await _unitOfWork.SaveChangesAsync();
+
+                    return MapTeacherToModel(existingTeacher);
+
+                case StaffCategory.NonTeaching:
+                    var existingNonTeacher = await _nonTeacher.GetSingleByAsync(n => n.NonTeacherID == selectStaffModel.StaffID);
+
+                    if (existingNonTeacher == null)
+                    {
+                        throw new ArgumentNullException($"Non-TeacherID {selectStaffModel.StaffID} not found in database");
+                    }
+
+                    MapModelToNonTeacher(staffModel, existingNonTeacher);
+
+                    await _unitOfWork.SaveChangesAsync();
+
+                    return MapNonTeacherToModel(existingNonTeacher);
+
+                default:
+                    throw new ArgumentNullException($"Invalid Selection");
+            }
+        }
+
+        public async Task<IEnumerable<StaffResponseModel>> GetAllNonTeachingStaff()
+        {
+            var nonTeachers = await _nonTeacher.GetAllAsync();
+
+            return nonTeachers.Select(MapNonTeacherToModel);
         }
 
 
@@ -311,7 +460,10 @@ namespace SchoolManagementSystem.Service.Implementation
 
 
 
-        private Teacher MapModelToTeacher(TeachingStaffModel teachingStaffModel , Teacher existingTeacher = null) 
+
+
+
+        private Teacher MapModelToTeacher(StaffModel teachingStaffModel , Teacher existingTeacher = null) 
 	    {
       
             if (existingTeacher == null)
@@ -319,17 +471,8 @@ namespace SchoolManagementSystem.Service.Implementation
                 existingTeacher = new Teacher();
             }
 
-            var dateTime = DateTime.Now;
+         
 
-            if (teachingStaffModel.DateOfBirth == dateTime)
-            {
-
-                
-
-                DateTime existingdOB = existingTeacher.DateOfBirth;
-
-                teachingStaffModel.DateOfBirth = existingdOB;
-            }
 
             existingTeacher.FirstName = teachingStaffModel.FirstName ?? existingTeacher.FirstName;
             existingTeacher.LastName = teachingStaffModel.LastName ?? existingTeacher.LastName;
@@ -346,17 +489,39 @@ namespace SchoolManagementSystem.Service.Implementation
                   
         }
 
-        private TeacherModel MapTeacherToModel(Teacher teacher)
+        private NonTeacher MapModelToNonTeacher(StaffModel StaffModel, NonTeacher existingNonTeacher = null)
         {
 
-            
+            if (existingNonTeacher == null)
+            {
+                existingNonTeacher = new NonTeacher();
+            }
 
-           
 
-            return new TeacherModel
+
+
+            existingNonTeacher.FirstName = StaffModel.FirstName ;
+            existingNonTeacher.LastName = StaffModel.LastName ;
+            existingNonTeacher.MiddleName = StaffModel.MiddleName ;
+            existingNonTeacher.Address = StaffModel.Address ;
+            existingNonTeacher.LGA = StaffModel.LGA ;
+            existingNonTeacher.StateOfOrigin = StaffModel.StateOfOrigin ;
+            existingNonTeacher.Email = StaffModel.Email ;
+            existingNonTeacher.PhoneNumber = StaffModel.PhoneNumber ;
+            existingNonTeacher.DateOfBirth = StaffModel.DateOfBirth;
+            //existingNonTeacher.ImageUrl = StaffModel.ImageUrl ;
+
+            return existingNonTeacher;
+
+        }
+
+        private StaffResponseModel MapTeacherToModel(Teacher teacher)
+        {
+
+            return new StaffResponseModel
             {
                 id = teacher.Id,
-                TeacherID = teacher.TeacherID,
+                StaffID = teacher.TeacherID,
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 MiddleName = teacher.MiddleName,
@@ -366,12 +531,35 @@ namespace SchoolManagementSystem.Service.Implementation
                 Email = teacher.Email,
                 PhoneNumber = teacher.PhoneNumber,
                 DateOfBirth = teacher.DateOfBirth,
-                //ImageUrl = teacher.ImageUrl,
+                ImageUrl = teacher.ImageUrl,
                 DateRegistered = teacher.DateRegistered
               };
         
    
 	    }
+
+        private StaffResponseModel MapNonTeacherToModel(NonTeacher nonTeacher)
+        {
+
+            return new StaffResponseModel
+            {
+                id = nonTeacher.Id,
+                StaffID = nonTeacher.NonTeacherID,
+                FirstName = nonTeacher.FirstName,
+                LastName = nonTeacher.LastName,
+                MiddleName = nonTeacher.MiddleName,
+                Address = nonTeacher.Address,
+                LGA = nonTeacher.LGA,
+                StateOfOrigin = nonTeacher.StateOfOrigin,
+                Email = nonTeacher.Email,
+                PhoneNumber = nonTeacher.PhoneNumber,
+                DateOfBirth = nonTeacher.DateOfBirth,
+                ImageUrl = nonTeacher.ImageUrl,
+                DateRegistered = nonTeacher.DateRegistered
+            };
+
+
+        }
 
         private TeacherWithSubjectAndClassModel MapTeacherToSubjectAndClassModel(Teacher teacher)
         {
@@ -400,14 +588,14 @@ namespace SchoolManagementSystem.Service.Implementation
             return randomNumber.ToString();
         }
 
-        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaff()
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaff()
         {
             var teachers = await _teacher.GetAllAsync();
 
             return teachers.Select(MapTeacherToModel);
         }
 
-        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificClass(Class Class)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificClass(Class Class)
         {
             var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(Class));
 
@@ -419,7 +607,7 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToModel);
         }
 
-        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
         {
             var teachers = await _teacher.GetByAsync(t => t.Subjects.Contains(Subject));
 
@@ -431,7 +619,7 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToModel);
         }
 
-        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
         {
             var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) && t.Subjects.Contains(classAndSubjectModel.Subject));
 
@@ -443,7 +631,7 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToModel);
         }
 
-        private async Task<IEnumerable<TeacherModel>> GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
         {
             var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) || t.Subjects.Contains(classAndSubjectModel.Subject));
 
@@ -455,6 +643,9 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToModel);
         }
 
+       
+
+     
     }
 }
 

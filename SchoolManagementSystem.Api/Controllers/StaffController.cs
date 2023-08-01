@@ -15,15 +15,15 @@ namespace SchoolManagementSystem.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TeachingStaffController : ControllerBase
+    public class StaffController : ControllerBase
     {
-        private readonly ITeachingStaff _teachingStaff;
+        private readonly IStaff _teachingStaff;
 
         private readonly ITenantResolver _tenantService;
 
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public TeachingStaffController(ITeachingStaff teachingStaff, IHttpContextAccessor contextAccessor, ITenantResolver tenantService)
+        public StaffController(IStaff teachingStaff, IHttpContextAccessor contextAccessor, ITenantResolver tenantService)
         {
             _teachingStaff = teachingStaff;
             _contextAccessor = contextAccessor;
@@ -35,7 +35,7 @@ namespace SchoolManagementSystem.Api.Controllers
         public async Task<IActionResult> AddingTeachingStaff([FromForm]StaffModel teachingStaff)
         {
 
-            var teacher = await _teachingStaff.TeachingStaff(teachingStaff);
+            var teacher = await _teachingStaff.AddingStaff(teachingStaff);
 
             return CreatedAtAction(nameof(GetTeachingStaffByTeacherID), new { teacher.id }, teacher);
         }
@@ -101,7 +101,7 @@ namespace SchoolManagementSystem.Api.Controllers
         [HttpGet("teachingStaffByTeacherID")]
         public async Task<IActionResult> GetTeachingStaffByTeacherID([Required] string TeacherID)
         {
-            var teacher = await _teachingStaff.GetTeachingStaffByTeacherID(TeacherID);
+            var teacher = await _teachingStaff.GetStaffByStaffID(TeacherID);
 
             return Ok(teacher);
         }
@@ -130,7 +130,7 @@ namespace SchoolManagementSystem.Api.Controllers
         [HttpDelete("teacherID")]
         public async Task<IActionResult> DeleteTeachingByID(string TeacherID)
         {
-            await _teachingStaff.DeleteTeachingByID(TeacherID);
+            await _teachingStaff.DeleteStaffByID(TeacherID);
 
             return NoContent();
         }

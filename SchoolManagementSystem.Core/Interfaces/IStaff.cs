@@ -5,14 +5,14 @@ using SchoolManagementSystem.Core.Entities;
 
 namespace SchoolManagementSystem.Core.Interfaces
 {
-    public interface ITeachingStaff
+    public interface IStaff
     {
 
-        Task<TeacherModel> TeachingStaff(StaffModel teachingStaff);
+        Task<StaffResponseModel> AddingStaff(StaffModel teachingStaff);
 
-        Task<TeacherModel> UpdateTeachingStaff(string TeacherID, StaffModel teachingStaff);
+        Task<StaffResponseModel> UpdateTeachingStaff(SelectStaffModel selectStaffModel, StaffModel teachingStaff);
 
-        Task<IEnumerable<TeacherModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId);
+        Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId);
 
         Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly();
 
@@ -20,15 +20,17 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<IEnumerable<Class>> GetAllClassOfTeacherByTeacherID(string TeacherID);
 
-        Task<TeacherModel> GetTeachingStaffByTeacherID(string TeacherID);
+        Task<IEnumerable<StaffResponseModel>> GetAllNonTeachingStaff();
 
-        Task<IEnumerable<TeacherModel>> SearchFuntion(string searchquery, string tenancyId); 
+        Task<StaffResponseModel> GetStaffByStaffID(SelectStaffModel selectStaffModel);
+
+        Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery, string tenancyId); 
 
         Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel); 
 
         Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass);
 
-        Task<bool> DeleteTeachingByID(string TeacherID);
+        Task<bool> DeleteStaffByID(SelectStaffModel selectStaffModel);
 
     }
 }
