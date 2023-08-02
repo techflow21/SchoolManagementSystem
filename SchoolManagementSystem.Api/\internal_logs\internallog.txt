@@ -136,3 +136,222 @@
    at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
    at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
    at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
+2023-08-02 14:19:58.2257 Info Message Template Auto Format enabled
+2023-08-02 14:19:58.3295 Debug ScanAssembly('NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2023-08-02 14:19:58.4268 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2023-08-02 14:19:58.4329 Debug Setting 'NLog.Targets.FileTarget.fileName' to '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:19:58.4414 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.4445 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:19:58.4492 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:19:58.4495 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.4495 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:19:58.4532 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.4537 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:19:58.4544 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.4544 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:19:58.4544 Info Adding target FileTarget(Name=logfile)
+2023-08-02 14:19:58.4564 Debug Registered target logfile: NLog.Targets.FileTarget
+2023-08-02 14:19:58.4564 Trace ParseRulesElement
+2023-08-02 14:19:58.5234 Debug Watching file-filter 'nlog.config' in directory: /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api
+2023-08-02 14:19:58.5250 Debug --- NLog configuration dump ---
+2023-08-02 14:19:58.5250 Debug Targets:
+2023-08-02 14:19:58.5271 Debug FileTarget(Name=logfile)
+2023-08-02 14:19:58.5274 Debug Rules:
+2023-08-02 14:19:58.5298 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-08-02 14:19:58.5298 Debug --- End of NLog configuration dump ---
+2023-08-02 14:19:58.5343 Trace FindReachableObject<System.Object>:
+2023-08-02 14:19:58.5353 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-08-02 14:19:58.5365 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2023-08-02 14:19:58.5381 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-08-02 14:19:58.5394 Trace   Scanning Property FileName '/logs/${shortdate}_logfile.txt' NLog.Layouts
+2023-08-02 14:19:58.5394 Trace   Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:19:58.5394 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:19:58.5404 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5404 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:19:58.5404 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5414 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts
+2023-08-02 14:19:58.5414 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:19:58.5414 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:19:58.5414 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:19:58.5414 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5414 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:19:58.5424 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5424 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:19:58.5424 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2023-08-02 14:19:58.5434 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2023-08-02 14:19:58.5434 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2023-08-02 14:19:58.5461 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/nlog.config
+2023-08-02 14:19:58.5499 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-08-02 14:19:58.5541 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-08-02 14:19:58.5545 Trace Initializing Layout Renderer: ${message}
+2023-08-02 14:19:58.5545 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:19:58.5545 Trace Initializing Layout Renderer: ${level}
+2023-08-02 14:19:58.5555 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:19:58.5555 Trace Initializing Layout Renderer: ${longdate}
+2023-08-02 14:19:58.5555 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-08-02 14:19:58.5593 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.5596 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:19:58.5596 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:19:58.5596 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:19:58.5596 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5603 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:19:58.5603 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5603 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:19:58.5627 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:19:58.5627 Trace Initializing Layout Renderer: ${shortdate}
+2023-08-02 14:19:58.5627 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:19:58.5627 Trace Initializing /logs/${shortdate}_logfile.txt
+2023-08-02 14:19:58.5636 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:19:58.5636 Trace Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:19:58.5636 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:19:58.5636 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5636 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:19:58.5645 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:19:58.5645 Trace Initializing FileTarget(Name=logfile)
+2023-08-02 14:19:58.5674 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-08-02 14:19:58.5674 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-08-02 14:19:58.5674 Trace  Scanning Property FileName '/logs/${shortdate}_logfile.txt' NLog.Layouts
+2023-08-02 14:19:58.5674 Trace  Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:19:58.5674 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts
+2023-08-02 14:19:58.5674 Trace  Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:19:58.5684 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2023-08-02 14:19:58.5684 Trace FileTarget(Name=logfile) has 2 layouts
+2023-08-02 14:19:58.5699 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-08-02 14:21:02.3006 Info Message Template Auto Format enabled
+2023-08-02 14:21:02.3585 Debug ScanAssembly('NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2023-08-02 14:21:02.4482 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2023-08-02 14:21:02.4527 Debug Setting 'NLog.Targets.FileTarget.fileName' to '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:21:02.4596 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.4629 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:21:02.4660 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:21:02.4663 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.4663 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:21:02.4702 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.4702 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:21:02.4702 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.4702 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:21:02.4716 Info Adding target FileTarget(Name=logfile)
+2023-08-02 14:21:02.4727 Debug Registered target logfile: NLog.Targets.FileTarget
+2023-08-02 14:21:02.4734 Trace ParseRulesElement
+2023-08-02 14:21:02.5333 Debug Watching file-filter 'nlog.config' in directory: /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api
+2023-08-02 14:21:02.5348 Debug --- NLog configuration dump ---
+2023-08-02 14:21:02.5348 Debug Targets:
+2023-08-02 14:21:02.5364 Debug FileTarget(Name=logfile)
+2023-08-02 14:21:02.5364 Debug Rules:
+2023-08-02 14:21:02.5386 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-08-02 14:21:02.5386 Debug --- End of NLog configuration dump ---
+2023-08-02 14:21:02.5425 Trace FindReachableObject<System.Object>:
+2023-08-02 14:21:02.5431 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-08-02 14:21:02.5431 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2023-08-02 14:21:02.5457 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-08-02 14:21:02.5476 Trace   Scanning Property FileName '/logs/${shortdate}_logfile.txt' NLog.Layouts
+2023-08-02 14:21:02.5476 Trace   Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:21:02.5483 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:21:02.5483 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5483 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:21:02.5483 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5492 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts
+2023-08-02 14:21:02.5492 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:21:02.5492 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:21:02.5492 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:21:02.5492 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5492 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:21:02.5502 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5502 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:21:02.5502 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2023-08-02 14:21:02.5512 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2023-08-02 14:21:02.5512 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2023-08-02 14:21:02.5539 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/nlog.config
+2023-08-02 14:21:02.5567 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-08-02 14:21:02.5609 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-08-02 14:21:02.5613 Trace Initializing Layout Renderer: ${message}
+2023-08-02 14:21:02.5613 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:21:02.5613 Trace Initializing Layout Renderer: ${level}
+2023-08-02 14:21:02.5624 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:21:02.5624 Trace Initializing Layout Renderer: ${longdate}
+2023-08-02 14:21:02.5624 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-08-02 14:21:02.5653 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.5653 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:21:02.5653 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:21:02.5653 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-08-02 14:21:02.5661 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5661 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-08-02 14:21:02.5661 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5661 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-08-02 14:21:02.5681 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:21:02.5681 Trace Initializing Layout Renderer: ${shortdate}
+2023-08-02 14:21:02.5681 Trace Initializing Layout Renderer: ${literal}
+2023-08-02 14:21:02.5681 Trace Initializing /logs/${shortdate}_logfile.txt
+2023-08-02 14:21:02.5681 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-08-02 14:21:02.5692 Trace Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:21:02.5692 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic
+2023-08-02 14:21:02.5692 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5692 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-08-02 14:21:02.5692 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-08-02 14:21:02.5692 Trace Initializing FileTarget(Name=logfile)
+2023-08-02 14:21:02.5736 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-08-02 14:21:02.5736 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-08-02 14:21:02.5741 Trace  Scanning Property FileName '/logs/${shortdate}_logfile.txt' NLog.Layouts
+2023-08-02 14:21:02.5741 Trace  Scanning SimpleLayout '/logs/${shortdate}_logfile.txt'
+2023-08-02 14:21:02.5741 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts
+2023-08-02 14:21:02.5741 Trace  Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-08-02 14:21:02.5741 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2023-08-02 14:21:02.5741 Trace FileTarget(Name=logfile) has 2 layouts
+2023-08-02 14:21:02.5764 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-08-02 14:21:36.0504 Debug Targets configured when LogLevel >= Debug for Logger: SchoolManagementSystem.Infrastructure.Configurations.LoggerManager
+2023-08-02 14:21:36.0513 Debug Logger SchoolManagementSystem.Infrastructure.Configurations.LoggerManager [Debug] => logfile
+2023-08-02 14:21:36.0513 Debug Logger SchoolManagementSystem.Infrastructure.Configurations.LoggerManager [Info] => logfile
+2023-08-02 14:21:36.0513 Debug Logger SchoolManagementSystem.Infrastructure.Configurations.LoggerManager [Warn] => logfile
+2023-08-02 14:21:36.0513 Debug Logger SchoolManagementSystem.Infrastructure.Configurations.LoggerManager [Error] => logfile
+2023-08-02 14:21:36.0521 Debug Logger SchoolManagementSystem.Infrastructure.Configurations.LoggerManager [Fatal] => logfile
+2023-08-02 14:21:36.0855 Debug FileTarget(Name=logfile): Preparing for new file '/logs/2023-08-02_logfile.txt'
+2023-08-02 14:21:36.1055 Debug FileTarget(Name=logfile): Creating file appender: /logs/2023-08-02_logfile.txt
+2023-08-02 14:21:36.1190 Trace FileTarget(Name=logfile): Opening /logs/2023-08-02_logfile.txt with allowFileSharedWriting=False
+2023-08-02 14:21:36.1282 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: /logs/2023-08-02_logfile.txt
+2023-08-02 14:21:36.1442 Warn FileTarget(Name=logfile): Failed to create file appender: /logs/2023-08-02_logfile.txt Exception: System.IO.IOException: Read-only file system : '/logs'
+   at System.IO.FileSystem.CreateDirectory(String fullPath)
+   at System.IO.Directory.CreateDirectory(String path)
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
+2023-08-02 14:21:36.3475 Debug FileTarget(Name=logfile): Creating file appender: /logs/2023-08-02_logfile.txt
+2023-08-02 14:21:36.3475 Trace FileTarget(Name=logfile): Opening /logs/2023-08-02_logfile.txt with allowFileSharedWriting=False
+2023-08-02 14:21:36.3487 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: /logs/2023-08-02_logfile.txt
+2023-08-02 14:21:36.3492 Warn FileTarget(Name=logfile): Failed to create file appender: /logs/2023-08-02_logfile.txt Exception: System.IO.IOException: Read-only file system : '/logs'
+   at System.IO.FileSystem.CreateDirectory(String fullPath)
+   at System.IO.Directory.CreateDirectory(String path)
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
+2023-08-02 14:23:00.4851 Debug FileTarget(Name=logfile): Creating file appender: /logs/2023-08-02_logfile.txt
+2023-08-02 14:23:00.4869 Trace FileTarget(Name=logfile): Opening /logs/2023-08-02_logfile.txt with allowFileSharedWriting=False
+2023-08-02 14:23:00.4869 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: /logs/2023-08-02_logfile.txt
+2023-08-02 14:23:00.4876 Warn FileTarget(Name=logfile): Failed to create file appender: /logs/2023-08-02_logfile.txt Exception: System.IO.IOException: Read-only file system : '/logs'
+   at System.IO.FileSystem.CreateDirectory(String fullPath)
+   at System.IO.Directory.CreateDirectory(String path)
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
+2023-08-02 14:25:29.7790 Debug FileTarget(Name=logfile): Creating file appender: /logs/2023-08-02_logfile.txt
+2023-08-02 14:25:29.7790 Trace FileTarget(Name=logfile): Opening /logs/2023-08-02_logfile.txt with allowFileSharedWriting=False
+2023-08-02 14:25:29.7790 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: /logs/2023-08-02_logfile.txt
+2023-08-02 14:25:29.7800 Warn FileTarget(Name=logfile): Failed to create file appender: /logs/2023-08-02_logfile.txt Exception: System.IO.IOException: Read-only file system : '/logs'
+   at System.IO.FileSystem.CreateDirectory(String fullPath)
+   at System.IO.Directory.CreateDirectory(String path)
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
+2023-08-02 14:25:29.7800 Debug FileTarget(Name=logfile): Creating file appender: /logs/2023-08-02_logfile.txt
+2023-08-02 14:25:29.7800 Trace FileTarget(Name=logfile): Opening /logs/2023-08-02_logfile.txt with allowFileSharedWriting=False
+2023-08-02 14:25:29.7800 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: /logs/2023-08-02_logfile.txt
+2023-08-02 14:25:29.7810 Warn FileTarget(Name=logfile): Failed to create file appender: /logs/2023-08-02_logfile.txt Exception: System.IO.IOException: Read-only file system : '/logs'
+   at System.IO.FileSystem.CreateDirectory(String fullPath)
+   at System.IO.Directory.CreateDirectory(String path)
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender..ctor(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.SingleProcessFileAppender.Factory.NLog.Internal.FileAppenders.IFileAppenderFactory.Open(String fileName, ICreateFileParameters parameters)
+   at NLog.Internal.FileAppenders.FileAppenderCache.CreateAppender(String fileName, Int32 freeSpot)
