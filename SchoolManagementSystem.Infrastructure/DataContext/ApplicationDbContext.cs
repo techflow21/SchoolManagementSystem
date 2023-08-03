@@ -36,6 +36,8 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<TeacherClass> TeacherClasses { get; set; }
+        public DbSet<TeacherSubject> TeacherSubjects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -112,6 +114,14 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
             modelBuilder.Entity<Contact>().HasKey(e => e.Id);
             modelBuilder.Entity<Contact>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<Contact>().HasQueryFilter(e => e.TenantId == _tenant.Name);
+
+            modelBuilder.Entity<TeacherClass>().HasKey(e => e.Id);
+            modelBuilder.Entity<TeacherClass>().Property(e => e.TenantId).IsRequired();
+            modelBuilder.Entity<TeacherClass>().HasQueryFilter(e => e.TenantId == _tenant.Name);
+
+            modelBuilder.Entity<TeacherSubject>().HasKey(e => e.Id);
+            modelBuilder.Entity<TeacherSubject>().Property(e => e.TenantId).IsRequired();
+            modelBuilder.Entity<TeacherSubject>().HasQueryFilter(e => e.TenantId == _tenant.Name);
         }
 
         //public DbSet<Goods> Goods { get; set; } = null!;

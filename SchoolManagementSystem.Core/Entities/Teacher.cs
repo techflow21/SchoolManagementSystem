@@ -12,8 +12,8 @@
         public string? Email { get; set; }
         public string? PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public ICollection<Subject> Subjects { get; set; } = null;
-        public ICollection<Class> Classes { get; set; } = null;
+        public ICollection<TeacherSubject> TeacherSubject { get; set; } = null;
+        public ICollection<TeacherClass> TeacherClass { get; set; } = null;
         public string? ImageUrl { get; set; }
         public DateTime DateRegistered { get; set; }
     }

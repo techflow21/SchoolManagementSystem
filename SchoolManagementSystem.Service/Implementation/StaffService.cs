@@ -1,12 +1,8 @@
-﻿using System;
-using System.Linq;
-using Microsoft.Data.SqlClient.Server;
-using SchoolManagementSystem.Core.DTOs.Requests;
+﻿using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
 using SchoolManagementSystem.Core.Enums;
 using SchoolManagementSystem.Core.Interfaces;
-using SchoolManagementSystem.Service.ExternalServices;
 
 namespace SchoolManagementSystem.Service.Implementation
 {
@@ -20,6 +16,10 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private readonly IRepository<Subject> _subject;
 
+        private readonly IRepository<TeacherClass> _teacherClass;
+
+        private readonly IRepository<TeacherSubject> _teacherSubject;
+
         private readonly IUnitOfWork _unitOfWork;
 
         private readonly IPhotoUploadService _photoUploadService;
@@ -30,6 +30,10 @@ namespace SchoolManagementSystem.Service.Implementation
             _teacher = unitOfWork.GetRepository<Teacher>();
 
             _nonTeacher = unitOfWork.GetRepository<NonTeacher>();
+
+            _teacherClass = unitOfWork.GetRepository<TeacherClass>();
+
+            _teacherSubject = unitOfWork.GetRepository<TeacherSubject>();
 
             _unitOfWork = unitOfWork;
 
@@ -94,58 +98,9 @@ namespace SchoolManagementSystem.Service.Implementation
             }
         }
 
-        public async Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass)
-        {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addClass.TeacherID);
+        
 
-            var checkClass = await _class.GetSingleByAsync(c => c.Id == addClass.DataID);
-
-            if (checkClass == null)
-            {
-                throw new ArgumentNullException($"ClassID {addClass.DataID} was not found in database");
-            }
-
-            if (teacher == null)
-            {
-                throw new ArgumentNullException($"TeacherID {addClass.TeacherID} was not found in database");
-            }
-
-            
-
-            teacher.Classes.Add(checkClass);
-
-            
-
-            await _unitOfWork.SaveChangesAsync();
-
-            return MapTeacherToSubjectAndClassModel(teacher);
-
-
-        }
-
-        public async Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
-        {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == addSubjectModel.TeacherID);
-
-            var subject = await _subject.GetSingleByAsync(c => c.Id == addSubjectModel.DataID);
-
-            if (subject == null)
-            {
-                throw new ArgumentNullException($"ClassID {addSubjectModel.DataID} was not found in database");
-            }
-
-            if (teacher == null)
-            {
-                throw new ArgumentNullException($"TeacherID {addSubjectModel.TeacherID} not found in database");
-            }
-
-          
-            teacher.Subjects.Add(subject);
-
-            await _unitOfWork.SaveChangesAsync();
-
-            return MapTeacherToSubjectAndClassModel(teacher);
-        }
+       
 
 
         public async Task<bool> DeleteStaffByID(SelectStaffModel selectStaffModel)
@@ -195,37 +150,10 @@ namespace SchoolManagementSystem.Service.Implementation
             }
         }
 
-        public async Task<IEnumerable<Class>> GetAllClassOfTeacherByTeacherID(string TeacherID)
-        {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
-
-            if (teacher == null)
-            {
-                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
-            }
-
-            return teacher.Classes;
-        }
-
-        public async Task<IEnumerable<Subject>> GetAllSubjectOfTeacherByTeacherID(string TeacherID)
-        {
-            var teacher = await _teacher.GetSingleByAsync(t => t.TeacherID == TeacherID);
-
-            if (teacher == null)
-            {
-                throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
-            }
-
-            return teacher.Subjects;
-        }
+        
 
        
-        public async Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly()
-        {
-            var teachers = await _teacher.GetAllAsync();
-
-            return teachers.Select(MapTeacherToSubjectAndClassModel);
-        }
+       
 
         public async Task<StaffResponseModel> GetStaffByStaffID(SelectStaffModel selectStaff)
         {
@@ -261,28 +189,15 @@ namespace SchoolManagementSystem.Service.Implementation
 
 
 
-        public async Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery, string tenancyID)
+        public async Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery)
         {
-            var @class = new Class
-            {
-                TenantId = tenancyID,
-                Name = searchquery
-            };
-
-            var subject = new Subject
-            {
-                TenantId = tenancyID,
-                Name = searchquery
-            };
-            
+           
             var teachers = await _teacher.GetByAsync(
                 t =>
                 t.TeacherID.Contains(searchquery) ||
                 t.FirstName.Contains(searchquery) ||
                 t.MiddleName.Contains(searchquery) ||
                 t.LastName.Contains(searchquery) ||
-                t.Classes.Contains(@class) ||
-                t.Subjects.Contains(subject) ||
                 t.PhoneNumber.Contains(searchquery) ||
                 t.StateOfOrigin.Contains(searchquery) ||
                 t.LGA.Contains(searchquery) ||
@@ -330,51 +245,32 @@ namespace SchoolManagementSystem.Service.Implementation
 
 
 
-        public async Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId)
+        public async Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff)
         {
            
             // GET By Class
             if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject))
             {
-                var @class = new Class
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Class
-                };
-                return await GetAllTeachingStaffOfSpecificClass(@class);
+           
+                return await GetAllTeachingStaffOfSpecificClass(sortingTeachingStaff.Class);
             }
 
             // GET By Subject
             if (string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject))
             {
 
-                var subject = new Subject
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Subject
-                };
-                return await GetAllTeachingStaffOfSpecificSubject(subject);
+                return await GetAllTeachingStaffOfSpecificSubject(sortingTeachingStaff.Subject);
             }
 
             // Get by Class or Subject
             if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject) && sortingTeachingStaff.strictlyBoth == false)
             {
-                var @class = new Class
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Class
-                };
-                var subject = new Subject
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Subject
-                };
 
                 var classAndSubject = new ClassAndSubjectModel
                 {
-                    Class = @class,
-                    Subject = subject
-                    
+                    Class = sortingTeachingStaff.Class,
+                    Subject = sortingTeachingStaff.Subject
+
                 };
 
                 return await GetAllTeachingStaffOfSpecificSubject_Or_Class(classAndSubject);
@@ -383,21 +279,10 @@ namespace SchoolManagementSystem.Service.Implementation
             // Get by Class And Subject
             if (!string.IsNullOrWhiteSpace(sortingTeachingStaff.Class) && !string.IsNullOrWhiteSpace(sortingTeachingStaff.Subject) && sortingTeachingStaff.strictlyBoth == true)
             {
-                var @class = new Class
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Class
-                };
-                var subject = new Subject
-                {
-                    TenantId = tenancyId,
-                    Name = sortingTeachingStaff.Subject
-                };
-
                 var classAndSubject = new ClassAndSubjectModel
                 {
-                    Class = @class,
-                    Subject = subject
+                    Class = sortingTeachingStaff.Class,
+                    Subject = sortingTeachingStaff.Subject
 
                 };
 
@@ -453,15 +338,6 @@ namespace SchoolManagementSystem.Service.Implementation
 
             return nonTeachers.Select(MapNonTeacherToModel);
         }
-
-
-
-
-
-
-
-
-
 
         private Teacher MapModelToTeacher(StaffModel teachingStaffModel , Teacher existingTeacher = null) 
 	    {
@@ -561,20 +437,6 @@ namespace SchoolManagementSystem.Service.Implementation
 
         }
 
-        private TeacherWithSubjectAndClassModel MapTeacherToSubjectAndClassModel(Teacher teacher)
-        {
-            return new TeacherWithSubjectAndClassModel
-            {
-                TeacherID = teacher.TeacherID,
-		        FirstName = teacher.FirstName,
-		        LastName = teacher.LastName,
-		        MiddleName = teacher.MiddleName,
-		        Classes = teacher.Classes,
-		        subjects = teacher.Subjects
-		         
-	        };
-
-	    }
 
 
 
@@ -595,37 +457,70 @@ namespace SchoolManagementSystem.Service.Implementation
             return teachers.Select(MapTeacherToModel);
         }
 
-        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificClass(Class Class)
-        {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(Class));
 
-            if (teachers == null)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificClass(string Class)
+        {
+            var @class = await _class.GetSingleByAsync(c => c.Name.Contains(Class));
+         
+            if (@class == null)
             {
-                throw new ArgumentNullException($"No Teacher with Class {Class} was not found in database");
+                throw new ArgumentNullException($"No Class with name {Class} was found in database");
             }
 
-            return teachers.Select(MapTeacherToModel);
+            var teacherClass = await _teacherClass.GetByAsync(tc => tc.ClassId == @class.Id);
+
+            if (teacherClass == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Class {Class} was found in database");
+            }
+
+            var teacherList = await GetTeachersFromTeacherClass(teacherClass);
+
+
+            return teacherList.Select(MapTeacherToModel);
+
         }
 
-        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject(Subject Subject)
+        private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject(string Subject)
         {
-            var teachers = await _teacher.GetByAsync(t => t.Subjects.Contains(Subject));
+            var subject = await _subject.GetSingleByAsync(c => c.Name.Contains(Subject));
 
-            if (teachers == null)
+            if (subject == null)
             {
-                throw new ArgumentNullException($"No Teacher with Subject {Subject} was not found in database");
+                throw new ArgumentNullException($"No Subject with name {Subject} was found in database");
             }
 
-            return teachers.Select(MapTeacherToModel);
+            var teacherSubject = await _teacherSubject.GetByAsync(ts => ts.SubjectId == subject.Id);
+
+            if (teacherSubject == null)
+            {
+                throw new ArgumentNullException($"No Teacher with Subject {Subject} was found in database");
+            }
+
+            var teacherList = await GetTeachersFromTeacherSubject(teacherSubject);
+
+
+            return teacherList.Select(MapTeacherToModel);
         }
 
         private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubjectAndClass(ClassAndSubjectModel classAndSubjectModel)
         {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) && t.Subjects.Contains(classAndSubjectModel.Subject));
+            var @class = await _class.GetSingleByAsync(c => c.Name.Contains(classAndSubjectModel.Class));
+            var teacherClass = await _teacherClass.GetByAsync(tc => tc.ClassId == @class.Id);
+            var subject = await _class.GetSingleByAsync(c => c.Name.Contains(classAndSubjectModel.Subject));
+            var teacherSubject = await _teacherSubject.GetByAsync(ts => ts.SubjectId == subject.Id);
+
+
+
+            var teacherListFromSubject = await GetTeachersFromTeacherSubject(teacherSubject);
+
+            var teacherListFromClass = await GetTeachersFromTeacherClass(teacherClass);
+
+            var teachers = teacherListFromClass.Intersect(teacherListFromSubject);
 
             if (teachers == null)
             {
-                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
+                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} or Class {classAndSubjectModel.Class} was not found in database");
             }
 
             return teachers.Select(MapTeacherToModel);
@@ -633,19 +528,102 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
         {
-            var teachers = await _teacher.GetByAsync(t => t.Classes.Contains(classAndSubjectModel.Class) || t.Subjects.Contains(classAndSubjectModel.Subject));
+            var @class = await _class.GetSingleByAsync(c => c.Name.Contains(classAndSubjectModel.Class));
+            var teacherClass = await _teacherClass.GetByAsync(tc => tc.ClassId == @class.Id);
+            var subject = await _class.GetSingleByAsync(c => c.Name.Contains(classAndSubjectModel.Subject));
+            var teacherSubject = await _teacherSubject.GetByAsync(ts => ts.SubjectId == subject.Id);
+
+           
+
+            var teacherListFromSubject = await GetTeachersFromTeacherSubject(teacherSubject);
+
+            var teacherListFromClass = await GetTeachersFromTeacherClass(teacherClass);
+
+            var teachers = teacherListFromClass.Concat(teacherListFromSubject);
 
             if (teachers == null)
             {
-                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was not found in database");
+                throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} or Class {classAndSubjectModel.Class} was not found in database");
             }
 
             return teachers.Select(MapTeacherToModel);
         }
 
-       
 
-     
+        private async Task<IEnumerable<Teacher>> GetTeachersFromTeacherClass(IEnumerable<TeacherClass> teacherClass)
+        {
+            var TeacherList = teacherClass.Select(teacherClass => teacherClass.TeacherId).ToList();
+
+
+
+            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.TeacherID == teacherId));
+            var teacherResults = await Task.WhenAll(getTeacherTasks);
+
+            return teacherResults.ToList();
+
+        }
+
+        private async Task<IEnumerable<Teacher>> GetTeachersFromTeacherSubject(IEnumerable<TeacherSubject> teacherSubject)
+        {
+            var TeacherList = teacherSubject.Select(teacherSubject => teacherSubject.TeacherId).ToList();
+
+
+
+            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.TeacherID == teacherId));
+            var teacherResults = await Task.WhenAll(getTeacherTasks);
+
+            return teacherResults.ToList();
+
+        }
+
+
+
     }
 }
 
+
+//private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStcaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
+//{
+//    var teachers = await _teacherClass
+//        .GetByAsync(tc => tc.Class.Name.Contains(classAndSubjectModel.Class) || tc.Teacher.Subjects.Any(ts => ts.Name.Contains(classAndSubjectModel.Subject)),
+//            include: q => q.Include(tc => tc.Teacher).ThenInclude(t => t.Subjects))
+//        .ToListAsync();
+
+//    if (teachers == null || !teachers.Any())
+//    {
+//        throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} or Class {classAndSubjectModel.Class} was found in the database");
+//    }
+
+//    return teachers.Select(MapTeacherToModel);
+//}
+
+//private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStjaffOfSpecificSubject_Or_Class(ClassAndSubjectModel classAndSubjectModel)
+//{
+//    var teachers = await _teacherClass
+//        .GetByAsync(tc => tc.Class.Name.Contains(classAndSubjectModel.Class) ||
+//                          _teacherSubject.Any(ts => ts.subject.Name.Contains(classAndSubjectModel.Subject) && ts.TeacherId == tc.TeacherId),
+//            include: q => q.Include(tc => tc.Teacher))
+//        .ToListAsync();
+
+//    if (teachers == null || !teachers.Any())
+//    {
+//        throw new ArgumentNullException($"No Teacher with Subject {classAndSubjectModel.Subject} or Class {classAndSubjectModel.Class} was found in the database");
+//    }
+
+//    return teachers.Select(MapTeacherToModel);
+//}
+//private async Task<IEnumerable<StaffResponseModel>> GetAllTeachingStaffOfSpecificSubject_And_Class(ClassAndSubjectModel classAndSubjectModel)
+//{
+//    var teachers = await _teacherClass
+//        .GetByAsync(tc => tc.Class.Name.Contains(classAndSubjectModel.Class) &&
+//                          _teacherSubject.Any(ts => ts.Subject.Name.Contains(classAndSubjectModel.Subject) && ts.TeacherId == tc.TeacherId),
+//            include: q => q.Include(tc => tc.Teacher))
+//        .ToListAsync();
+
+//    if (teachers == null || !teachers.Any())
+//    {
+//        throw new ArgumentNullException($"No Teacher with both Subject {classAndSubjectModel.Subject} and Class {classAndSubjectModel.Class} was found in the database");
+//    }
+
+//    return teachers.Select(MapTeacherToModel);
+//}

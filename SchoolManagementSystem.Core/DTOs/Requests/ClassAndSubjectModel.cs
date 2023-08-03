@@ -5,9 +5,9 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
 {
     public class ClassAndSubjectModel
     {
-        public Class Class { get; set; }
+        public string Class { get; set; }
 
-        public Subject Subject { get; set; }
+        public string Subject { get; set; }
     }
 }
 

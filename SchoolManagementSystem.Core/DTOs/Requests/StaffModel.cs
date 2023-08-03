@@ -28,14 +28,14 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
         public string StateOfOrigin { get; set; } = null;
 
         [Required(ErrorMessage = "Email is Required")]
-        [RegularExpression(pattern: "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/", ErrorMessage = "Email format is wrong")]
+        [RegularExpression(pattern: @"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Email format is wrong")]
         public string Email { get; set; } = null!;
 
         [Required(ErrorMessage = "Phone Number is Required")]
         [RegularExpression(pattern: @"^\d+$", ErrorMessage = "Numbers only")]
         public string PhoneNumber { get; set; } = null!;
 
-        [Required(ErrorMessage = "Date of Birth is Required")]
+        [Required(ErrorMessage = "Date of Birth is Required eg:8/2/2023 3:21:27 PM")]
         public DateTime DateOfBirth { get; set; }
 
         public string? Duty { get; set; }// should be made required at frontend

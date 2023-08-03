@@ -36,6 +36,8 @@ public static class ServiceExtensions
         services.AddScoped<IClassService, ClassService>();
         services.AddScoped<ISubjectService, SubjectService>();
 
+        services.AddScoped<ITeacherClassAndSubject, TeacherClassAndSubjectService>();
+
 
     }
 }

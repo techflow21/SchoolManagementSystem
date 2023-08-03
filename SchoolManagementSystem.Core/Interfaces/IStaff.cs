@@ -12,23 +12,13 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<StaffResponseModel> UpdateTeachingStaff(SelectStaffModel selectStaffModel, StaffModel teachingStaff);
 
-        Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff, string tenancyId);
-
-        Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly();
-
-        Task<IEnumerable<Subject>> GetAllSubjectOfTeacherByTeacherID(string TeacherID);
-
-        Task<IEnumerable<Class>> GetAllClassOfTeacherByTeacherID(string TeacherID);
+        Task<IEnumerable<StaffResponseModel>> SortingTeachingStaff(SortingTeachingStaffModel sortingTeachingStaff);     
 
         Task<IEnumerable<StaffResponseModel>> GetAllNonTeachingStaff();
 
         Task<StaffResponseModel> GetStaffByStaffID(SelectStaffModel selectStaffModel);
 
-        Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery, string tenancyId); 
-
-        Task<TeacherWithSubjectAndClassModel> AssignSubjectByTeacherID(AddDataModel addSubjectModel); 
-
-        Task<TeacherWithSubjectAndClassModel> AssignClassByTeacherID(AddDataModel addClass);
+        Task<IEnumerable<StaffResponseModel>> SearchFuntion(string searchquery); 
 
         Task<bool> DeleteStaffByID(SelectStaffModel selectStaffModel);
 
