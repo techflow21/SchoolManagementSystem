@@ -95,7 +95,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var teacherSubject = new TeacherSubject()
             {
-                TeacherId = teacher.TeacherID,
+                TeacherID = teacher.TeacherID,
 
                 SubjectId = subject.Id
             };
@@ -203,7 +203,7 @@ namespace SchoolManagementSystem.Service.Implementation
         private async Task<IEnumerable<Subject>> GetSubjects(string teacherId)
         {
 
-            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherId == teacherId);
+            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherID == teacherId);
 
             if (teacherSubject == null)
             {

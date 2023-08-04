@@ -56,16 +56,11 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TeacherId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TenantId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TeacherId");
 
                     b.ToTable("Classes");
                 });
@@ -525,9 +520,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Property<int?>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TeacherId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TenantId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -535,8 +527,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex("TeacherId");
 
                     b.ToTable("Subjects");
                 });
@@ -549,8 +539,8 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Duration")
-                        .HasColumnType("int");
+                    b.Property<TimeSpan?>("Duration")
+                        .HasColumnType("time");
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
@@ -634,6 +624,68 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.ToTable("Teachers");
                 });
 
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherClass", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TeacherId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeachersId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenantId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassId");
+
+                    b.HasIndex("TeachersId");
+
+                    b.ToTable("TeacherClasses");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherSubject", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TeacherID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeachersId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenantId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubjectId");
+
+                    b.HasIndex("TeachersId");
+
+                    b.ToTable("TeacherSubjects");
+                });
+
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Attendance", b =>
                 {
                     b.HasOne("SchoolManagementSystem.Core.Entities.Class", "Class")
@@ -643,13 +695,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Class");
-                });
-
-            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Class", b =>
-                {
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", null)
-                        .WithMany("Classes")
-                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.ClientPayment", b =>
@@ -707,10 +752,6 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.HasOne("SchoolManagementSystem.Core.Entities.Student", null)
                         .WithMany("Subjects")
                         .HasForeignKey("StudentId");
-
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", null)
-                        .WithMany("Subjects")
-                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Teacher", b =>
@@ -718,6 +759,49 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.HasOne("SchoolManagementSystem.Core.Entities.SMSMessage", null)
                         .WithMany("Teachers")
                         .HasForeignKey("SMSMessageId");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherClass", b =>
+                {
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Class", "Classes")
+                        .WithMany("TeacherClass")
+                        .HasForeignKey("ClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teachers")
+                        .WithMany("TeacherClass")
+                        .HasForeignKey("TeachersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classes");
+
+                    b.Navigation("Teachers");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherSubject", b =>
+                {
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Subject", "Subjects")
+                        .WithMany("TeacherSubject")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teachers")
+                        .WithMany("TeacherSubject")
+                        .HasForeignKey("TeachersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Subjects");
+
+                    b.Navigation("Teachers");
+                });
+
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Class", b =>
+                {
+                    b.Navigation("TeacherClass");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Result", b =>
@@ -737,11 +821,16 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Navigation("Subjects");
                 });
 
+            modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Subject", b =>
+                {
+                    b.Navigation("TeacherSubject");
+                });
+
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Teacher", b =>
                 {
-                    b.Navigation("Classes");
+                    b.Navigation("TeacherClass");
 
-                    b.Navigation("Subjects");
+                    b.Navigation("TeacherSubject");
                 });
 #pragma warning restore 612, 618
         }

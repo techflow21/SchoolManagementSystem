@@ -565,7 +565,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private async Task<IEnumerable<Teacher>> GetTeachersFromTeacherSubject(IEnumerable<TeacherSubject> teacherSubject)
         {
-            var TeacherList = teacherSubject.Select(teacherSubject => teacherSubject.TeacherId).ToList();
+            var TeacherList = teacherSubject.Select(teacherSubject => teacherSubject.TeacherID).ToList();
 
 
 
