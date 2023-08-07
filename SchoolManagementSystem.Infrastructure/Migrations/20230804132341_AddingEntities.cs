@@ -281,8 +281,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TeacherId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TeachersId = table.Column<int>(type: "int", nullable: false),
+                    TeacherId = table.Column<int>(type: "int", nullable: false),
                     ClassId = table.Column<int>(type: "int", nullable: false),
                     TenantId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -296,8 +295,8 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_TeacherClasses_Teachers_TeachersId",
-                        column: x => x.TeachersId,
+                        name: "FK_TeacherClasses_Teachers_TeacherId",
+                        column: x => x.TeacherId,
                         principalTable: "Teachers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -461,9 +460,9 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                 column: "ClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TeacherClasses_TeachersId",
+                name: "IX_TeacherClasses_TeacherId",
                 table: "TeacherClasses",
-                column: "TeachersId");
+                column: "TeacherId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teachers_SMSMessageId",

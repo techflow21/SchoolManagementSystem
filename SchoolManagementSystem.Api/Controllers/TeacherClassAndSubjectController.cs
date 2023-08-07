@@ -46,13 +46,13 @@ namespace SchoolManagementSystem.Api.Controllers
         [HttpGet("allClassesOfTeacherByTeacherID")]
         public async Task<IActionResult> GetAllClassOfTeacherByTeacherID([Required] string TeacherID)
         {
-            var classes = await _teacherClassAndSubject.GetAllSubjectOfTeacherByTeacherID(TeacherID);
+            var classes = await _teacherClassAndSubject.GetAllClassOfTeacherByTeacherID(TeacherID);
 
             return Ok(classes);
         }
 
 
-        [HttpPut("addSubject")]
+        [HttpPost("addSubject")]
         public async Task<IActionResult> AssignSubjectByTeacherID(AddDataModel addSubjectModel)
         {
 
@@ -61,7 +61,7 @@ namespace SchoolManagementSystem.Api.Controllers
             return Ok(teacher);
         }
 
-        [HttpPut("addClass")]
+        [HttpPost("addClass")]
         public async Task<IActionResult> AssignClassByTeacherID(AddDataModel addClassModel)
         {
 

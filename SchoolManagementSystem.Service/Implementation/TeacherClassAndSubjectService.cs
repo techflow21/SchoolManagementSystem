@@ -60,9 +60,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var teacherClass = new TeacherClass()
             {
-
-
-                TeacherId = teacher.TeacherID,
+                TeacherId = teacher.Id,
 
                 ClassId = checkClass.Id
 
@@ -135,7 +133,7 @@ namespace SchoolManagementSystem.Service.Implementation
                 throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
-            return await GetClasses(TeacherID);
+            return await GetClasses(teacher.Id);
         }
 
         public async Task<IEnumerable<Subject>> GetAllSubjectOfTeacherByTeacherID(string TeacherID)
@@ -165,7 +163,7 @@ namespace SchoolManagementSystem.Service.Implementation
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 MiddleName = teacher.MiddleName,
-                Classes  = await GetClasses(teacher.TeacherID),
+                Classes  = await GetClasses(teacher.Id),
                 subjects = await GetSubjects(teacher.TeacherID)
 
             };
@@ -182,7 +180,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
         //}
 
-        private async Task<IEnumerable<Class>> GetClasses(string teacherId)
+        private async Task<IEnumerable<Class>> GetClasses(int teacherId)
         {
             var teacherClasses = await _teacherClass.Where(tc => tc.TeacherId == teacherId);
 

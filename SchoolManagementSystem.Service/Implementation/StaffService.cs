@@ -556,7 +556,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
 
 
-            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.TeacherID == teacherId));
+            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.Id == teacherId));
             var teacherResults = await Task.WhenAll(getTeacherTasks);
 
             return teacherResults.ToList();

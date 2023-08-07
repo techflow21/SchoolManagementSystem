@@ -12,7 +12,7 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230803230444_AddingEntities")]
+    [Migration("20230804132341_AddingEntities")]
     partial class AddingEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -637,11 +637,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Property<int>("ClassId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TeacherId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TeachersId")
+                    b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<string>("TenantId")
@@ -652,7 +648,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.HasIndex("TeachersId");
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("TeacherClasses");
                 });
@@ -765,21 +761,21 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherClass", b =>
                 {
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Class", "Classes")
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Class", "Class")
                         .WithMany("TeacherClass")
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teachers")
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teacher")
                         .WithMany("TeacherClass")
-                        .HasForeignKey("TeachersId")
+                        .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Classes");
+                    b.Navigation("Class");
 
-                    b.Navigation("Teachers");
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherSubject", b =>
