@@ -2,12 +2,11 @@
 {
     public class TeacherSubject : EntityBase
     {
-       
-
-        public string TeacherID { get; set; }
-        public Teacher Teachers { get; set; }
+      
+        public int TeacherId { get; set; }
+        public Teacher Teacher { get; set; }
 
         public int SubjectId { get; set; }
-        public Subject Subjects { get; set; }
+        public Subject Subject { get; set; }
     }
 }

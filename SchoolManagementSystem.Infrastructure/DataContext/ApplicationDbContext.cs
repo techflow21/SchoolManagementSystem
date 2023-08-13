@@ -69,9 +69,18 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
                 .HasForeignKey(t => t.TeacherId)
                 .IsRequired();
 
+            modelBuilder.Entity<Teacher>().HasMany(t => t.TeacherSubject)
+                .WithOne(t => t.Teacher)
+                .HasForeignKey(t => t.TeacherId)
+                .IsRequired();
+
             modelBuilder.Entity<Subject>().HasKey(e => e.Id);
             modelBuilder.Entity<Subject>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<Subject>().HasQueryFilter(e => e.TenantId == _tenant.Name);
+            modelBuilder.Entity<Subject>().HasMany(c => c.TeacherSubject)
+                .WithOne(c => c.Subject)
+                .HasForeignKey(c => c.SubjectId)
+                .IsRequired();
 
             modelBuilder.Entity<NonTeacher>().HasKey(e => e.Id);
             modelBuilder.Entity<NonTeacher>().Property(e => e.TenantId).IsRequired();

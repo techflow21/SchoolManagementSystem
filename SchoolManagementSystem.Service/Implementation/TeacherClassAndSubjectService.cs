@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
 using SchoolManagementSystem.Core.Entities;
+using SchoolManagementSystem.Core.Exceptions;
 using SchoolManagementSystem.Core.Interfaces;
 using SchoolManagementSystem.Infrastructure.Repository;
 using SchoolManagementSystem.Service.ExternalServices;
@@ -66,6 +67,13 @@ namespace SchoolManagementSystem.Service.Implementation
 
             };
 
+            var existingTeacherClass = await _teacherClass.GetSingleByAsync(tc => tc.TeacherId == teacherClass.TeacherId && tc.ClassId == teacherClass.ClassId);
+
+            if (existingTeacherClass != null)
+            {
+                throw new DuplicateEntryException($"Teacher have already been assigned to this class");        
+            }
+
             await _teacherClass.AddAsync(teacherClass);
 
             await _unitOfWork.SaveChangesAsync();
@@ -93,11 +101,18 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var teacherSubject = new TeacherSubject()
             {
-                TeacherID = teacher.TeacherID,
+                TeacherId = teacher.Id,
 
                 SubjectId = subject.Id
             };
+            var existingTeacherSubject = await _teacherSubject.GetSingleByAsync(ts => ts.TeacherId == teacherSubject.TeacherId && ts.SubjectId == teacherSubject.SubjectId);
 
+            if (existingTeacherSubject != null)
+            {
+                throw new DuplicateEntryException($"Teacher have already been assigned to this Subject");
+
+                
+            }
 
             await _teacherSubject.AddAsync(teacherSubject);
 
@@ -113,12 +128,13 @@ namespace SchoolManagementSystem.Service.Implementation
 
             
 
-            IEnumerable<Task<TeacherWithSubjectAndClassModel>> tasks = teachers.Select(async teacher => await MapTeacherToSubjectAndClassModelAsync(teacher));
+            IEnumerable<Task<TeacherWithSubjectAndClassModel>> tasks =  teachers.Select(async teacher => await MapTeacherToSubjectAndClassModelAsync(teacher));
 
-            Task<TeacherWithSubjectAndClassModel>[] taskArray = tasks.ToArray();
+            //Task<TeacherWithSubjectAndClassModel>[] taskArray = tasks.ToArray();
 
-            IEnumerable<TeacherWithSubjectAndClassModel> results = await Task.WhenAll(taskArray);
+            IEnumerable<TeacherWithSubjectAndClassModel> results = await Task.WhenAll(tasks);
 
+            Task.WaitAll();
 
             return results;
         }
@@ -145,7 +161,7 @@ namespace SchoolManagementSystem.Service.Implementation
                 throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
-            return await GetSubjects(TeacherID);
+            return await GetSubjects(teacher.Id);
         }
 
 
@@ -164,7 +180,7 @@ namespace SchoolManagementSystem.Service.Implementation
                 LastName = teacher.LastName,
                 MiddleName = teacher.MiddleName,
                 Classes  = await GetClasses(teacher.Id),
-                subjects = await GetSubjects(teacher.TeacherID)
+                subjects = await GetSubjects(teacher.Id)
 
             };
 
@@ -191,17 +207,21 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var classList = teacherClasses.Select(teacherClass => teacherClass.ClassId).ToList();
 
-            var getClassesTasks = classList.Select(classId => _class.GetSingleByAsync(c => c.Id == classId));
+            var getClassesTasks =  classList.Select(classId => _class.GetSingleByAsync(c => c.Id == classId));
             var classResults = await Task.WhenAll(getClassesTasks);
+
+            Task.WaitAll();
+
+            
 
             return classResults.ToList();
         }
 
 
-        private async Task<IEnumerable<Subject>> GetSubjects(string teacherId)
+        private async Task<IEnumerable<Subject>> GetSubjects(int teacherId)
         {
 
-            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherID == teacherId);
+            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherId == teacherId);
 
             if (teacherSubject == null)
             {
@@ -214,6 +234,7 @@ namespace SchoolManagementSystem.Service.Implementation
 
             var getSubjectTasks = SubjectList.Select(subjectId => _subject.GetSingleByAsync(s => s.Id == subjectId));
             var subjectsResults = await Task.WhenAll(getSubjectTasks);
+            Task.WaitAll();
 
             return subjectsResults.ToList();
 

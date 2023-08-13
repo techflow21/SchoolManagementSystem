@@ -565,11 +565,11 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private async Task<IEnumerable<Teacher>> GetTeachersFromTeacherSubject(IEnumerable<TeacherSubject> teacherSubject)
         {
-            var TeacherList = teacherSubject.Select(teacherSubject => teacherSubject.TeacherID).ToList();
+            var TeacherList = teacherSubject.Select(teacherSubject => teacherSubject.TeacherId).ToList();
 
 
 
-            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.TeacherID == teacherId));
+            var getTeacherTasks = TeacherList.Select(teacherId => _teacher.GetSingleByAsync(t => t.Id == teacherId));
             var teacherResults = await Task.WhenAll(getTeacherTasks);
 
             return teacherResults.ToList();

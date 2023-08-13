@@ -31,7 +31,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
             var staff = await _Staff.AddingStaff(StaffModel);
 
-            return CreatedAtAction(nameof(GetStaffByTeacherID), new { selectStaffModel = new SelectStaffModel() { StaffID = staff.StaffID , StaffCategory = StaffModel.StaffCategory} }, staff);
+            return CreatedAtAction(nameof(StaffByTeacherID), new { selectStaffModel = new SelectStaffModel() { StaffID = staff.StaffID , StaffCategory = StaffModel.StaffCategory} }, staff);
         }
 
         [HttpPut("updateTeachingStaff")]
@@ -60,7 +60,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
         [HttpGet("AllNonTeachingStaff")]
-        public async Task<IActionResult> GetAllNonTeachingStaff()
+        public async Task<IActionResult> AllNonTeachingStaff()
         {
             var nonTeachers = await _Staff.GetAllNonTeachingStaff();
 
@@ -69,7 +69,7 @@ namespace SchoolManagementSystem.Api.Controllers
 
 
         [HttpGet("teachingStaffByTeacherID")]
-        public async Task<IActionResult> GetStaffByTeacherID([Required] SelectStaffModel selectStaffModel)
+        public async Task<IActionResult> StaffByTeacherID([Required][FromQuery] SelectStaffModel selectStaffModel)
         {
             var teacher = await _Staff.GetStaffByStaffID(selectStaffModel);
 

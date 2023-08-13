@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-namespace SchoolManagementSystem.Core.Entities
+﻿namespace SchoolManagementSystem.Core.Entities
 {
     
     public class TeacherClass : EntityBase

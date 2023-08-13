@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManagementSystem.Infrastructure.DataContext;
 
@@ -11,9 +12,10 @@ using SchoolManagementSystem.Infrastructure.DataContext;
 namespace SchoolManagementSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230811210926_EditingSubjectEntities2")]
+    partial class EditingSubjectEntities2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -662,7 +664,11 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<string>("TeacherID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeachersId")
                         .HasColumnType("int");
 
                     b.Property<string>("TenantId")
@@ -673,7 +679,7 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.HasIndex("TeacherId");
+                    b.HasIndex("TeachersId");
 
                     b.ToTable("TeacherSubjects");
                 });
@@ -774,21 +780,21 @@ namespace SchoolManagementSystem.Infrastructure.Migrations
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.TeacherSubject", b =>
                 {
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Subject", "Subject")
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Subject", "Subjects")
                         .WithMany("TeacherSubject")
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teacher")
+                    b.HasOne("SchoolManagementSystem.Core.Entities.Teacher", "Teachers")
                         .WithMany("TeacherSubject")
-                        .HasForeignKey("TeacherId")
+                        .HasForeignKey("TeachersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Subject");
+                    b.Navigation("Subjects");
 
-                    b.Navigation("Teacher");
+                    b.Navigation("Teachers");
                 });
 
             modelBuilder.Entity("SchoolManagementSystem.Core.Entities.Class", b =>
