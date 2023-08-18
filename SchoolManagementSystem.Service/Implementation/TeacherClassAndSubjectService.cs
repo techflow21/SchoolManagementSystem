@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Core.DTOs.Requests;
 using SchoolManagementSystem.Core.DTOs.Responses;
@@ -14,7 +15,6 @@ namespace SchoolManagementSystem.Service.Implementation
     {
         private readonly IRepository<Teacher> _teacher;
 
-        private readonly IRepository<NonTeacher> _nonTeacher;
 
         private readonly IRepository<Class> _class;
 
@@ -29,8 +29,6 @@ namespace SchoolManagementSystem.Service.Implementation
         public TeacherClassAndSubjectService(IUnitOfWork unitOfWork)
         {
             _teacher = unitOfWork.GetRepository<Teacher>();
-
-            _nonTeacher = unitOfWork.GetRepository<NonTeacher>();
 
             _teacherClass = unitOfWork.GetRepository<TeacherClass>();
 
@@ -149,7 +147,9 @@ namespace SchoolManagementSystem.Service.Implementation
                 throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
-            return await GetClasses(teacher.Id);
+            var teacherModel = await MapTeacherToSubjectAndClassModelAsync(teacher);
+
+            return teacherModel.Classes;
         }
 
         public async Task<IEnumerable<Subject>> GetAllSubjectOfTeacherByTeacherID(string TeacherID)
@@ -161,7 +161,9 @@ namespace SchoolManagementSystem.Service.Implementation
                 throw new ArgumentNullException($"TeacherID {TeacherID} not found in database");
             }
 
-            return await GetSubjects(teacher.Id);
+            var teacherModel = await MapTeacherToSubjectAndClassModelAsync(teacher);
+
+            return teacherModel.subjects;
         }
 
 
@@ -170,8 +172,34 @@ namespace SchoolManagementSystem.Service.Implementation
 
         private async Task<TeacherWithSubjectAndClassModel> MapTeacherToSubjectAndClassModelAsync(Teacher teacher)
         {
-            
+            var teacherClasses = await _teacherClass.Where(tc => tc.TeacherId == teacher.Id);
 
+            //if (teacherClasses == null)
+            //{
+            //    //return Enumerable.Empty<Class>();
+            //};
+
+            var classList = teacherClasses.Select(teacherClass => teacherClass.ClassId).ToList();
+
+            var getClassesTasks = classList.Select(classId => _class.GetSingleByAsync(c => c.Id == classId));
+            //var classResults = await Task.WhenAll(getClassesTasks);
+
+            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherId == teacher.Id);
+
+            //if (teacherSubject == null)
+            //{
+            //    //return Enumerable.Empty<Subject>();
+            //};
+
+            var SubjectList = teacherSubject.Select(teacherSubject => teacherSubject.SubjectId).ToList();
+
+
+
+            var getSubjectTasks = SubjectList.Select(subjectId => _subject.GetSingleByAsync(s => s.Id == subjectId));
+
+            (IEnumerable<Subject> subjectsResults, IEnumerable<Class> classResults) = ( await Task.WhenAll(getSubjectTasks), await Task.WhenAll(getClassesTasks));
+
+            Task.WaitAll();
 
             return new TeacherWithSubjectAndClassModel
             {
@@ -179,8 +207,8 @@ namespace SchoolManagementSystem.Service.Implementation
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
                 MiddleName = teacher.MiddleName,
-                Classes  = await GetClasses(teacher.Id),
-                subjects = await GetSubjects(teacher.Id)
+                Classes  = classResults.ToList(),
+                subjects = subjectsResults.ToList()
 
             };
 
@@ -196,49 +224,49 @@ namespace SchoolManagementSystem.Service.Implementation
 
         //}
 
-        private async Task<IEnumerable<Class>> GetClasses(int teacherId)
-        {
-            var teacherClasses = await _teacherClass.Where(tc => tc.TeacherId == teacherId);
+        //private async Task<IEnumerable<Class>> GetClasses(IEnumerable<TeacherClass> teacherClasses)
+        //{
+        //    //var teacherClasses = await _teacherClass.Where(tc => tc.TeacherId == teacherId);
 
-            if (teacherClasses == null)
-            {
-                return Enumerable.Empty<Class>();
-            };
+        //    if (teacherClasses == null)
+        //    {
+        //        return Enumerable.Empty<Class>();
+        //    };
 
-            var classList = teacherClasses.Select(teacherClass => teacherClass.ClassId).ToList();
+        //    var classList =  teacherClasses.Select(teacherClass => teacherClass.ClassId).ToList();
 
-            var getClassesTasks =  classList.Select(classId => _class.GetSingleByAsync(c => c.Id == classId));
-            var classResults = await Task.WhenAll(getClassesTasks);
+        //    var getClassesTasks =  classList.Select(classId => _class.GetSingleByAsync(c => c.Id == classId));
+        //    var classResults = await Task.WhenAll(getClassesTasks);
 
-            Task.WaitAll();
+        //    Task.WaitAll();
 
             
 
-            return classResults.ToList();
-        }
+        //    return classResults.ToList();
+        //}
 
 
-        private async Task<IEnumerable<Subject>> GetSubjects(int teacherId)
-        {
+        //private async Task<IEnumerable<Subject>> GetSubjects(int teacherId)
+        //{
 
-            var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherId == teacherId);
+        //    var teacherSubject = await _teacherSubject.Where(ts => ts.TeacherId == teacherId);
 
-            if (teacherSubject == null)
-            {
-                return  Enumerable.Empty <Subject>();
-            };
+        //    if (teacherSubject == null)
+        //    {
+        //        return  Enumerable.Empty <Subject>();
+        //    };
 
-            var SubjectList = teacherSubject.Select(teacherSubject => teacherSubject.SubjectId).ToList();
+        //    var SubjectList = teacherSubject.Select(teacherSubject => teacherSubject.SubjectId).ToList();
 
           
 
-            var getSubjectTasks = SubjectList.Select(subjectId => _subject.GetSingleByAsync(s => s.Id == subjectId));
-            var subjectsResults = await Task.WhenAll(getSubjectTasks);
-            Task.WaitAll();
+        //    var getSubjectTasks = SubjectList.Select(subjectId => _subject.GetSingleByAsync(s => s.Id == subjectId));
+        //    var subjectsResults = await Task.WhenAll(getSubjectTasks);
+        //    Task.WaitAll();
 
-            return subjectsResults.ToList();
+        //    return subjectsResults.ToList();
 
-        }
+        //}
 
         
     }
