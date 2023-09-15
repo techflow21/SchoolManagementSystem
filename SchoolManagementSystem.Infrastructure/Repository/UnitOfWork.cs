@@ -10,10 +10,15 @@ namespace SchoolManagementSystem.Infrastructure.Repository
         private Dictionary<Type, object> _repositories;
         private readonly TContext _context;
 
+        
+
         public UnitOfWork(TContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
+       
+        
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {

@@ -13,9 +13,9 @@ namespace SchoolManagementSystem.Core.Interfaces
 
         Task<IEnumerable<TeacherWithSubjectAndClassModel>> GetAllTeachingStaffWithClassAndSubjectOnly();
 
-        Task<IEnumerable<Subject>> GetAllSubjectOfTeacherByTeacherID(string TeacherID);
+        Task<IEnumerable<GetSubjectModel>> GetAllSubjectOfTeacherByTeacherID(string TeacherID);
 
-        Task<IEnumerable<Class>> GetAllClassOfTeacherByTeacherID(string TeacherID);
+        Task<IEnumerable<GetClassModel>> GetAllClassOfTeacherByTeacherID(string TeacherID);
     }
 }
 

@@ -13,9 +13,9 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
 
         public string LastName { get; set; }
 
-        public IEnumerable<Subject> subjects { get; set; }
+        public IEnumerable<GetSubjectModel> subjects { get; set; }
 
-        public IEnumerable<Class> Classes { get; set; }
+        public IEnumerable<GetClassModel> Classes { get; set; }
     }
 }
 
