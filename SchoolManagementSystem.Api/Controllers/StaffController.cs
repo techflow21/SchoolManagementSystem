@@ -68,7 +68,7 @@ namespace SchoolManagementSystem.Api.Controllers
         }
 
 
-        [HttpGet("teachingStaffByTeacherID")]
+        [HttpGet("StaffByTeacherID")]
         public async Task<IActionResult> StaffByTeacherID([Required][FromQuery] SelectStaffModel selectStaffModel)
         {
             var teacher = await _Staff.GetStaffByStaffID(selectStaffModel);

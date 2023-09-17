@@ -17,8 +17,7 @@ namespace SchoolManagementSystem.Core.DTOs.Responses
         public DateTime DateOfBirth { get; set; }
         public string ImageUrl { get; set; }
         public DateTime DateRegistered { get; set; }
-
-
+        public string Role { get; set; }
     }
 }
 

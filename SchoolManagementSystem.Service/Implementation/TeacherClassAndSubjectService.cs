@@ -231,7 +231,7 @@ namespace SchoolManagementSystem.Service.Implementation
             }
 
             // If no teacher with the specified TeacherID is found, return an empty list.
-            return Enumerable.Empty<GetSubjectModel>(); ;
+            return Enumerable.Empty<GetSubjectModel>(); 
 
 
 
