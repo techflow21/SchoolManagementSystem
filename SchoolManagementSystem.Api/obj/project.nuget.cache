@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TCl8h+56ZA0W24Un18wy5TDnXRikozeP4NMsREDJLuWbLUzbsGsHPVqiwTVcwEnGJ4fqphc7VttOkHILEyLAfQ==",
+  "dgSpecHash": "eI2ADLJnylYrGDxPpvFGgf9K3uCE/X48xZmSA2VX7rPr+nGmoSrHLwaiGxL1uJPDhRSOeNhfp+jtDXxJsS+G/w==",
   "success": true,
   "projectFilePath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Api/SchoolManagementSystem.Api.csproj",
   "expectedPackageFiles": [
@@ -249,7 +249,10 @@
     "/Users/mac/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "/Users/mac/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
+    "/Users/mac/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.netcore.app.host.osx-x64/6.0.22/microsoft.netcore.app.host.osx-x64.6.0.22.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eGzs0OpaqQ6OCWMqKfuYYb97oRQiyhdMpMi5OkaG+Uvxf29uo1DBFq0jkjvn3KWLt+hKBGv4crukejQZV2pWtw==",
+  "dgSpecHash": "AkLRf4+ffEoFRR8yv5Myxu2NC6biXV8djbs6ED5Pt30yollh8iOE941TWX5LxCm1XK/sZR306Jm/HtDBMrvIAg==",
   "success": true,
   "projectFilePath": "/Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Service/SchoolManagementSystem.Service.csproj",
   "expectedPackageFiles": [
@@ -70,7 +70,9 @@
     "/Users/mac/.nuget/packages/system.text.encoding.codepages/7.0.0/system.text.encoding.codepages.7.0.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
-    "/Users/mac/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
+    "/Users/mac/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512"
   ],
   "logs": []
 }
