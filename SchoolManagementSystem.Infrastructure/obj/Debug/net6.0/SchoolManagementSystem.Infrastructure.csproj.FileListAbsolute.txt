@@ -66,3 +66,105 @@ C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Infrastructure\obj\Debug
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
 C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\John\Documents\JUST PRACTICE\MAJOR WORKS(TASKS)\MULTI-TENANT\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\Admin\Downloads\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\HP\Desktop\SchoolPr\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\MyPC\Source\Repos\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\HP\Desktop\SCH\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.deps.json
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.csproj.CopyComplete
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\refint\SchoolManagementSystem.Infrastructure.dll
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.pdb
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\SchoolManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\Admin\Desktop\SchoolManagementSystem\SchoolManagementSystem.Infrastructure\obj\Debug\net6.0\ref\SchoolManagementSystem.Infrastructure.dll

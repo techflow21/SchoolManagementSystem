@@ -1,11 +1,11 @@
 ﻿using System;
 namespace SchoolManagementSystem.Core.DTOs.Responses
 {
-    public class TeacherModel
+    public class StaffResponseModel
     
     {
         public int id { get; set; }
-        public string TeacherID { get; set; }
+        public string StaffID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }

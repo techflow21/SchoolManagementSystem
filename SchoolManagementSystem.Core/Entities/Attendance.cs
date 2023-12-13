@@ -1,6 +1,4 @@
-﻿using SchoolManagementSystem.Core.Enums;
-
-namespace SchoolManagementSystem.Core.Entities
+﻿namespace SchoolManagementSystem.Core.Entities
 {
     public class Attendance : EntityBase
     {

@@ -5,11 +5,9 @@ namespace SchoolManagementSystem.Core.DTOs.Requests
 {
     public class AddDataModel
     {
-        public string TeacherID { get; set; }
+        public string TeacherID { get; set; } = null!;
 
-        public Class addClass{ get; set; }
-
-        public Subject subject { get; set; }
+        public int DataID { get; set; } 
     }
 }
 

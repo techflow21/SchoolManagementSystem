@@ -22,27 +22,99 @@ C:/Users/HP/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
 /Users/mac/Desktop/Bezao Project/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.deps.json
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.AssemblyReference.cache
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfoInputs.cache
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfo.cs
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
-C:\Users\HP\Desktop\ResolvedPR\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.deps.json
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.AssemblyReference.cache
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfoInputs.cache
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfo.cs
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
-C:\Users\HP\Desktop\FreshResolve\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/ResolvedPR/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/FreshResolve/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/John/Documents/JUST PRACTICE/MAJOR WORKS(TASKS)/MULTI-TENANT/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/Admin/Downloads/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/SchoolPr/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/MyPC/Source/Repos/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/HP/Desktop/SCH/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.deps.json
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/bin/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.AssemblyInfo.cs
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/refint/SchoolManagementSystem.Core.dll
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/SchoolManagementSystem.Core.pdb
+C:/Users/Admin/Desktop/SchoolManagementSystem/SchoolManagementSystem.Core/obj/Debug/net6.0/ref/SchoolManagementSystem.Core.dll

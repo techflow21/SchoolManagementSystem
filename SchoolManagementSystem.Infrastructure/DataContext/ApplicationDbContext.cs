@@ -6,7 +6,7 @@ using SchoolManagementSystem.Core.Interfaces;
 
 namespace SchoolManagementSystem.Infrastructure.DataContext
 {
-    public class ApplicationDbContext : DbContext
+    public sealed class ApplicationDbContext : DbContext
     {
         private readonly Tenant _tenant;
 
@@ -31,10 +31,11 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
         public DbSet<Salary> Salaries { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Result> Results { get; set; }
-        public DbSet<SMSMessage> SMSMessages { get; set; }
+        public DbSet<SMSMessage> SmsMessages { get; set; }
         public DbSet<ClientPayment> ClientPayments { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Report> Reports { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -71,11 +72,11 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
             modelBuilder.Entity<SchoolFee>().HasKey(e => e.Id);
             modelBuilder.Entity<SchoolFee>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<SchoolFee>().Property(e =>  e.FeeAmount).HasPrecision(18, 2);
-            modelBuilder.Entity<SchoolFee>().Property(e =>  e.TotalFees).HasPrecision(18, 2);
             modelBuilder.Entity<SchoolFee>().HasQueryFilter(e => e.TenantId == _tenant.Name);
 
             modelBuilder.Entity<Expense>().HasKey(e => e.Id);
             modelBuilder.Entity<Expense>().Property(e => e.TenantId).IsRequired();
+            modelBuilder.Entity<Expense>().Property(e => e.Amount).HasPrecision(18, 2);
             modelBuilder.Entity<Expense>().HasQueryFilter(e => e.TenantId == _tenant.Name);
 
             modelBuilder.Entity<Salary>().HasKey(e => e.Id);
@@ -107,6 +108,10 @@ namespace SchoolManagementSystem.Infrastructure.DataContext
             modelBuilder.Entity<Report>().HasKey(e => e.Id);
             modelBuilder.Entity<Report>().Property(e => e.TenantId).IsRequired();
             modelBuilder.Entity<Report>().HasQueryFilter(e => e.TenantId == _tenant.Name);
+
+            modelBuilder.Entity<Contact>().HasKey(e => e.Id);
+            modelBuilder.Entity<Contact>().Property(e => e.TenantId).IsRequired();
+            modelBuilder.Entity<Contact>().HasQueryFilter(e => e.TenantId == _tenant.Name);
         }
 
         //public DbSet<Goods> Goods { get; set; } = null!;
