@@ -1,1 +1,7 @@
 # School Management System
+
+
+
+
+
+
