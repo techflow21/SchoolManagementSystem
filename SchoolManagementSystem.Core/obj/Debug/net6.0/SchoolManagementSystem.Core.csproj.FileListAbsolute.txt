@@ -11,3 +11,16 @@ C:\Users\HP\Desktop\SchMgtSytem-api\SchoolManagementSystem\SchoolManagementSyste
 C:\Users\HP\Desktop\SchMgtSytem-api\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
 C:\Users\HP\Desktop\SchMgtSytem-api\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
 C:\Users\HP\Desktop\SchMgtSytem-api\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.deps.json
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\bin\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.AssemblyInfo.cs
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.sourcelink.json
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\refint\SchoolManagementSystem.Core.dll
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\SchoolManagementSystem.Core.pdb
+C:\Users\HP\Desktop\SCH\SchMgtSystem_API\SchoolManagementSystem\SchoolManagementSystem.Core\obj\Debug\net6.0\ref\SchoolManagementSystem.Core.dll

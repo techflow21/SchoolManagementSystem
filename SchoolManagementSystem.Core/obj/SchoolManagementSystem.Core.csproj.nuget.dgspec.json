@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {}
+    "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
+    "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "projectName": "SchoolManagementSystem.Core",
-        "projectPath": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Core\\SchoolManagementSystem.Core.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"

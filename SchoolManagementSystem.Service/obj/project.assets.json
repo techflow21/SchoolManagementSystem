@@ -3073,11 +3073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
       "projectName": "SchoolManagementSystem.Service",
-      "projectPath": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Service\\SchoolManagementSystem.Service.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
@@ -3099,8 +3099,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\SchMgtSytem-api\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
+            "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\SCH\\SchMgtSystem_API\\SchoolManagementSystem\\SchoolManagementSystem.Infrastructure\\SchoolManagementSystem.Infrastructure.csproj"
             }
           }
         }

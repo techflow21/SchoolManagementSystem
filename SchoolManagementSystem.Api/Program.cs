@@ -22,6 +22,17 @@ public abstract class Program
             o.UseSqlServer(options => options.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
         });
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("MyPolicy",
+
+            builder => builder
+                .WithOrigins("http://localhost:4200", "https://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
+        });
+
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
@@ -33,7 +44,7 @@ public abstract class Program
         builder.Services.AddSwaggerGen(c =>
         {
             c.EnableAnnotations();
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolManagementSystem", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "School Management System", Version = "v1" });
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
             {
                 Name = "Authorization",
@@ -83,6 +94,8 @@ public abstract class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseCors("MyPolicy");
 
         app.UseStaticFiles();
 
